@@ -13,18 +13,13 @@ The What's Crackin' website, phase 1: homepage with Orlando signup, city request
 1. **Put the code on GitHub.** Create a private repo and push this folder to it.
 2. **Import it into Vercel.** New Project, pick the repo, keep the defaults (Next.js is detected).
 3. **Add a database.** In the Vercel project, open Storage, add Neon Postgres and connect it to the project. That sets `DATABASE_URL`.
-4. **Set environment variables** (Settings > Environment Variables), using `.env.example` as the list:
+4. **Set environment variables** (in the project's sidebar, Environment Variables) using `.env.example` as the list:
    - `SESSION_SECRET`: a long random string
    - `SITE_URL`: `https://whatscrackin.us`
    - `SENDGRID_API_KEY` and `EMAIL_FROM`
    - `BEEHIIV_API_KEY` and `BEEHIIV_PUBLICATION_ID` (beehiiv Settings > Integrations > API)
    - `EVENTS_FEED_URL` (see below)
-5. **Create the tables and your owner account**, once, from a computer with Node installed:
-   ```
-   npx vercel env pull .env.local
-   DATABASE_URL="(value from .env.local)" OWNER_EMAIL=you@example.com npm run db:setup
-   ```
-   This also adds Orlando as the first live city.
+5. **Add `OWNER_EMAIL`** with your email address. The first time the site runs, it creates its own tables, adds Orlando as the first live city, and makes that email the owner. Nothing to run on your computer.
 6. **Redeploy** so the variables take effect, then sign in at `/admin/login`.
 
 ## Domain and email setup

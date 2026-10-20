@@ -1,6 +1,6 @@
 import { readForm, reply, tooMany } from '@/lib/api';
 import { subscribeToBeehiiv } from '@/lib/beehiiv';
-import { db } from '@/lib/db';
+import { db, ready } from '@/lib/db';
 import { cleanEmail } from '@/lib/email';
 import type { City } from '@/lib/cities';
 
@@ -12,6 +12,7 @@ export async function POST(req: Request) {
 
   const email = cleanEmail(form.email);
   if (!email) return reply('Enter a valid email address.', 400);
+  await ready();
 
   const [city] = await db()<City[]>`select * from cities where slug = ${form.city || ''} and status = 'live'`;
   if (!city) return reply('Pick a city from the list.', 400);

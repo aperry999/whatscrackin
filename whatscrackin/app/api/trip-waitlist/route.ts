@@ -1,5 +1,5 @@
 import { readForm, reply, tooMany } from '@/lib/api';
-import { db } from '@/lib/db';
+import { db, ready } from '@/lib/db';
 import { cleanEmail } from '@/lib/email';
 
 export async function POST(req: Request) {
@@ -10,6 +10,7 @@ export async function POST(req: Request) {
 
   const email = cleanEmail(form.email);
   if (!email) return reply('Enter a valid email address.', 400);
+  await ready();
   const city = (form.city || '').replace(/[<>{}\\]/g, '').trim().slice(0, 80) || null;
 
   await db()`insert into trip_waitlist (email, city) values (${email}, ${city})

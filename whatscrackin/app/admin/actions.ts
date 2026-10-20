@@ -4,7 +4,7 @@ import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
 import { consumeLoginToken, createLoginToken, endSession, getAdmin, siteUrl, startSession, type Admin } from '@/lib/auth';
 import { findOrCreateCity, parseCityInput } from '@/lib/cities';
-import { db } from '@/lib/db';
+import { db, ready } from '@/lib/db';
 import { cleanEmail, sendEmail } from '@/lib/email';
 import { saveSettings } from '@/lib/settings';
 
@@ -44,6 +44,7 @@ function loginEmail(link: string, intro: string) {
 export async function sendLoginLink(formData: FormData) {
   const email = cleanEmail(formData.get('email'));
   if (email) {
+    await ready();
     const [admin] = await db()`select email from admins where email = ${email}`;
     if (admin) {
       const token = await createLoginToken(email);

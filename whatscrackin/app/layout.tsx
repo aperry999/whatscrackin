@@ -1,8 +1,9 @@
 import type { Metadata, Viewport } from 'next';
+import { siteUrl } from '@/lib/site';
 import './globals.css';
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.SITE_URL || 'https://whatscrackin.us'),
+  metadataBase: new URL(siteUrl()),
   title: "What's Crackin' · Every local craft beer event, delivered weekly",
   description:
     'Trivia, tap takeovers, run clubs and release parties at every brewery and beer bar in town, in one weekly email.',

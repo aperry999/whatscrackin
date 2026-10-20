@@ -1,4 +1,4 @@
-import { db } from './db';
+import { db, ready } from './db';
 import { STATES, STATE_CODES } from './states';
 import type { Settings } from './settings';
 
@@ -85,6 +85,7 @@ export function goalFor(city: Pick<City, 'goal' | 'brewery_count'>, s: Settings)
 }
 
 export async function getCitiesWithCounts(): Promise<CityWithCount[]> {
+  await ready();
   return db()<CityWithCount[]>`
     select c.*, coalesce(r.n, 0)::int as requests
     from cities c
@@ -93,6 +94,7 @@ export async function getCitiesWithCounts(): Promise<CityWithCount[]> {
 }
 
 export async function getLiveCities(): Promise<City[]> {
+  await ready();
   return db()<City[]>`select * from cities where status = 'live' order by launched_at nulls last, name`;
 }
 
@@ -116,6 +118,7 @@ export async function getPublicDeck(s: Settings, limit = 6): Promise<DeckCity[]>
 }
 
 export async function findOrCreateCity(parsed: { name: string; state: string; slug: string }): Promise<City> {
+  await ready();
   const [row] = await db()<City[]>`
     insert into cities (slug, name, state) values (${parsed.slug}, ${parsed.name}, ${parsed.state})
     on conflict (slug) do update set slug = excluded.slug

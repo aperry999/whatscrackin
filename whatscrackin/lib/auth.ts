@@ -1,7 +1,7 @@
 import { createHash, randomBytes } from 'node:crypto';
 import { cookies } from 'next/headers';
 import { SignJWT, jwtVerify } from 'jose';
-import { db } from './db';
+import { db, ready } from './db';
 
 export type Admin = { email: string; role: 'owner' | 'editor' };
 
@@ -17,6 +17,7 @@ function secret() {
 export const hashToken = (t: string) => createHash('sha256').update(t).digest('hex');
 
 export async function createLoginToken(email: string) {
+  await ready();
   const token = randomBytes(32).toString('base64url');
   await db()`delete from login_tokens where expires_at < now() - interval '1 day'`;
   await db()`insert into login_tokens (token_hash, email, expires_at)
@@ -62,6 +63,7 @@ export async function getAdmin(): Promise<Admin | null> {
     const { payload } = await jwtVerify(jwt, secret());
     const email = typeof payload.email === 'string' ? payload.email : '';
     if (!email) return null;
+    await ready();
     const [admin] = await db()<Admin[]>`select email, role from admins where email = ${email}`;
     return admin ?? null;
   } catch {
@@ -69,6 +71,4 @@ export async function getAdmin(): Promise<Admin | null> {
   }
 }
 
-export function siteUrl() {
-  return (process.env.SITE_URL || 'http://localhost:3000').replace(/\/$/, '');
-}
+export { siteUrl } from './site';

@@ -1,4 +1,4 @@
-import { db } from './db';
+import { db, ready } from './db';
 
 export type Settings = {
   defaultGoal: number;
@@ -9,6 +9,7 @@ export type Settings = {
 const DEFAULTS: Settings = { defaultGoal: 100, revealPct: 75, suggestFromBreweries: true };
 
 export async function getSettings(): Promise<Settings> {
+  await ready();
   const rows = await db()<{ key: string; value: string }[]>`select key, value from settings`;
   const map = new Map(rows.map((r) => [r.key, r.value]));
   const int = (k: string, d: number) => {

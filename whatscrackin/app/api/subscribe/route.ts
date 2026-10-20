@@ -18,7 +18,7 @@ export async function POST(req: Request) {
   if (!city) return reply('Pick a city from the list.', 400);
 
   try {
-    await subscribeToBeehiiv(email, city.beehiiv_tag || city.name);
+    await subscribeToBeehiiv(email, city.beehiiv_tag || city.name, city.name);
   } catch (err) {
     console.error(err);
     return reply("We couldn't sign you up just now. Try again in a minute.", 502);

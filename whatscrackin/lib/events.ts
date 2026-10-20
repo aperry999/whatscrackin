@@ -1,5 +1,6 @@
 import { readFile } from 'node:fs/promises';
 import { slugify } from './cities';
+import bundled from '@/data/events.json';
 
 // One event as produced by the existing event engine (same shape as the What's Crackin' Events page).
 export type FeedEvent = {
@@ -41,6 +42,8 @@ const CAT: Record<string, string> = {
   other: 'Event',
 };
 
+// The feed comes from data/events.json, which the nightly event run updates and pushes to GitHub
+// (each push redeploys the site). EVENTS_FEED_URL or EVENTS_FEED_FILE override it if set.
 async function loadFeed(): Promise<FeedEvent[]> {
   try {
     const file = process.env.EVENTS_FEED_FILE;
@@ -49,15 +52,17 @@ async function loadFeed(): Promise<FeedEvent[]> {
       return Array.isArray(data) ? data : data.events || [];
     }
     const url = process.env.EVENTS_FEED_URL;
-    if (!url) return [];
-    const res = await fetch(url, { next: { revalidate: 3600 } });
-    if (!res.ok) return [];
-    const data = await res.json();
-    return Array.isArray(data) ? data : data.events || [];
+    if (url) {
+      const res = await fetch(url, { next: { revalidate: 3600 } });
+      if (res.ok) {
+        const data = await res.json();
+        return Array.isArray(data) ? data : data.events || [];
+      }
+    }
   } catch (err) {
     console.error('Event feed unavailable', err);
-    return [];
   }
+  return ((bundled as { events?: FeedEvent[] }).events || []) as FeedEvent[];
 }
 
 function todayIn(tz: string) {

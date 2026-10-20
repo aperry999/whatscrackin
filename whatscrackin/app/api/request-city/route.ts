@@ -20,7 +20,7 @@ export async function POST(req: Request) {
   // Asked for a city that's already live: subscribe them instead.
   if (city.status === 'live') {
     try {
-      await subscribeToBeehiiv(email, city.beehiiv_tag || city.name);
+      await subscribeToBeehiiv(email, city.beehiiv_tag || city.name, city.name);
     } catch (err) {
       console.error(err);
       return reply("We couldn't sign you up just now. Try again in a minute.", 502);

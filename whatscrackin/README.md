@@ -32,23 +32,15 @@ Order matters so the newsletter never goes offline:
 
 ## Event feed
 
-The homepage "This week" board reads a JSON feed from the existing event engine, refreshed hourly. The feed is either a list of events or `{ "events": [...] }`, each in the same shape as the What's Crackin' Events page:
+The homepage "This week" board reads `data/events.json`. The nightly Daily event run rebuilds the Events page, then runs `python3 scripts/publish_feed.py <brewery-events.html> data/events.json` and pushes the result here, which redeploys the site with fresh events. The feed keeps upcoming events (yesterday through 30 days out) with these fields:
 
 ```json
-{
-  "city": "orlando",
-  "venue": "Toll Road Brewing Company",
-  "date": "2026-10-20",
-  "time": "18:15",
-  "title": "Not So Serious Run Club",
-  "cat": "fitness_run_club",
-  "link": "https://www.instagram.com/p/...",
-  "weekly": true,
-  "featured": true
-}
+{ "city": "orlando", "venue": "Toll Road Brewing Company", "date": "2026-10-20", "time": "18:15",
+  "title": "Not So Serious Run Club", "cat": "fitness_run_club", "link": "https://www.instagram.com/p/...",
+  "weekly": true, "featured": true }
 ```
 
-`city` matches a live city's name (lowercase, dashes for spaces). `featured` marks CBC breweries, which get the highlighted rows. The board shows six events across the next seven days: up to three featured, no more than two per day, timed events before all-day specials.
+`city` matches a live city's name (lowercase, dashes for spaces). `featured` marks CBC breweries, which get the highlighted rows. The board shows six events across the next seven days: up to three featured, no more than two per day, timed events before all-day specials. `EVENTS_FEED_URL` can point the site at a different feed instead.
 
 ## Running it locally
 

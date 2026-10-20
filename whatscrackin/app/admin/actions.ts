@@ -2,11 +2,12 @@
 
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
-import { consumeLoginToken, createLoginToken, endSession, getAdmin, siteUrl, startSession, type Admin } from '@/lib/auth';
+import { consumeLoginToken, createLoginToken, endSession, getAdmin, startSession, type Admin } from '@/lib/auth';
 import { findOrCreateCity, parseCityInput } from '@/lib/cities';
 import { db, ready } from '@/lib/db';
 import { cleanEmail, sendEmail } from '@/lib/email';
 import { saveSettings } from '@/lib/settings';
+import { currentOrigin } from '@/lib/site';
 
 const str = (f: FormData, k: string) => String(f.get(k) ?? '').trim();
 const optInt = (v: string) => {
@@ -48,7 +49,7 @@ export async function sendLoginLink(formData: FormData) {
     const [admin] = await db()`select email from admins where email = ${email}`;
     if (admin) {
       const token = await createLoginToken(email);
-      const { text, html } = loginEmail(`${siteUrl()}/admin/verify?token=${token}`, "Here's your sign-in link for the What's Crackin' admin.");
+      const { text, html } = loginEmail(`${await currentOrigin()}/admin/verify?token=${token}`, "Here's your sign-in link for the What's Crackin' admin.");
       try {
         await sendEmail(email, "Your What's Crackin' sign-in link", text, html);
       } catch (err) {
@@ -135,9 +136,10 @@ export async function inviteAdmin(formData: FormData) {
   await db()`insert into admins (email, role, invited_by) values (${email}, ${role}, ${me.email})
     on conflict (email) do update set role = excluded.role`;
   const token = await createLoginToken(email);
+  const base = await currentOrigin();
   const { text, html } = loginEmail(
-    `${siteUrl()}/admin/verify?token=${token}`,
-    `${me.email} added you to the What's Crackin' admin as ${role === 'owner' ? 'an owner' : 'an editor'}. After this link expires, sign in any time at ${siteUrl()}/admin/login.`,
+    `${base}/admin/verify?token=${token}`,
+    `${me.email} added you to the What's Crackin' admin as ${role === 'owner' ? 'an owner' : 'an editor'}. After this link expires, sign in any time at ${base}/admin/login.`,
   );
   try {
     await sendEmail(email, "You've been added to What's Crackin' admin", text, html);

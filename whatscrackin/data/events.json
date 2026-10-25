@@ -1,881 +1,6 @@
 {
 "events": [
 {
-"cat": "other",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DeDjSZBoE0O/",
-"time": "09:00",
-"title": "Cars & Coffee",
-"venue": "Lost Worlds Brewing Company"
-},
-{
-"cat": "fitness_run_club",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DesZbdDINIm/",
-"time": "10:00",
-"title": "Pilates with Gainz x Grace",
-"venue": "Club West Brewing"
-},
-{
-"cat": "fitness_run_club",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DeKtQHJiTME/",
-"time": "10:30",
-"title": "Yoga",
-"venue": "Armored Cow Brewing Co.",
-"weekly": true
-},
-{
-"cat": "food_truck_food_special",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DeFYp-_vR_n/",
-"time": "11:00",
-"title": "Saturday Brunch Features",
-"venue": "Heist Brewery",
-"weekly": true
-},
-{
-"cat": "food_truck_food_special",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/De0FkrxDs6W/",
-"time": "11:00",
-"title": "forcryingoutloudtasty Food Truck",
-"venue": "Percent Tap House"
-},
-{
-"cat": "fundraiser_community",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DefuopCDbLf/",
-"time": "11:00",
-"title": "9 Lives Cat Adoption with Killer Kitties Rescue",
-"venue": "Resident Culture"
-},
-{
-"cat": "beer_release_tap_takeover",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DeuNtnUDUeS/",
-"time": "11:00",
-"title": "Ego Death Numbered Tickets",
-"venue": "Resident Culture"
-},
-{
-"cat": "fundraiser_community",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DezOCHYl1rf/",
-"time": "11:00",
-"title": "Killer Kitties Rescue Adoptions",
-"venue": "Resident Culture"
-},
-{
-"cat": "food_truck_food_special",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DezOCHYl1rf/",
-"time": "11:00",
-"title": "Leroy's Diner Breakfast Pop-Up",
-"venue": "Resident Culture"
-},
-{
-"cat": "festival_party",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DeEsUi_Frwq/",
-"time": "11:00",
-"title": "Porch Party Bottle Share",
-"venue": "Resident Culture"
-},
-{
-"cat": "fundraiser_community",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DezxxYJgXc_/",
-"time": "11:00",
-"title": "Beers 4 Beetus Charity Event",
-"venue": "The Print Shop"
-},
-{
-"cat": "drink_special",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DezxxYJgXc_/",
-"time": "11:00",
-"title": "Bottomless Mimosas & Bloody Saturday",
-"venue": "The Print Shop"
-},
-{
-"cat": "festival_party",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DeXXDiWgfkN/",
-"time": "11:30",
-"title": "15 Year Family Reunion",
-"venue": "NoDa Brewing Company"
-},
-{
-"cat": "beer_release_tap_takeover",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DeXXDiWgfkN/",
-"time": "11:30",
-"title": "5 New Beer Releases",
-"venue": "NoDa Brewing Company"
-},
-{
-"cat": "food_truck_food_special",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DeSxo7Njpnv/",
-"time": "12:00",
-"title": "JT's BBQ Food Truck",
-"venue": "Lake Norman Brewery"
-},
-{
-"cat": "festival_party",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DeSxo7Njpnv/",
-"time": "12:00",
-"title": "Laketoberfest",
-"venue": "Lake Norman Brewery"
-},
-{
-"cat": "festival_party",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/De1z1IBS3OD/",
-"time": "12:00",
-"title": "LagerFest",
-"venue": "Legion Brewing West Morehead"
-},
-{
-"cat": "fundraiser_community",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/Dd9PBp_jT-f/",
-"time": "12:00",
-"title": "Kids Zone",
-"venue": "NoDa Brewing Company"
-},
-{
-"cat": "food_truck_food_special",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/De0FkrxDs6W/",
-"time": "12:00",
-"title": "forcryingoutloudtasty Food Truck",
-"venue": "Percent Tap House"
-},
-{
-"cat": "class_workshop",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DerdOhoEYtq/",
-"time": "12:00",
-"title": "DIY Fall Candle Making",
-"venue": "Pilot Brewing"
-},
-{
-"cat": "festival_party",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/De14vaih0Wd/",
-"time": "12:00",
-"title": "Anniversary Party",
-"venue": "Replay Brewing"
-},
-{
-"cat": "festival_party",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DefuopCDbLf/",
-"time": "12:00",
-"title": "9 Well Crafted Years Anniversary Party",
-"venue": "Resident Culture"
-},
-{
-"cat": "market_vendor",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DefuopCDbLf/",
-"time": "12:00",
-"title": "Anniversary Party Vendors",
-"venue": "Resident Culture"
-},
-{
-"cat": "beer_release_tap_takeover",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DeEsUi_Frwq/",
-"time": "12:00",
-"title": "Ego Death 2026 Bottle Release",
-"venue": "Resident Culture"
-},
-{
-"cat": "festival_party",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DegsZwmF59_/",
-"time": "12:00",
-"title": "9 Well Crafted Lives: Anniversary Party",
-"venue": "Resident Culture Brewing Company"
-},
-{
-"cat": "food_truck_food_special",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DezxxYJgXc_/",
-"time": "12:00",
-"title": "J's Fish Tacos",
-"venue": "The Print Shop"
-},
-{
-"cat": "market_vendor",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/Derzm_6Cv2I/",
-"time": "12:00",
-"title": "Charlotte Halloween Book Fair",
-"venue": "Triple C Brewing Company"
-},
-{
-"cat": "live_music",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DesZbdDINIm/",
-"time": "13:00",
-"title": "Live Music: Lukas Delgra",
-"venue": "Club West Brewing"
-},
-{
-"cat": "food_truck_food_special",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DerjSn1oKks/",
-"time": "13:00",
-"title": "Food Truck: Mr. Hibachi",
-"venue": "Lost Worlds Brewing Company"
-},
-{
-"cat": "fundraiser_community",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DerbDh3gcpX/",
-"time": "13:00",
-"title": "German Shepherd Rescue & Adoptions",
-"venue": "Primal Brewery"
-},
-{
-"cat": "food_truck_food_special",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DeuvYV7GpE_/",
-"time": "13:00",
-"title": "ninetiesanalog Coffee Pop-Up",
-"venue": "Replay Brewing"
-},
-{
-"cat": "festival_party",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DeABr3uDPJo/",
-"time": "13:00",
-"title": "Craft Beer Week LoSo Bar Crawl",
-"venue": "The Olde Mecklenburg Brewery & Biergarten"
-},
-{
-"cat": "fundraiser_community",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DeCz958iRLc/",
-"time": "14:00",
-"title": "Drink for a Cause: NMAR Howl-o-ween",
-"venue": "Birdsong Brewing Co."
-},
-{
-"cat": "fundraiser_community",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/De2OdoyoKG-/",
-"time": "14:00",
-"title": "Howl-O-Ween: Meet, Sip & Support",
-"venue": "Birdsong Brewing Co."
-},
-{
-"cat": "market_vendor",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/Dd4ehphtLzn/",
-"time": "14:00",
-"title": "Halloween Vendor Market",
-"venue": "Edge City Brewery"
-},
-{
-"cat": "food_truck_food_special",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/Deb92iNx9Oz/",
-"time": "14:00",
-"title": "All You Can Eat Pierogi by Queen City Pierogi Co.",
-"venue": "King Canary Brewing"
-},
-{
-"cat": "food_truck_food_special",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DerdOhoEYtq/",
-"time": "14:00",
-"title": "Free Egg Roll Day w/ Deejai Thai",
-"venue": "Pilot Brewing"
-},
-{
-"cat": "market_vendor",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/reel/DeVaPPsoCWS/",
-"time": "15:00",
-"title": "Dark Market",
-"venue": "Lost Worlds Brewing Company"
-},
-{
-"cat": "fundraiser_community",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/Dd_uibSFaBr/",
-"time": "15:00",
-"title": "Catering 2 Cats & Dogs Pet Adoption",
-"venue": "Vaulted Oak Brewing"
-},
-{
-"cat": "live_music",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DejsriPiJK0/",
-"time": "16:00",
-"title": "Pearson House of Rock's Travel Team",
-"venue": "Lake Norman Brewery"
-},
-{
-"cat": "live_music",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/Derzm_6Cv2I/",
-"time": "16:00",
-"title": "Gator Gumbo Band",
-"venue": "Triple C Brewing Company"
-},
-{
-"cat": "live_music",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DesZbdDINIm/",
-"time": "17:00",
-"title": "Live Music: Save Tonight Band",
-"venue": "Club West Brewing"
-},
-{
-"cat": "fitness_run_club",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/reel/De2P2zgtRtf/",
-"time": "17:00",
-"title": "Freaky 5k",
-"venue": "Heist Brewery"
-},
-{
-"cat": "food_truck_food_special",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DerJgx-le1G/",
-"time": "17:00",
-"title": "Food Truck: Chef Kenny's Kitchen",
-"venue": "Hoptown Brewing Company"
-},
-{
-"cat": "food_truck_food_special",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DeSxo7Njpnv/",
-"time": "17:00",
-"title": "Ady's Pita Food Truck",
-"venue": "Lake Norman Brewery"
-},
-{
-"cat": "food_truck_food_special",
-"city": "charlotte",
-"date": "2026-10-24",
-"featured": true,
-"link": "https://www.instagram.com/p/Deo05YII3lC/",
-"time": "17:00",
-"title": "Food Truck: Fry Station",
-"venue": "Neoteric Brewing"
-},
-{
-"cat": "festival_party",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DeuWjnHP5g9/",
-"time": "17:00",
-"title": "Fete Noire Halloween Party",
-"venue": "Petty Thieves Brewing Co"
-},
-{
-"cat": "live_music",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/Dd37JIHDb6T/",
-"time": "17:00",
-"title": "Ben Gatlin",
-"venue": "Primal Brewery"
-},
-{
-"cat": "live_music",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DeuvYV7GpE_/",
-"time": "17:00",
-"title": "Live Music: Surgent",
-"venue": "Replay Brewing"
-},
-{
-"cat": "festival_party",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/Derzm_6Cv2I/",
-"time": "17:00",
-"title": "South End Night Crawl",
-"venue": "Triple C Brewing Company"
-},
-{
-"cat": "food_truck_food_special",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/Dd_uibSFaBr/",
-"time": "17:00",
-"title": "Union BBQ Food Truck",
-"venue": "Vaulted Oak Brewing"
-},
-{
-"cat": "festival_party",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DesSxVOkUAL/",
-"time": "17:00",
-"title": "South End Brewery Crawl",
-"venue": "Wooden Robot Brewery"
-},
-{
-"cat": "trivia_games",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DeKtQHJiTME/",
-"time": "18:00",
-"title": "Chess Club",
-"venue": "Armored Cow Brewing Co.",
-"weekly": true
-},
-{
-"cat": "trivia_games",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DeKtQHJiTME/",
-"time": "18:00",
-"title": "Themed Trivia",
-"venue": "Armored Cow Brewing Co."
-},
-{
-"cat": "festival_party",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/De2JrQ1jWJv/",
-"time": "18:00",
-"title": "Trunk or Treat",
-"venue": "Durty Bull Brewing Company"
-},
-{
-"cat": "festival_party",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/Dechyl3B88G/",
-"time": "18:00",
-"title": "Dashain Tihar Dhamaka USA Tour 2026",
-"venue": "Heist Brewery and Barrel Arts"
-},
-{
-"cat": "live_music",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/Dd9EvozxBd1/",
-"time": "18:00",
-"title": "Bone Fried Turkey",
-"venue": "Slow Play Brewing"
-},
-{
-"cat": "live_music",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DezxxYJgXc_/",
-"time": "18:00",
-"title": "Live Music with Chris Suter",
-"venue": "The Print Shop"
-},
-{
-"cat": "live_music",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DerJgx-le1G/",
-"time": "18:30",
-"title": "Live Music: S. Brown Acoustic",
-"venue": "Hoptown Brewing Company"
-},
-{
-"cat": "live_music",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/Dd9orp_KHUd/",
-"time": "18:30",
-"title": "Caution! Blind Driver",
-"venue": "Lake Wylie Brewing Co."
-},
-{
-"cat": "live_music",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DerbF3sm_dr/",
-"time": "19:00",
-"title": "Bluegrass Music",
-"venue": "Durty Bull Brewing Company",
-"weekly": true
-},
-{
-"cat": "live_music",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/Dew5O9uDIlj/",
-"time": "19:00",
-"title": "Mark & Samantha Cantrell Debut Show",
-"venue": "Durty Bull Brewing Company"
-},
-{
-"cat": "live_music",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/Dd2h3w3ET6K/",
-"time": "19:00",
-"title": "The Chain – Fleetwood Mac Tribute Band",
-"venue": "Lake Norman Brewery"
-},
-{
-"cat": "live_music",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DeDjSZBoE0O/",
-"time": "19:00",
-"title": "Live Music: RLM Band",
-"venue": "Lost Worlds Brewing Company"
-},
-{
-"cat": "live_music",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/Dd9QUI5kTvs/",
-"time": "19:00",
-"title": "Live Music: Don't Blink",
-"venue": "Royal Bliss Brewing Co."
-},
-{
-"cat": "sports_viewing",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/De1lfWORLDF/",
-"time": "19:30",
-"title": "College Football: Ole Miss vs. Texas",
-"venue": "Middle James Brewing Company"
-},
-{
-"cat": "live_music",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DesZbdDINIm/",
-"time": "20:00",
-"title": "DJ Night",
-"venue": "Club West Brewing"
-},
-{
-"cat": "festival_party",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/Dd9PBp_jT-f/",
-"time": "20:00",
-"title": "Silent Disco",
-"venue": "NoDa Brewing Company"
-},
-{
-"cat": "other",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DeuvYV7GpE_/",
-"time": "21:00",
-"title": "Anniversary Karaoke",
-"venue": "Replay Brewing"
-},
-{
-"cat": "festival_party",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/reel/DekusL1Oyfp/",
-"time": "21:00",
-"title": "Noche Latina",
-"venue": "Salud Cerveceria",
-"weekly": true
-},
-{
-"cat": "drink_special",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DekYrhpSJ0M/",
-"title": "S'mores Rim Saturday",
-"venue": "Armored Cow Brewing Co.",
-"weekly": true
-},
-{
-"cat": "fundraiser_community",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DesYouZDmdP/",
-"title": "Drink for a Cause: Howl-O-Ween Costume Party",
-"venue": "Birdsong Brewing Co."
-},
-{
-"cat": "fundraiser_community",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DeCz958iRLc/",
-"title": "Drink for a Cause: North Meck Animal Rescue",
-"venue": "Birdsong Brewing Co."
-},
-{
-"cat": "drink_special",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DeIALN6IG-1/",
-"title": "$20 Mimosa Bottles",
-"venue": "Club West Brewing",
-"weekly": true
-},
-{
-"cat": "sports_viewing",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DesZbdDINIm/",
-"title": "College Football Saturday",
-"venue": "Club West Brewing"
-},
-{
-"cat": "sports_viewing",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/De18-YwoHpF/",
-"title": "College Football all day",
-"venue": "Club West Brewing"
-},
-{
-"cat": "sports_viewing",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/De18-YwoHpF/",
-"title": "World Series viewing",
-"venue": "Club West Brewing"
-},
-{
-"cat": "beer_release_tap_takeover",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DeqBA-mkQiC/",
-"title": "Sour Social",
-"venue": "Fonta Flora Brewery"
-},
-{
-"cat": "festival_party",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/reel/Dd_i7i-TuFv/",
-"title": "Last Oktoberfest Saturday",
-"venue": "Hoptown Brewing Company",
-"weekly": true
-},
-{
-"cat": "food_truck_food_special",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/Dd9Haz2EUn2/",
-"title": "Queen City Pierogi Food Truck",
-"venue": "King Canary Brewing"
-},
-{
-"cat": "sports_viewing",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DemiEmlEZeK/",
-"title": "Saturday football viewing",
-"venue": "Lore Brewing Company",
-"weekly": true
-},
-{
-"cat": "sports_viewing",
-"city": "charlotte",
-"date": "2026-10-24",
-"featured": true,
-"link": "https://www.instagram.com/p/Deo05YII3lC/",
-"title": "College Football on the TVs",
-"venue": "Neoteric Brewing"
-},
-{
-"cat": "beer_release_tap_takeover",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/Dd9PBp_jT-f/",
-"title": "In Todd We Trust Release",
-"venue": "NoDa Brewing Company"
-},
-{
-"cat": "live_music",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/Dd9PBp_jT-f/",
-"title": "Live Music",
-"venue": "NoDa Brewing Company"
-},
-{
-"cat": "festival_party",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DevFegxj0Qz/",
-"title": "NoDa 15th Anniversary Celebration",
-"venue": "NoDa Brewing Company"
-},
-{
-"cat": "beer_release_tap_takeover",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/Dd9PBp_jT-f/",
-"title": "NoDaRyez'd Release",
-"venue": "NoDa Brewing Company"
-},
-{
-"cat": "beer_release_tap_takeover",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/Dd9PBp_jT-f/",
-"title": "Ramble On Red Release",
-"venue": "NoDa Brewing Company"
-},
-{
-"cat": "beer_release_tap_takeover",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/Dd9PBp_jT-f/",
-"title": "Shades of the Past Release",
-"venue": "NoDa Brewing Company"
-},
-{
-"cat": "beer_release_tap_takeover",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/Dd9PBp_jT-f/",
-"title": "Sucette D'Suzie Release",
-"venue": "NoDa Brewing Company"
-},
-{
-"cat": "fitness_run_club",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/Dd37JIHDb6T/",
-"title": "Pure Barre Pop Up Class",
-"venue": "Primal Brewery"
-},
-{
-"cat": "festival_party",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/Dd2GUHTmhSl/",
-"title": "5th Birthday Party",
-"venue": "Replay Brewing"
-},
-{
-"cat": "festival_party",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/Dd_3LIcoAhh/",
-"title": "Spooky Island Fifth Birthday",
-"venue": "Replay Brewing"
-},
-{
-"cat": "festival_party",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/reel/Dezc4H2h5aq/",
-"title": "Spooky Island Party",
-"venue": "Replay Brewing"
-},
-{
-"cat": "market_vendor",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DezOCHYl1rf/",
-"title": "Local Vendor Market",
-"venue": "Resident Culture"
-},
-{
-"cat": "sports_viewing",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DezOCHYl1rf/",
-"title": "Vols Watch Party",
-"venue": "Resident Culture"
-},
-{
-"cat": "drink_special",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DeUJEbBDal9/",
-"title": "$1 Off Pitchers",
-"venue": "Sweet Union Brewing",
-"weekly": true
-},
-{
-"cat": "food_truck_food_special",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DeuOnzbkSzb/",
-"title": "The Lumpia Shack",
-"venue": "The Chamber by Wooden Robot"
-},
-{
-"cat": "sports_viewing",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/reel/DeUY3fYE3kq/",
-"title": "College Football Saturday",
-"venue": "The Olde Mecklenburg Brewery & Biergarten",
-"weekly": true
-},
-{
-"cat": "festival_party",
-"city": "charlotte",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/reel/DerqmqRu7p5/",
-"title": "Lantern Parade",
-"venue": "Traust Brewing Company"
-},
-{
 "cat": "drink_special",
 "city": "charlotte",
 "date": "2026-10-25",
@@ -884,6 +9,15 @@
 "title": "Sunday Funday Brunch",
 "venue": "Gilde Brewery",
 "weekly": true
+},
+{
+"cat": "food_truck_food_special",
+"city": "charlotte",
+"date": "2026-10-25",
+"link": "https://www.instagram.com/p/De4hTqtNSWN/",
+"time": "10:00",
+"title": "All You Can Eat SpookyBrunch",
+"venue": "Heist Brewery"
 },
 {
 "cat": "food_truck_food_special",
@@ -1151,6 +285,15 @@
 "time": "15:00",
 "title": "Open Mic",
 "venue": "The Print Shop"
+},
+{
+"cat": "festival_party",
+"city": "charlotte",
+"date": "2026-10-25",
+"link": "https://www.instagram.com/p/De4hTqtNSWN/",
+"time": "16:00",
+"title": "NoDaWeen Candy Crawl",
+"venue": "Heist Brewery"
 },
 {
 "cat": "festival_party",
@@ -2372,6 +1515,16 @@
 "title": "Wine Night",
 "venue": "Lake Norman Brewery",
 "weekly": true
+},
+{
+"cat": "festival_party",
+"city": "charlotte",
+"date": "2026-10-28",
+"featured": true,
+"link": "https://www.instagram.com/reel/De4IhznIxg3/",
+"time": "16:00",
+"title": "Halloween Party & Trivia Night",
+"venue": "Neoteric Brewing"
 },
 {
 "cat": "food_truck_food_special",
@@ -6715,6 +5868,46 @@
 "venue": "Old Armor Beer Company"
 },
 {
+"cat": "fitness_run_club",
+"city": "charlotte",
+"date": "2026-11-07",
+"link": "https://www.instagram.com/reel/DePQ2IbDWqj/",
+"time": "10:00",
+"title": "Saturday Morning Mat Pilates",
+"venue": "Club West Brewing",
+"weekly": true
+},
+{
+"cat": "fitness_run_club",
+"city": "charlotte",
+"date": "2026-11-07",
+"link": "https://www.instagram.com/p/DeKtQHJiTME/",
+"time": "10:30",
+"title": "Yoga",
+"venue": "Armored Cow Brewing Co.",
+"weekly": true
+},
+{
+"cat": "food_truck_food_special",
+"city": "charlotte",
+"date": "2026-11-07",
+"link": "https://www.instagram.com/p/DeFYp-_vR_n/",
+"time": "11:00",
+"title": "Saturday Brunch Features",
+"venue": "Heist Brewery",
+"weekly": true
+},
+{
+"cat": "drink_special",
+"city": "charlotte",
+"date": "2026-11-07",
+"link": "https://www.instagram.com/p/DeKZqAulrAu/",
+"time": "11:00",
+"title": "Bottomless Mimosas & Bloody Saturday",
+"venue": "The Print Shop",
+"weekly": true
+},
+{
 "cat": "fundraiser_community",
 "city": "charlotte",
 "date": "2026-11-07",
@@ -6769,6 +5962,16 @@
 "venue": "Slow Play Brewing"
 },
 {
+"cat": "trivia_games",
+"city": "charlotte",
+"date": "2026-11-07",
+"link": "https://www.instagram.com/p/DeKtQHJiTME/",
+"time": "18:00",
+"title": "Chess Club",
+"venue": "Armored Cow Brewing Co.",
+"weekly": true
+},
+{
 "cat": "live_music",
 "city": "charlotte",
 "date": "2026-11-07",
@@ -6778,12 +5981,77 @@
 "venue": "Slow Play Brewing"
 },
 {
+"cat": "live_music",
+"city": "charlotte",
+"date": "2026-11-07",
+"link": "https://www.instagram.com/p/DerbF3sm_dr/",
+"time": "19:00",
+"title": "Bluegrass Music",
+"venue": "Durty Bull Brewing Company",
+"weekly": true
+},
+{
+"cat": "festival_party",
+"city": "charlotte",
+"date": "2026-11-07",
+"link": "https://www.instagram.com/reel/DekusL1Oyfp/",
+"time": "21:00",
+"title": "Noche Latina",
+"venue": "Salud Cerveceria",
+"weekly": true
+},
+{
+"cat": "drink_special",
+"city": "charlotte",
+"date": "2026-11-07",
+"link": "https://www.instagram.com/p/DekYrhpSJ0M/",
+"title": "S'mores Rim Saturday",
+"venue": "Armored Cow Brewing Co.",
+"weekly": true
+},
+{
+"cat": "drink_special",
+"city": "charlotte",
+"date": "2026-11-07",
+"link": "https://www.instagram.com/p/DeIALN6IG-1/",
+"title": "$20 Mimosa Bottles",
+"venue": "Club West Brewing",
+"weekly": true
+},
+{
+"cat": "sports_viewing",
+"city": "charlotte",
+"date": "2026-11-07",
+"link": "https://www.instagram.com/p/Dd_yoipICm1/",
+"title": "College Football Saturdays",
+"venue": "Club West Brewing",
+"weekly": true
+},
+{
 "cat": "festival_party",
 "city": "charlotte",
 "date": "2026-11-07",
 "link": "https://www.instagram.com/p/De1pdmJR47T/",
 "title": "Fonta Flora Brewery 13th Anniversary Party",
 "venue": "Fonta Flora Brewery"
+},
+{
+"cat": "festival_party",
+"city": "charlotte",
+"date": "2026-11-07",
+"link": "https://www.instagram.com/reel/Dd_i7i-TuFv/",
+"title": "Last Oktoberfest Saturday",
+"venue": "Hoptown Brewing Company",
+"weekly": true
+},
+{
+"cat": "sports_viewing",
+"city": "charlotte",
+"date": "2026-11-07",
+"link": "https://www.instagram.com/p/DemiEmlEZeK/",
+"title": "Saturday football viewing",
+"venue": "Lore Brewing Company",
+"weekly": true
 },
 {
 "cat": "beer_release_tap_takeover",
@@ -6808,6 +6076,24 @@
 "link": "https://www.instagram.com/p/DexKi8SN6xh/",
 "title": "Puppy Foot Porter Release",
 "venue": "Slow Play Brewing"
+},
+{
+"cat": "drink_special",
+"city": "charlotte",
+"date": "2026-11-07",
+"link": "https://www.instagram.com/p/DeUJEbBDal9/",
+"title": "$1 Off Pitchers",
+"venue": "Sweet Union Brewing",
+"weekly": true
+},
+{
+"cat": "sports_viewing",
+"city": "charlotte",
+"date": "2026-11-07",
+"link": "https://www.instagram.com/reel/DeUY3fYE3kq/",
+"title": "College Football Saturday",
+"venue": "The Olde Mecklenburg Brewery & Biergarten",
+"weekly": true
 },
 {
 "cat": "festival_party",
@@ -6862,342 +6148,6 @@
 "time": "19:00",
 "title": "Candles and Cold Ones Class",
 "venue": "Middle James Brewing Company"
-},
-{
-"cat": "festival_party",
-"city": "orlando",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DeuGs5tiRFS/",
-"time": "10:00",
-"title": "Enchanted Knights: Dungeons of Downtown Renaissance Festival",
-"venue": "Deviant Wolfe Brewing"
-},
-{
-"cat": "fitness_run_club",
-"city": "orlando",
-"date": "2026-10-24",
-"featured": true,
-"link": "https://www.instagram.com/p/Des03aXNO5F/",
-"time": "10:30",
-"title": "Yoga",
-"venue": "RockPit Brewing & Distilling"
-},
-{
-"cat": "live_music",
-"city": "orlando",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/Dd13dPUILi5/",
-"time": "11:00",
-"title": "Oktoberfest: Gone Coastal",
-"venue": "Crooked Can Winter Garden"
-},
-{
-"cat": "fundraiser_community",
-"city": "orlando",
-"date": "2026-10-24",
-"link": "https://ivanhoeparkbrewing.com/event/blood-drive/",
-"time": "11:00",
-"title": "Blood Drive",
-"venue": "Ivanhoe Park Brewing Co"
-},
-{
-"cat": "sports_viewing",
-"city": "orlando",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/De14hQCDP3R/",
-"time": "12:00",
-"title": "College Football: Pitt @ Miami",
-"venue": "Gravity Taproom"
-},
-{
-"cat": "food_truck_food_special",
-"city": "orlando",
-"date": "2026-10-24",
-"link": "https://ivanhoeparkbrewing.com/event/lenador-argentinian-grill-2/",
-"time": "12:00",
-"title": "Food truck: Lenador Argentinian Grill",
-"venue": "Ivanhoe Park Brewing Co",
-"weekly": true
-},
-{
-"cat": "market_vendor",
-"city": "orlando",
-"date": "2026-10-24",
-"link": "https://ivanhoeparkbrewing.com/event/sunny-vibes-market/",
-"time": "12:00",
-"title": "Sunny Vibes Market",
-"venue": "Ivanhoe Park Brewing Co"
-},
-{
-"cat": "live_music",
-"city": "orlando",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DerhgdEETn0/",
-"time": "13:00",
-"title": "Live Music: Jan Lavigne",
-"venue": "Crooked Can Minneola"
-},
-{
-"cat": "festival_party",
-"city": "orlando",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/Dd13dPUILi5/",
-"time": "13:00",
-"title": "Oktoberfest: Stilt Walkers",
-"venue": "Crooked Can Winter Garden"
-},
-{
-"cat": "live_music",
-"city": "orlando",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/Dd13dPUILi5/",
-"time": "14:00",
-"title": "Oktoberfest: Jimmy Horzen Duo",
-"venue": "Crooked Can Winter Garden"
-},
-{
-"cat": "food_truck_food_special",
-"city": "orlando",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DezypaygnHO/",
-"time": "14:00",
-"title": "Tagliolino Fresh Pasta 3rd Anniversary Party",
-"venue": "Windermere Brewing Company"
-},
-{
-"cat": "festival_party",
-"city": "orlando",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/Dd13dPUILi5/",
-"time": "14:45",
-"title": "Oktoberfest: Orlando Cloggers",
-"venue": "Crooked Can Winter Garden"
-},
-{
-"cat": "class_workshop",
-"city": "orlando",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DecMBGFA11j/",
-"time": "15:00",
-"title": "Bonsai Tree Class",
-"venue": "Half Barrel Beer Project"
-},
-{
-"cat": "sports_viewing",
-"city": "orlando",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/De14hQCDP3R/",
-"time": "15:30",
-"title": "College Football: BYU @ UCF (Homecoming)",
-"venue": "Gravity Taproom"
-},
-{
-"cat": "festival_party",
-"city": "orlando",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/Dd13dPUILi5/",
-"time": "16:00",
-"title": "Oktoberfest: Stilt Walkers",
-"venue": "Crooked Can Winter Garden"
-},
-{
-"cat": "market_vendor",
-"city": "orlando",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DeppvMpDJI4/",
-"time": "16:00",
-"title": "Orlando Pop-Up Market",
-"venue": "Gravity Taproom"
-},
-{
-"cat": "live_music",
-"city": "orlando",
-"date": "2026-10-24",
-"featured": true,
-"link": "https://www.instagram.com/p/Des03aXNO5F/",
-"time": "16:00",
-"title": "Neil Ricketts (Acoustic Set)",
-"venue": "RockPit Brewing & Distilling"
-},
-{
-"cat": "live_music",
-"city": "orlando",
-"date": "2026-10-24",
-"featured": true,
-"link": "https://www.instagram.com/p/Devc-jfNe1N/",
-"time": "17:00",
-"title": "Kacey Smith",
-"venue": "RockPit Brewing & Distilling"
-},
-{
-"cat": "live_music",
-"city": "orlando",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DerhgdEETn0/",
-"time": "18:00",
-"title": "Live Music: James Doyle",
-"venue": "Crooked Can Minneola"
-},
-{
-"cat": "live_music",
-"city": "orlando",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/Dd13dPUILi5/",
-"time": "18:00",
-"title": "Oktoberfest: The Brussel Sprouts German Polka Band",
-"venue": "Crooked Can Winter Garden"
-},
-{
-"cat": "festival_party",
-"city": "orlando",
-"date": "2026-10-24",
-"link": "https://ivanhoeparkbrewing.com/event/cinema-on-the-grass-pokemon-night/",
-"time": "18:00",
-"title": "Cinema On The Grass Pokemon Night",
-"venue": "Ivanhoe Park Brewing Co"
-},
-{
-"cat": "live_music",
-"city": "orlando",
-"date": "2026-10-24",
-"featured": true,
-"link": "https://www.instagram.com/p/DeuMt1Axa9t/",
-"time": "18:00",
-"title": "Live Music: Allie Sawicki",
-"venue": "Toll Road Brewing Company"
-},
-{
-"cat": "festival_party",
-"city": "orlando",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/Dd13dPUILi5/",
-"time": "19:00",
-"title": "Oktoberfest: Stein Holding",
-"venue": "Crooked Can Winter Garden"
-},
-{
-"cat": "live_music",
-"city": "orlando",
-"date": "2026-10-24",
-"featured": true,
-"link": "https://www.instagram.com/p/Des03aXNO5F/",
-"time": "19:00",
-"title": "The Moondogs Tribute",
-"venue": "RockPit Brewing & Distilling"
-},
-{
-"cat": "trivia_games",
-"city": "orlando",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/reel/DesJLyyqnGu/",
-"time": "19:00",
-"title": "Halloween Beer Pong",
-"venue": "Windermere Brewing Company"
-},
-{
-"cat": "sports_viewing",
-"city": "orlando",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/De14hQCDP3R/",
-"time": "19:30",
-"title": "College Football: Ole Miss @ Texas",
-"venue": "Gravity Taproom"
-},
-{
-"cat": "other",
-"city": "orlando",
-"date": "2026-10-24",
-"link": "https://ivanhoeparkbrewing.com/event/ocsc-home-game/",
-"time": "19:30",
-"title": "OCSC Home Game",
-"venue": "Ivanhoe Park Lager House",
-"weekly": true
-},
-{
-"cat": "festival_party",
-"city": "orlando",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/Dee1Zilg4JQ/",
-"time": "20:00",
-"title": "HSB Annual Halloween Party",
-"venue": "Home State Brewing Co."
-},
-{
-"cat": "sports_viewing",
-"city": "orlando",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/De0DwLFlFyA/",
-"title": "College Football Saturday",
-"venue": "Celebration Brewing"
-},
-{
-"cat": "festival_party",
-"city": "orlando",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/reel/De3L_VdxtXa/",
-"title": "Oktoberfest Day Two",
-"venue": "Crooked Can Winter Garden"
-},
-{
-"cat": "festival_party",
-"city": "orlando",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/Dd13dPUILi5/",
-"title": "Oktoberfest: Face Painting",
-"venue": "Crooked Can Winter Garden"
-},
-{
-"cat": "fundraiser_community",
-"city": "orlando",
-"date": "2026-10-24",
-"featured": true,
-"link": "https://www.instagram.com/p/Des03aXNO5F/",
-"title": "Frank Fest",
-"venue": "RockPit Brewing & Distilling"
-},
-{
-"cat": "food_truck_food_special",
-"city": "orlando",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/reel/DesJLyyqnGu/",
-"title": "Food Truck: Tagliolino's Anniversary Party",
-"venue": "Windermere Brewing Company"
-},
-{
-"cat": "festival_party",
-"city": "orlando",
-"date": "2026-10-24",
-"featured": true,
-"link": "https://www.instagram.com/p/Dd9_d-2STAI/",
-"title": "Pumpkinfest",
-"venue": "À La Cart Milk District"
-},
-{
-"cat": "food_truck_food_special",
-"city": "orlando",
-"date": "2026-10-24",
-"featured": true,
-"link": "https://www.instagram.com/p/DeaTn79lZZB/",
-"title": "The Steak Truck Grand Opening",
-"venue": "À La Cart Milk District"
-},
-{
-"cat": "festival_party",
-"city": "orlando",
-"date": "2026-10-24",
-"featured": true,
-"link": "https://www.instagram.com/reel/DeIatSEhr1t/",
-"title": "Pumpkin Fest",
-"venue": "À La Cart SoDo District"
-},
-{
-"cat": "festival_party",
-"city": "orlando",
-"date": "2026-10-24",
-"featured": true,
-"link": "https://www.instagram.com/p/DemNerCoC5A/",
-"title": "Pumpkinfest",
-"venue": "À La Cart SoDo District"
 },
 {
 "cat": "fitness_run_club",
@@ -8614,6 +7564,15 @@
 "venue": "NYBP Orlando"
 },
 {
+"cat": "live_music",
+"city": "orlando",
+"date": "2026-10-31",
+"link": "https://www.instagram.com/reel/De4awl_xrXF/",
+"title": "Spinnin Saturday",
+"venue": "Redlight Redlight Brewpub",
+"weekly": true
+},
+{
 "cat": "fitness_run_club",
 "city": "orlando",
 "date": "2026-11-01",
@@ -8722,6 +7681,15 @@
 "title": "Bottomless Mimosas",
 "venue": "Windermere Brewing Company",
 "weekly": true
+},
+{
+"cat": "sports_viewing",
+"city": "orlando",
+"date": "2026-11-01",
+"link": "https://www.instagram.com/p/Decd0TpAlNg/",
+"time": "14:00",
+"title": "Formula 1 Mexico GP Watch Party",
+"venue": "Half Barrel Beer Project"
 },
 {
 "cat": "trivia_games",
@@ -9635,8 +8603,7 @@
 "link": "https://ivanhoeparkbrewing.com/event/ocsc-home-game-2/",
 "time": "16:00",
 "title": "OCSC Home Game",
-"venue": "Ivanhoe Park Lager House",
-"weekly": true
+"venue": "Ivanhoe Park Lager House"
 },
 {
 "cat": "live_music",
@@ -9646,6 +8613,24 @@
 "time": "20:00",
 "title": "Exile on Virginia Drive with Blue Streak Mamas, Telephone, and Brian Chodorcoff",
 "venue": "Ten10 Brewing Co."
+},
+{
+"cat": "sports_viewing",
+"city": "orlando",
+"date": "2026-11-07",
+"link": "https://www.instagram.com/p/De0DwLFlFyA/",
+"title": "College Football Saturday",
+"venue": "Celebration Brewing",
+"weekly": true
+},
+{
+"cat": "live_music",
+"city": "orlando",
+"date": "2026-11-07",
+"link": "https://www.instagram.com/reel/De4awl_xrXF/",
+"title": "Spinnin Saturday",
+"venue": "Redlight Redlight Brewpub",
+"weekly": true
 },
 {
 "cat": "food_truck_food_special",
@@ -9931,435 +8916,32 @@
 "weekly": true
 },
 {
-"cat": "sports_viewing",
-"city": "pittsburgh",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/Dez1dkiDfBd/",
-"time": "12:00",
-"title": "Pitt vs Miami Watch Party",
-"venue": "Balance Brewing"
-},
-{
-"cat": "festival_party",
-"city": "pittsburgh",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/De2egsBmLX-/",
-"time": "12:00",
-"title": "5th Trick or Treat Halloween Block Party",
-"venue": "Coven Brewing"
-},
-{
-"cat": "festival_party",
-"city": "pittsburgh",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/Dew4GDrlfXK/",
-"time": "13:00",
-"title": "Dog Costume Contest at Boone's Howl'oween Party",
-"venue": "Allegheny City Brewing"
-},
-{
-"cat": "fundraiser_community",
-"city": "pittsburgh",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/Dep_nRYq6zf/",
-"time": "13:00",
-"title": "Pawstume Party",
-"venue": "Big Sewickley Creek Brewery"
-},
-{
-"cat": "beer_release_tap_takeover",
-"city": "pittsburgh",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/De2mRgUscOe/",
-"time": "13:00",
-"title": "Abrikoos: Apricot Solera Sour Bottle Release",
-"venue": "Late Addition Brewing"
-},
-{
-"cat": "beer_release_tap_takeover",
-"city": "pittsburgh",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DezRbOrM-nx/",
-"time": "13:00",
-"title": "Limited Edition Bottle Release: Keeping Time",
-"venue": "Late Addition Brewing"
-},
-{
-"cat": "fundraiser_community",
-"city": "pittsburgh",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DerbEGIiIF9/",
-"time": "13:00",
-"title": "Dog Costume Party Fundraiser",
-"venue": "Squatch Brewing"
-},
-{
-"cat": "fundraiser_community",
-"city": "pittsburgh",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DeUP9zcDd9Q/",
-"time": "13:00",
-"title": "Pet Costume Party",
-"venue": "Squatch Brewing"
-},
-{
-"cat": "sports_viewing",
-"city": "pittsburgh",
-"date": "2026-10-24",
-"featured": true,
-"link": "https://www.instagram.com/p/DerRTcKl2o3/",
-"time": "13:00",
-"title": "WNBA: Golden State Valkyries vs. Atlanta Dream",
-"venue": "Two Frays Brewery"
-},
-{
-"cat": "food_truck_food_special",
-"city": "pittsburgh",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DerKjwnk2uH/",
-"time": "14:00",
-"title": "Johnny's Seafood Shack",
-"venue": "Back Alley Brewing"
-},
-{
-"cat": "festival_party",
-"city": "pittsburgh",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DesDswUP5sF/",
-"time": "14:00",
-"title": "Boo in the Borough",
-"venue": "Links Brewing"
-},
-{
-"cat": "beer_release_tap_takeover",
-"city": "pittsburgh",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/De17TqyFHgO/",
-"time": "14:00",
-"title": "Links 1010 Bottle Sale & Taproom Afternoon",
-"venue": "Links Brewing"
-},
-{
-"cat": "festival_party",
-"city": "pittsburgh",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/Dew4GDrlfXK/",
-"time": "15:00",
-"title": "Neighborhood Murals and Live Painting with DJ",
-"venue": "Allegheny City Brewing"
-},
-{
-"cat": "food_truck_food_special",
-"city": "pittsburgh",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/Dez1dkiDfBd/",
-"time": "15:00",
-"title": "PGH Torta Food Truck",
-"venue": "Balance Brewing"
-},
-{
-"cat": "food_truck_food_special",
-"city": "pittsburgh",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DepjIVOlwsS/",
-"time": "15:00",
-"title": "PGH Tortas Food Truck",
-"venue": "Balance Brewing"
-},
-{
-"cat": "live_music",
-"city": "pittsburgh",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DerbEGIiIF9/",
-"time": "15:00",
-"title": "Affordable Elegance",
-"venue": "Squatch Brewing"
-},
-{
-"cat": "food_truck_food_special",
-"city": "pittsburgh",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DeuGKbGlr3_/",
-"time": "16:00",
-"title": "ZEUS B.B.Q Food Truck",
-"venue": "Bloom Brew"
-},
-{
-"cat": "class_workshop",
-"city": "pittsburgh",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/De2egsBmLX-/",
-"time": "16:00",
-"title": "Halloween Portrait Sessions with Stephen James",
-"venue": "Coven Brewing"
-},
-{
-"cat": "food_truck_food_special",
-"city": "pittsburgh",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DexLGWICmuI/",
-"time": "16:00",
-"title": "Annie Lee's Southern Kitchen",
-"venue": "Fermata Brewing"
-},
-{
-"cat": "festival_party",
-"city": "pittsburgh",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/Dew31z8kWng/",
-"time": "16:00",
-"title": "Verona Zombie Bar Crawl",
-"venue": "Inner Groove Brewing (Verona)"
-},
-{
-"cat": "live_music",
-"city": "pittsburgh",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/Dew4GDrlfXK/",
-"time": "18:00",
-"title": "Bring Your Own Vinyl Night",
-"venue": "Allegheny City Brewing"
-},
-{
-"cat": "beer_release_tap_takeover",
-"city": "pittsburgh",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DepDCOZxJoF/",
-"time": "18:00",
-"title": "Mon Monster Beer Release",
-"venue": "Hazel Grove Brewing"
-},
-{
-"cat": "live_music",
-"city": "pittsburgh",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DerbEGIiIF9/",
-"time": "18:00",
-"title": "Jay Wiley",
-"venue": "Squatch Brewing"
-},
-{
-"cat": "festival_party",
-"city": "pittsburgh",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/Dd9E7oIleV-/",
-"time": "18:30",
-"title": "Halloween Costume Party",
-"venue": "Recon Brewing"
-},
-{
-"cat": "live_music",
-"city": "pittsburgh",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/reel/De14BRWRgT1/",
+"cat": "trivia_games",
+"city": "orlando",
+"date": "2026-11-16",
+"link": "https://ivanhoeparkbrewing.com/event/texas-hold-em-mondays-4/",
 "time": "19:00",
-"title": "Free Punk Show with Thump Note",
-"venue": "Altered Genius Brewing (Ambridge)"
-},
-{
-"cat": "live_music",
-"city": "pittsburgh",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/reel/Dew7nu3KMPM/",
-"time": "19:00",
-"title": "BT and the Chosen Few Live Music",
-"venue": "Big Sewickley Creek Brewery"
-},
-{
-"cat": "festival_party",
-"city": "pittsburgh",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/Dez51DEja9J/",
-"time": "19:00",
-"title": "Halloween Costume Party",
-"venue": "Mondays Brewing"
-},
-{
-"cat": "live_music",
-"city": "pittsburgh",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DeHubcwGNDK/",
-"time": "19:00",
-"title": "Live Music feat. Nick Glasso",
-"venue": "Recon Brewing",
+"title": "Texas Hold ‘Em Mondays",
+"venue": "Ivanhoe Park Brewing Co",
 "weekly": true
 },
 {
-"cat": "live_music",
-"city": "pittsburgh",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/Dd9E7oIleV-/",
-"time": "19:00",
-"title": "Live Music: This, That, and The Other Thing",
-"venue": "Recon Brewing"
-},
-{
-"cat": "comedy_open_mic",
-"city": "pittsburgh",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/Dered48jNvr/",
-"time": "19:00",
-"title": "Karaoke Night",
-"venue": "Voodoo Brewery (New Kensington)"
-},
-{
-"cat": "live_music",
-"city": "pittsburgh",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/Dd6jVkWlJkc/",
-"time": "19:30",
-"title": "Eldorado Band",
-"venue": "Fermata Brewing"
-},
-{
-"cat": "comedy_open_mic",
-"city": "pittsburgh",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/Dem2g1gl3fA/",
-"time": "20:00",
-"title": "Encore Comedy Standup Comedy Show",
-"venue": "Balance Brewing"
-},
-{
-"cat": "comedy_open_mic",
-"city": "pittsburgh",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DepjIVOlwsS/",
-"time": "20:00",
-"title": "Stand-Up Comedy Show",
-"venue": "Balance Brewing"
-},
-{
-"cat": "food_truck_food_special",
-"city": "pittsburgh",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/Dew4GDrlfXK/",
-"title": "77club_pgh Pizza Pop-up",
-"venue": "Allegheny City Brewing"
-},
-{
-"cat": "live_music",
-"city": "pittsburgh",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/Dd96mGRG4qQ/",
-"title": "Bobby Thompson Band",
-"venue": "Big Sewickley Creek Brewery"
-},
-{
-"cat": "food_truck_food_special",
-"city": "pittsburgh",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/reel/Dew7nu3KMPM/",
-"title": "Yovi's Hot Dogs Food Truck",
-"venue": "Big Sewickley Creek Brewery"
-},
-{
-"cat": "food_truck_food_special",
-"city": "pittsburgh",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/Dd96mGRG4qQ/",
-"title": "Yovis",
-"venue": "Big Sewickley Creek Brewery"
-},
-{
-"cat": "food_truck_food_special",
-"city": "pittsburgh",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DeubUBwG_fN/",
-"title": "Pastrami Jack's Food Truck",
-"venue": "CoStar Brewing"
-},
-{
-"cat": "festival_party",
-"city": "pittsburgh",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/De2egsBmLX-/",
-"title": "Witch Costume Contest",
-"venue": "Coven Brewing"
-},
-{
-"cat": "festival_party",
-"city": "pittsburgh",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/Dd9ShgeF7KU/",
-"title": "Carnegie Community Halloween",
-"venue": "Headley's Brewing"
-},
-{
-"cat": "food_truck_food_special",
-"city": "pittsburgh",
-"date": "2026-10-24",
-"featured": true,
-"link": "https://www.instagram.com/p/Dew31z8kWng/",
-"title": "Quick-E Food Truck",
-"venue": "Inner Groove Brewing (Pittsburgh)"
-},
-{
-"cat": "beer_release_tap_takeover",
-"city": "pittsburgh",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/De0O79XMX2d/",
-"title": "Rubus: Raspberry Solera Sour Bottle Release",
-"venue": "Late Addition Brewing"
-},
-{
-"cat": "food_truck_food_special",
-"city": "pittsburgh",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/Deuah0GyaHY/",
-"title": "Food Truck: Sticky Rice Tacos",
-"venue": "Leaning Cask Brewing"
-},
-{
-"cat": "sports_viewing",
-"city": "pittsburgh",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DemRdPHDJpN/",
-"title": "College Football Saturday",
-"venue": "Mondays Brewing",
+"cat": "drink_special",
+"city": "orlando",
+"date": "2026-11-16",
+"link": "https://ivanhoeparkbrewing.com/event/case-of-the-mondays-case-special-4/",
+"title": "Case of the Mondays Case Special",
+"venue": "Ivanhoe Park Brewing Co",
 "weekly": true
 },
 {
-"cat": "sports_viewing",
-"city": "pittsburgh",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DemRdPHDJpN/",
-"title": "College Football Saturday",
-"venue": "Mondays Brewing (Peters Township)",
+"cat": "drink_special",
+"city": "orlando",
+"date": "2026-11-17",
+"link": "https://ivanhoeparkbrewing.com/event/take-one-home-tuesday-4/",
+"title": "Take One Home Tuesday",
+"venue": "Ivanhoe Park Brewing Co",
 "weekly": true
-},
-{
-"cat": "festival_party",
-"city": "pittsburgh",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DeejFijgX7O/",
-"title": "Halloween Party",
-"venue": "Mondays Brewing (Peters Township)"
-},
-{
-"cat": "food_truck_food_special",
-"city": "pittsburgh",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DergJbJJ0jh/",
-"title": "Black Cat Pizza",
-"venue": "Old Thunder Brewing"
-},
-{
-"cat": "food_truck_food_special",
-"city": "pittsburgh",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/Dee3e2UsBwS/",
-"title": "Off the Press Burgers",
-"venue": "Trace Brewing"
-},
-{
-"cat": "festival_party",
-"city": "pittsburgh",
-"date": "2026-10-24",
-"featured": true,
-"link": "https://www.instagram.com/p/DeelKTvF4Ld/",
-"title": "Hotdog Howlloween Puppy Costume Contest & Halloween Party",
-"venue": "Two Frays Brewery"
 },
 {
 "cat": "sports_viewing",
@@ -10377,6 +8959,15 @@
 "link": "https://www.instagram.com/p/DeuqLs-oND1/",
 "time": "08:00",
 "title": "Pittsburgh vs New Orleans from Paris Watch Party",
+"venue": "Tortured Souls Brewing"
+},
+{
+"cat": "sports_viewing",
+"city": "pittsburgh",
+"date": "2026-10-25",
+"link": "https://www.instagram.com/p/De4XN4jDrtO/",
+"time": "08:00",
+"title": "Steelers vs. Saints Early Opening with Breakfast",
 "venue": "Tortured Souls Brewing"
 },
 {
@@ -10405,6 +8996,15 @@
 "time": "09:00",
 "title": "Early Steelers Sunday",
 "venue": "Abjuration Brewing"
+},
+{
+"cat": "sports_viewing",
+"city": "pittsburgh",
+"date": "2026-10-25",
+"link": "https://www.instagram.com/p/De5cZ1Mt70J/",
+"time": "09:00",
+"title": "Steelers vs Saints Watch Party",
+"venue": "Hop Farm Brewing"
 },
 {
 "cat": "sports_viewing",
@@ -10456,6 +9056,15 @@
 "cat": "sports_viewing",
 "city": "pittsburgh",
 "date": "2026-10-25",
+"link": "https://www.instagram.com/p/De5AmPYGJ0o/",
+"time": "09:30",
+"title": "Steelers Game Watch Party",
+"venue": "Balance Brewing"
+},
+{
+"cat": "sports_viewing",
+"city": "pittsburgh",
+"date": "2026-10-25",
 "link": "https://www.instagram.com/p/Dez1dkiDfBd/",
 "time": "09:30",
 "title": "Steelers Game in France",
@@ -10474,6 +9083,15 @@
 "cat": "sports_viewing",
 "city": "pittsburgh",
 "date": "2026-10-25",
+"link": "https://www.instagram.com/reel/De41HePyk8w/",
+"time": "09:30",
+"title": "Steelers vs. Saints Watch Party",
+"venue": "Leaning Cask Brewing"
+},
+{
+"cat": "sports_viewing",
+"city": "pittsburgh",
+"date": "2026-10-25",
 "link": "https://www.instagram.com/p/DezUQaGRhCD/",
 "time": "09:30",
 "title": "Steelers Watch Party",
@@ -10487,6 +9105,24 @@
 "time": "09:30",
 "title": "Steelers vs. Saints Watch Party",
 "venue": "Tortured Souls Brewing"
+},
+{
+"cat": "fitness_run_club",
+"city": "pittsburgh",
+"date": "2026-10-25",
+"link": "https://www.instagram.com/reel/De41HePyk8w/",
+"time": "11:00",
+"title": "Boo Bash Costume Run",
+"venue": "Leaning Cask Brewing"
+},
+{
+"cat": "fundraiser_community",
+"city": "pittsburgh",
+"date": "2026-10-25",
+"link": "https://www.instagram.com/reel/De41HePyk8w/",
+"time": "11:00",
+"title": "TinyCause Rescue Adoption Event",
+"venue": "Leaning Cask Brewing"
 },
 {
 "cat": "fitness_run_club",
@@ -10532,6 +9168,15 @@
 "time": "13:00",
 "title": "Halloween Yoga",
 "venue": "Balance Brewing"
+},
+{
+"cat": "sports_viewing",
+"city": "pittsburgh",
+"date": "2026-10-25",
+"link": "https://www.instagram.com/p/De5n0qGFqqS/",
+"time": "13:00",
+"title": "Sunday Taproom Hours with Steelers Game",
+"venue": "Bloom Brew"
 },
 {
 "cat": "sports_viewing",
@@ -10607,6 +9252,15 @@
 "time": "15:00",
 "title": "Music Bingo",
 "venue": "Voodoo Brewery (New Kensington)"
+},
+{
+"cat": "live_music",
+"city": "pittsburgh",
+"date": "2026-10-25",
+"link": "https://www.instagram.com/p/De4TWy-lfLF/",
+"time": "15:30",
+"title": "Scottish Jam",
+"venue": "East End Brewing (Mt. Lebanon)"
 },
 {
 "cat": "live_music",
@@ -11840,6 +10494,16 @@
 "cat": "sports_viewing",
 "city": "pittsburgh",
 "date": "2026-11-01",
+"link": "https://www.instagram.com/p/De5n0qGFqqS/",
+"time": "13:00",
+"title": "Sunday Taproom Hours with Steelers Game",
+"venue": "Bloom Brew",
+"weekly": true
+},
+{
+"cat": "sports_viewing",
+"city": "pittsburgh",
+"date": "2026-11-01",
 "link": "https://www.instagram.com/reel/DemRrCMAETD/",
 "time": "13:00",
 "title": "Steelers Sunday",
@@ -12754,6 +11418,34 @@
 "venue": "Firewhistle Brewing"
 },
 {
+"cat": "live_music",
+"city": "pittsburgh",
+"date": "2026-11-07",
+"link": "https://www.instagram.com/p/DeHubcwGNDK/",
+"time": "19:00",
+"title": "Live Music feat. Nick Glasso",
+"venue": "Recon Brewing",
+"weekly": true
+},
+{
+"cat": "sports_viewing",
+"city": "pittsburgh",
+"date": "2026-11-07",
+"link": "https://www.instagram.com/p/DemRdPHDJpN/",
+"title": "College Football Saturday",
+"venue": "Mondays Brewing",
+"weekly": true
+},
+{
+"cat": "sports_viewing",
+"city": "pittsburgh",
+"date": "2026-11-07",
+"link": "https://www.instagram.com/p/DemRdPHDJpN/",
+"title": "College Football Saturday",
+"venue": "Mondays Brewing (Peters Township)",
+"weekly": true
+},
+{
 "cat": "class_workshop",
 "city": "pittsburgh",
 "date": "2026-11-08",
@@ -12810,106 +11502,6 @@
 {
 "cat": "festival_party",
 "city": "tallahassee",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/Dey4m1juWoz/",
-"time": "12:00",
-"title": "Brew Fest",
-"venue": "Amicus Brewing Ventures"
-},
-{
-"cat": "sports_viewing",
-"city": "tallahassee",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DezWdH1IbPr/",
-"time": "12:00",
-"title": "CFB Week 8 Saturday Watch Party",
-"venue": "DEEP Brewing Company"
-},
-{
-"cat": "festival_party",
-"city": "tallahassee",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DexSr2HIFll/",
-"time": "12:00",
-"title": "Oktoberfest Family Fun (Bounce Houses & Inflatables)",
-"venue": "Growler Country"
-},
-{
-"cat": "festival_party",
-"city": "tallahassee",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DexSr2HIFll/",
-"time": "14:00",
-"title": "Masskrugstemmen Stein-Hold Test",
-"venue": "Growler Country"
-},
-{
-"cat": "market_vendor",
-"city": "tallahassee",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/Deu6cD7nJMQ/",
-"time": "14:00",
-"title": "Howl'o Ween: Barks & Brews",
-"venue": "Ology Power Mill"
-},
-{
-"cat": "festival_party",
-"city": "tallahassee",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DexSr2HIFll/",
-"time": "16:00",
-"title": "Steinträger Stein Obstacle Race",
-"venue": "Growler Country"
-},
-{
-"cat": "festival_party",
-"city": "tallahassee",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/De1ePIGyhbl/",
-"time": "17:00",
-"title": "Oktoberfest Joust (German Gladiator Style)",
-"venue": "Growler Country"
-},
-{
-"cat": "food_truck_food_special",
-"city": "tallahassee",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DesTHB_D7_9/",
-"time": "17:00",
-"title": "Venebites Mobile Food Truck",
-"venue": "Ology Power Mill"
-},
-{
-"cat": "live_music",
-"city": "tallahassee",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/Dej2sc1RD4O/",
-"time": "19:00",
-"title": "Drum and Bass Night",
-"venue": "Ology Brewing Co",
-"weekly": true
-},
-{
-"cat": "sports_viewing",
-"city": "tallahassee",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DezZTMpInD2/",
-"time": "20:00",
-"title": "World Series Game 2 Watch Party: Rays at Brewers",
-"venue": "DEEP Brewing Company"
-},
-{
-"cat": "comedy_open_mic",
-"city": "tallahassee",
-"date": "2026-10-24",
-"link": "https://www.instagram.com/p/DewiYDixdZf/",
-"time": "20:00",
-"title": "Brandon Barrera Live",
-"venue": "Proof Brewing Company"
-},
-{
-"cat": "festival_party",
-"city": "tallahassee",
 "date": "2026-10-25",
 "link": "https://www.instagram.com/p/DexSr2HIFll/",
 "time": "12:00",
@@ -12944,6 +11536,15 @@
 "venue": "Growler Country"
 },
 {
+"cat": "sports_viewing",
+"city": "tallahassee",
+"date": "2026-10-25",
+"link": "https://www.instagram.com/p/De4qNzPGJa3/",
+"time": "17:20",
+"title": "Sunday Night Football: Seahawks vs Chiefs",
+"venue": "Smitty's Taphouse & Grill"
+},
+{
 "cat": "festival_party",
 "city": "tallahassee",
 "date": "2026-10-25",
@@ -12960,6 +11561,15 @@
 "time": "18:00",
 "title": "Oktoberfest Joust Semifinals and Finals",
 "venue": "Growler Country"
+},
+{
+"cat": "sports_viewing",
+"city": "tallahassee",
+"date": "2026-10-25",
+"link": "https://www.instagram.com/p/De6FFvDog02/",
+"title": "NFL RedZone Sunday",
+"venue": "DEEP Brewing Company",
+"weekly": true
 },
 {
 "cat": "drink_special",
@@ -13046,6 +11656,14 @@
 "title": "Halloween Trivia Night",
 "venue": "Lake Tribe Brewing Company",
 "weekly": true
+},
+{
+"cat": "class_workshop",
+"city": "tallahassee",
+"date": "2026-10-29",
+"link": "https://www.instagram.com/p/De5GiEEIEft/",
+"title": "Pumpkin Paint & Sip",
+"venue": "Growler Country"
 },
 {
 "cat": "sports_viewing",
@@ -13185,6 +11803,15 @@
 "venue": "Growler Country"
 },
 {
+"cat": "festival_party",
+"city": "tallahassee",
+"date": "2026-10-31",
+"link": "https://www.instagram.com/p/De4Z4lRIMkl/",
+"time": "17:00",
+"title": "Joust (German Gladiator Style)",
+"venue": "Growler Country"
+},
+{
 "cat": "live_music",
 "city": "tallahassee",
 "date": "2026-10-31",
@@ -13244,6 +11871,15 @@
 "time": "16:00",
 "title": "Steinträger Stein Obstacle Race",
 "venue": "Growler Country"
+},
+{
+"cat": "sports_viewing",
+"city": "tallahassee",
+"date": "2026-11-01",
+"link": "https://www.instagram.com/p/De6FFvDog02/",
+"title": "NFL RedZone Sunday",
+"venue": "DEEP Brewing Company",
+"weekly": true
 },
 {
 "cat": "drink_special",
@@ -13348,7 +11984,35 @@
 "title": "Friday Night College Football Watch",
 "venue": "DEEP Brewing Company",
 "weekly": true
+},
+{
+"cat": "sports_viewing",
+"city": "tallahassee",
+"date": "2026-11-07",
+"link": "https://www.instagram.com/p/DezWdH1IbPr/",
+"time": "12:00",
+"title": "CFB Week 8 Saturday Watch Party",
+"venue": "DEEP Brewing Company",
+"weekly": true
+},
+{
+"cat": "live_music",
+"city": "tallahassee",
+"date": "2026-11-07",
+"link": "https://www.instagram.com/p/Dej2sc1RD4O/",
+"time": "19:00",
+"title": "Drum and Bass Night",
+"venue": "Ology Brewing Co",
+"weekly": true
+},
+{
+"cat": "class_workshop",
+"city": "tallahassee",
+"date": "2026-11-10",
+"link": "https://www.instagram.com/p/De5GiEEIEft/",
+"title": "Craft Event with Leon County Humane Society",
+"venue": "Growler Country"
 }
 ],
-"generated": "2026-10-24"
+"generated": "2026-10-25"
 }

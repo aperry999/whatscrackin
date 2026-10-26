@@ -1,5 +1,6 @@
 import { readForm, reply, tooMany } from '@/lib/api';
 import { subscribeToBeehiiv } from '@/lib/beehiiv';
+import { alertOwners } from '@/lib/alerts';
 import { db, ready } from '@/lib/db';
 import { cleanEmail } from '@/lib/email';
 import type { City } from '@/lib/cities';
@@ -23,5 +24,6 @@ export async function POST(req: Request) {
     console.error(err);
     return reply("We couldn't sign you up just now. Try again in a minute.", 502);
   }
+  alertOwners(`New newsletter signup (${city.name})`, { Email: email, City: city.name, Form: 'Homepage newsletter signup' });
   return reply(`You're in for ${city.name}. Check your inbox to confirm.`);
 }

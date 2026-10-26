@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { headers } from 'next/headers';
 import { SiteFooter, SiteHeader } from '@/components/chrome';
 import { CityRequestForm, HeroForm } from '@/components/forms';
+import { ExplainerVideo } from '@/components/video';
 import { getLiveCities, getPublicDeck, nearestLiveCity } from '@/lib/cities';
 import { getWeekBoard } from '@/lib/events';
 import { getSettings } from '@/lib/settings';
@@ -128,13 +129,14 @@ export default async function Home() {
 
         <section className="trips-band">
           <div className="wrap section">
-            <div className="trips-top">
+            <div className="trips-intro">
               <div className="section-head">
                 <span className="eyebrow">Custom trip event lists · coming soon</span>
                 <h2>New city? Know what&apos;s pouring before you land.</h2>
                 <p>Your own interactive link to every brewery event in the city you&apos;re visiting, on the exact dates you&apos;re there.</p>
+                <Link className="btn btn-accent" href="/trips">Get early access</Link>
               </div>
-              <Link className="btn btn-accent" href="/trips">Get early access</Link>
+              <ExplainerVideo url={process.env.TRIP_VIDEO_URL} poster={process.env.TRIP_VIDEO_POSTER} dark />
             </div>
             <div className="points">
               <div className="point">

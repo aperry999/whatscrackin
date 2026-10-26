@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { SiteFooter, SiteHeader } from '@/components/chrome';
 import { TripWaitlistForm } from '@/components/forms';
+import { ExplainerVideo } from '@/components/video';
 
 export const metadata: Metadata = {
   title: "Custom trip event lists · What's Crackin'",
@@ -20,6 +21,7 @@ export default function TripsPage() {
               Tell us where and when, and you get your own interactive trip page with every brewery event within 10 miles during your
               stay. View it by day or by brewery, filter for live music, trivia or run clubs, and watch it fill in as breweries post.
             </p>
+            <ExplainerVideo url={process.env.TRIP_VIDEO_URL} poster={process.env.TRIP_VIDEO_POSTER} />
           </div>
           <div className="panel">
             <span className="eyebrow">Launching soon</span>

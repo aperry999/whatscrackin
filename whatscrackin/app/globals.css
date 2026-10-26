@@ -252,3 +252,33 @@ p { margin: 0; text-wrap: pretty; }
 .admin-main > * { min-width: 0; }
 .input.sm::placeholder { color: #9aa0a8; }
 .ctable { position: relative; }
+
+/* Vertical explainer video */
+.explainer { margin: 0; width: min(270px, 100%); display: flex; flex-direction: column; gap: 10px; flex: none; }
+.explainer-frame { position: relative; aspect-ratio: 9 / 16; border-radius: 18px; overflow: hidden; background: #15161a; border: 1px solid var(--line); box-shadow: 0 10px 30px rgba(20, 20, 20, 0.12); }
+.explainer.dark .explainer-frame { border-color: var(--band-line); box-shadow: none; }
+.explainer-frame iframe, .explainer-frame video, .explainer-poster { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; object-fit: cover; }
+.explainer-still {
+  position: absolute; inset: 0; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end; gap: 6px; padding: 22px;
+  background-color: #1c1d22;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 36px 36px; color: #f4f3ef;
+}
+.explainer-mark { font-family: var(--script); font-size: 26px; line-height: 1; transform: rotate(-4deg); color: #fbf6ea; }
+.explainer-still svg { transform: rotate(-4deg); margin: 0 0 10px 6px; }
+.explainer-title { font: 500 19px/1.25 var(--display); max-width: 11em; }
+.explainer-play {
+  position: absolute; left: 50%; top: 42%; transform: translate(-50%, -50%); width: 72px; height: 72px; border-radius: 50%; border: 0;
+  background: var(--accent); display: grid; place-items: center; padding-left: 4px; cursor: pointer; box-shadow: 0 0 0 10px rgba(232, 163, 61, 0.22);
+}
+.explainer-play:hover:not(:disabled) { background: #f0b153; }
+.explainer-play:disabled { cursor: default; opacity: 0.9; }
+.explainer-play:focus-visible { outline: 3px solid #fbf6ea; outline-offset: 4px; }
+.explainer-soon { position: absolute; top: 14px; right: 14px; font: 11px var(--mono); letter-spacing: 0.08em; text-transform: uppercase; padding: 4px 8px; border-radius: 4px; background: rgba(0, 0, 0, 0.55); color: #f4f3ef; }
+.explainer figcaption { font: 12px var(--mono); letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+.explainer.dark figcaption { color: var(--band-muted); }
+
+.trips-intro { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 40px; }
+.trips-intro .section-head { flex: 1 1 420px; max-width: 680px; }
+.trips-intro .section-head .btn { align-self: flex-start; margin-top: 12px; }
+@media (max-width: 640px) { .explainer { width: min(240px, 100%); } }

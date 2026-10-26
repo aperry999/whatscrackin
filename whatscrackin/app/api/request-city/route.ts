@@ -1,6 +1,7 @@
 import { readForm, reply, tooMany } from '@/lib/api';
 import { subscribeToBeehiiv } from '@/lib/beehiiv';
 import { findOrCreateCity, parseCityInput } from '@/lib/cities';
+import { alertOwners } from '@/lib/alerts';
 import { db } from '@/lib/db';
 import { cleanEmail } from '@/lib/email';
 
@@ -25,6 +26,7 @@ export async function POST(req: Request) {
       console.error(err);
       return reply("We couldn't sign you up just now. Try again in a minute.", 502);
     }
+    alertOwners(`New newsletter signup (${city.name})`, { Email: email, City: city.name, Form: '"My city isn\'t listed" (city was already live)' });
     return reply(`Good news: ${city.name} is already live. You're subscribed, so check your inbox to confirm.`);
   }
 
@@ -33,6 +35,7 @@ export async function POST(req: Request) {
     on conflict (city_id, email) do nothing
     returning id`;
   const label = `${city.name}, ${city.state}`;
+  if (inserted.length) alertOwners(`City request: ${label}`, { Email: email, City: label, Form: '"My city isn\'t listed"' });
   if (!inserted.length) return reply(`You already asked for ${label}. We'll email you the day it launches.`);
   return reply(`You're on the list for ${label}. Share it with friends there to get it launched sooner.`);
 }

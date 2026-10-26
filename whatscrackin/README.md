@@ -8,6 +8,10 @@ The What's Crackin' website, phase 1: homepage with Orlando signup, city request
 - `/trips` trip lists landing page with a "tell me when it launches" waitlist (paid trips are phase 2).
 - `/admin` sign-in by emailed link. Cities, goals, live/waiting status, launch settings, exports, and team invites (owners and editors).
 
+## Signup alerts
+
+Every newsletter signup, trip waitlist signup ("Tell me when trips launch") and city request emails the site owners through SendGrid, right after the visitor gets their confirmation. Alerts go to every owner in admin, or to `ALERT_EMAIL` if it's set. A failed alert is logged and never blocks the signup. Signups made directly on beehiiv's own pages don't pass through this site, so they don't trigger an alert.
+
 ## Going live on Vercel
 
 1. **Put the code on GitHub.** Create a private repo and push this folder to it.

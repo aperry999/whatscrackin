@@ -48,3 +48,9 @@ create table if not exists login_tokens (
   expires_at timestamptz not null,
   used_at timestamptz
 );
+
+-- One row per trip-planner trip already alerted, so each trip emails the owners once.
+create table if not exists trip_alerts (
+  trip_id text primary key,
+  created_at timestamptz not null default now()
+);

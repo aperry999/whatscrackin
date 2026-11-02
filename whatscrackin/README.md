@@ -10,7 +10,9 @@ The What's Crackin' website, phase 1: homepage with Orlando signup, city request
 
 ## Signup alerts
 
-Every newsletter signup, trip waitlist signup ("Tell me when trips launch") and city request emails the site owners through SendGrid, right after the visitor gets their confirmation. Alerts go to every owner in admin, or to `ALERT_EMAIL` if it's set. A failed alert is logged and never blocks the signup. Signups made directly on beehiiv's own pages don't pass through this site, so they don't trigger an alert.
+Every newsletter signup, trip waitlist signup ("Tell me when trips launch") and city request emails the site owners through SendGrid, right after the visitor gets their confirmation. Alerts go to every owner in admin, or to `ALERT_EMAIL` if it's set. A failed alert is logged and never blocks the signup.
+
+The trip planner (trips.whatscrackin.us, a separate Cloudflare site) calls `/api/trip-alert` with the new trip's id each time a guest starts a trip, and the owners get who, where and when. There's no shared secret: the route reads the trip back from the trip site, ignores trips older than 15 minutes, and alerts once per trip (table `trip_alerts`). Signups made directly on beehiiv's own pages don't pass through this site, so they don't trigger an alert.
 
 ## Going live on Vercel
 

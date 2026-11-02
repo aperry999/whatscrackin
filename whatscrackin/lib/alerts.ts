@@ -17,17 +17,22 @@ async function recipients(): Promise<string[]> {
 export function alertOwners(subject: string, details: Record<string, string | null | undefined>) {
   after(async () => {
     try {
-      const to = await recipients();
-      if (!to.length) return;
-      const when = new Date().toLocaleString('en-US', { timeZone: process.env.SITE_TZ || 'America/New_York' });
-      const rows = Object.entries({ ...details, Time: `${when} ET` }).filter(([, v]) => v);
-      const text = rows.map(([k, v]) => `${k}: ${v}`).join('\n');
-      const html = `<table style="font-family:sans-serif;font-size:15px">${rows
-        .map(([k, v]) => `<tr><td style="color:#666;padding:2px 12px 2px 0">${esc(k)}</td><td>${esc(String(v))}</td></tr>`)
-        .join('')}</table>`;
-      for (const addr of to) await sendEmail(addr, `[What's Crackin'] ${subject}`, text, html);
+      await sendOwnerAlert(subject, details);
     } catch (err) {
       console.error('signup alert failed', err);
     }
   });
+}
+
+// Sends the alert now. Use inside work that already runs after the response.
+export async function sendOwnerAlert(subject: string, details: Record<string, string | null | undefined>) {
+  const to = await recipients();
+  if (!to.length) return;
+  const when = new Date().toLocaleString('en-US', { timeZone: process.env.SITE_TZ || 'America/New_York' });
+  const rows = Object.entries({ ...details, Time: `${when} ET` }).filter(([, v]) => v);
+  const text = rows.map(([k, v]) => `${k}: ${v}`).join('\n');
+  const html = `<table style="font-family:sans-serif;font-size:15px">${rows
+    .map(([k, v]) => `<tr><td style="color:#666;padding:2px 12px 2px 0">${esc(k)}</td><td>${esc(String(v))}</td></tr>`)
+    .join('')}</table>`;
+  for (const addr of to) await sendEmail(addr, `[What's Crackin'] ${subject}`, text, html);
 }

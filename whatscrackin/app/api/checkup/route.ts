@@ -26,8 +26,9 @@ function cleanHandle(raw: string | undefined): string | null {
 export async function POST(req: Request) {
   if (tooMany(req)) return reply('Too many tries. Wait a few minutes and try again.', 429);
   const form = await readForm(req);
-  if (form === 'bot') return reply("Thanks! We'll email your report within a couple of days.");
-  if (!form) return reply('Something went wrong. Try again.', 400);
+  // The checkup form has no hidden spam-trap field (browser autofill kept tripping it);
+  // the rate limit and manual review before sending cover abuse.
+  if (!form || form === 'bot') return reply('Something went wrong. Try again.', 400);
 
   const brewery = clean(form.brewery, 120);
   const city = clean(form.city, 80);

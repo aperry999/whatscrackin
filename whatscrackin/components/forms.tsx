@@ -175,7 +175,6 @@ export function CheckupForm() {
       email: get('email'),
       role: get('role'),
       consent: f.get('consent') ? 'yes' : '',
-      company: get('hp_x'),
     });
     setStatus(result);
     if (result.kind === 'ok') form.reset();
@@ -240,7 +239,6 @@ export function CheckupForm() {
         <input type="checkbox" name="consent" required />
         <span>Crackem can email me my report and a few follow-up tips. I can unsubscribe anytime.</span>
       </label>
-      <input className="hp" tabIndex={-1} aria-hidden="true" name="hp_x" autoComplete="off" />
       <button className="btn btn-accent" type="submit" disabled={status.kind === 'busy'}>
         {status.kind === 'busy' ? 'Sending…' : 'Get my free report'}
       </button>

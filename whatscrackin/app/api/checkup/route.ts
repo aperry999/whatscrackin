@@ -1,9 +1,10 @@
-import { after } from 'next/server';
+import { after, NextResponse } from 'next/server';
 import { readForm, reply, tooMany } from '@/lib/api';
 import { buildCheckupReport, newReportId } from '@/lib/checkup-report';
 import { alertOwners } from '@/lib/alerts';
 import { db, ready } from '@/lib/db';
 import { cleanEmail } from '@/lib/email';
+import { isPreview } from '@/lib/preview';
 
 // The report is built after the response is sent; give that work room to finish.
 export const maxDuration = 300;
@@ -65,6 +66,8 @@ export async function POST(req: Request) {
   });
   const thanks = `Thanks! We'll email the report for @${handle} to ${email} within a couple of days.`;
   // On preview deployments, hand the tester the draft link so they can check the report.
-  if (process.env.VERCEL_ENV === 'preview') return reply(`${thanks} Preview only: the draft will be at /checkup/report/${reportId} in about a minute.`);
+  if (isPreview(req.headers.get('x-forwarded-host') || req.headers.get('host'))) {
+    return NextResponse.json({ message: thanks, previewLink: `/checkup/report/${reportId}` });
+  }
   return reply(thanks);
 }

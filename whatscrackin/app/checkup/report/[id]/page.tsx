@@ -1,8 +1,10 @@
 import type { Metadata } from 'next';
+import { headers } from 'next/headers';
 import { notFound } from 'next/navigation';
 import { getAdmin } from '@/lib/auth';
 import type { CheckupContent, CheckupMetrics } from '@/lib/checkup-report';
 import { db, ready } from '@/lib/db';
+import { isPreview } from '@/lib/preview';
 
 export const dynamic = 'force-dynamic';
 export const metadata: Metadata = { title: 'Your Instagram checkup · Crackem', robots: { index: false } };
@@ -20,7 +22,8 @@ export default async function CheckupReportPage({ params }: { params: Promise<{ 
     from checkup_reports rep join checkup_requests req on req.id = rep.request_id where rep.id = ${id}`;
   if (!r) notFound();
   // Preview deployments (behind Vercel's login) show drafts so reports can be checked before launch.
-  const canSeeDraft = process.env.VERCEL_ENV === 'preview' || Boolean(await getAdmin());
+  const h = await headers();
+  const canSeeDraft = isPreview(h.get('x-forwarded-host') || h.get('host')) || Boolean(await getAdmin());
   if (r.status !== 'sent' && !canSeeDraft) {
     return (
       <main className="wrap checkup-report">

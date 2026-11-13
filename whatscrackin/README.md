@@ -6,6 +6,7 @@ The What's Crackin' website, phase 1: homepage with Orlando signup, city request
 
 - `/` homepage. The city dropdown lists every city marked Live in admin, preselecting the nearest one for visitors close to it. "My city isn't listed" turns the signup into a city request.
 - `/trips` trip lists landing page with a "tell me when it launches" waitlist (paid trips are phase 2).
+- `/checkup` Crackem's free Instagram checkup for breweries (not linked from the site, not indexed). Requests land in the `checkup_requests` table, email the owners, and export from admin.
 - `/admin` sign-in by emailed link. Cities, goals, live/waiting status, launch settings, exports, and team invites (owners and editors).
 
 ## Signup alerts

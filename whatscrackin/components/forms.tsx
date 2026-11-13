@@ -155,3 +155,91 @@ export function TripWaitlistForm() {
     </form>
   );
 }
+
+const CHECKUP_ROLES = ['Owner', 'Taproom manager', 'Bartender or staff', 'Marketing person or agency', 'Nobody really'];
+
+export function CheckupForm() {
+  const [status, setStatus] = useState<Status>({ kind: 'idle' });
+
+  async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const f = new FormData(form);
+    setStatus({ kind: 'busy' });
+    const get = (k: string) => String(f.get(k) || '');
+    const result = await post('/api/checkup', {
+      brewery: get('brewery'),
+      city: get('city'),
+      handle: get('handle'),
+      name: get('name'),
+      email: get('email'),
+      role: get('role'),
+      consent: f.get('consent') ? 'yes' : '',
+      company: get('company'),
+    });
+    setStatus(result);
+    if (result.kind === 'ok') form.reset();
+  }
+
+  if (status.kind === 'ok') {
+    return (
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+        <h2>You&apos;re on the list.</h2>
+        <p className="muted">{status.text}</p>
+        <button className="btn btn-ghost sm" type="button" style={{ alignSelf: 'flex-start' }} onClick={() => setStatus({ kind: 'idle' })}>
+          Add another brewery
+        </button>
+      </div>
+    );
+  }
+
+  return (
+    <form onSubmit={onSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+      <div className="form-grid">
+        <label className="label">
+          Brewery name
+          <input className="input" name="brewery" autoComplete="organization" required maxLength={120} />
+        </label>
+        <label className="label">
+          City
+          <input className="input" name="city" placeholder="Orlando, FL" autoComplete="address-level2" required maxLength={80} />
+        </label>
+      </div>
+      <label className="label">
+        Instagram handle
+        <input className="input" name="handle" placeholder="@yourbrewery" autoCapitalize="off" autoCorrect="off" spellCheck={false} required maxLength={80} />
+        <span className="checkup-hint">Needs to be a Business or Creator account. Not sure? We&apos;ll check for you.</span>
+      </label>
+      <div className="form-grid">
+        <label className="label">
+          Your name
+          <input className="input" name="name" autoComplete="name" required maxLength={80} />
+        </label>
+        <label className="label">
+          Email
+          <input className="input" type="email" name="email" placeholder="you@yourbrewery.com" autoComplete="email" required maxLength={254} />
+        </label>
+      </div>
+      <fieldset className="checkup-roles">
+        <legend className="label">Who posts on your Instagram?</legend>
+        <div className="checkup-chips">
+          {CHECKUP_ROLES.map((r) => (
+            <label key={r} className="checkup-chip">
+              <input type="radio" name="role" value={r} />
+              <span>{r}</span>
+            </label>
+          ))}
+        </div>
+      </fieldset>
+      <label className="checkup-consent">
+        <input type="checkbox" name="consent" required />
+        <span>Crackem can email me my report and a few follow-up tips. I can unsubscribe anytime.</span>
+      </label>
+      <input className="hp" tabIndex={-1} aria-hidden="true" name="company" autoComplete="off" />
+      <button className="btn btn-accent" type="submit" disabled={status.kind === 'busy'}>
+        {status.kind === 'busy' ? 'Sending…' : 'Get my free report'}
+      </button>
+      <Msg s={status} />
+    </form>
+  );
+}

@@ -18,6 +18,19 @@ export async function GET(req: Request) {
   let rows: Record<string, unknown>[];
   let name: string;
 
+  if (type === 'checkups') {
+    const rows = await db()`select brewery, city, ig_handle, name, email, who_posts, created_at from checkup_requests order by created_at`;
+    const header = ['brewery', 'city', 'instagram', 'name', 'email', 'who_posts', 'requested_at'];
+    const body = rows.map((r) => [r.brewery, r.city, r.ig_handle, r.name, r.email, r.who_posts, r.created_at].map(cell).join(','));
+    return new Response([header.join(','), ...body].join('\n') + '\n', {
+      headers: {
+        'Content-Type': 'text/csv; charset=utf-8',
+        'Content-Disposition': 'attachment; filename="checkup-requests.csv"',
+        'Cache-Control': 'no-store',
+      },
+    });
+  }
+
   if (type === 'waitlist') {
     rows = await db()`select email, city, created_at from trip_waitlist order by created_at`;
     name = 'trip-waitlist';

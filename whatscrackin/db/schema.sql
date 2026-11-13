@@ -54,3 +54,16 @@ create table if not exists trip_alerts (
   trip_id text primary key,
   created_at timestamptz not null default now()
 );
+
+-- Crackem Instagram checkup requests from breweries (/checkup).
+create table if not exists checkup_requests (
+  id serial primary key,
+  brewery text not null,
+  city text not null,
+  ig_handle text not null,
+  name text not null,
+  email text not null,
+  who_posts text,
+  created_at timestamptz not null default now()
+);
+create index if not exists checkup_requests_created_idx on checkup_requests (created_at);

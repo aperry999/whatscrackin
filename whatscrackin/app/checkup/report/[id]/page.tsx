@@ -29,6 +29,13 @@ export default async function CheckupReportPage({ params }: { params: Promise<{ 
       </main>
     );
   }
+  if (r.status === 'building') {
+    return (
+      <main className="wrap checkup-report">
+        <p className="report-banner">Draft: this report is still being built. Refresh in a minute.</p>
+      </main>
+    );
+  }
   if (!r.metrics || !r.content) {
     return (
       <main className="wrap checkup-report">

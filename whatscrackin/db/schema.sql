@@ -72,7 +72,7 @@ create index if not exists checkup_requests_created_idx on checkup_requests (cre
 create table if not exists checkup_reports (
   id text primary key,                -- unguessable, used in the report link
   request_id integer not null unique references checkup_requests(id) on delete cascade,
-  status text not null check (status in ('draft', 'sent', 'failed')),
+  status text not null check (status in ('building', 'draft', 'sent', 'failed')),
   metrics jsonb,
   content jsonb,
   error text,

@@ -230,7 +230,7 @@ async function writeReport(m: CheckupMetrics, recentCaptions: string[]): Promise
 
 // ---------- Orchestration ----------
 
-const newId = () => crypto.randomUUID().replace(/-/g, '').slice(0, 20);
+export const newReportId = () => crypto.randomUUID().replace(/-/g, '').slice(0, 20);
 
 export const reportUrl = (id: string) => `${siteUrl()}/checkup/report/${id}`;
 
@@ -242,7 +242,7 @@ export async function buildCheckupReport(requestId: number): Promise<{ id: strin
   if (!req) throw new Error(`No checkup request ${requestId}`);
 
   const [existing] = await db()<{ id: string }[]>`select id from checkup_reports where request_id = ${requestId}`;
-  const id = existing?.id || newId();
+  const id = existing?.id || newReportId();
 
   let status: 'draft' | 'failed' = 'draft';
   let metrics: CheckupMetrics | null = null;

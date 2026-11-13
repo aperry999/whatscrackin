@@ -1,6 +1,6 @@
 import { after } from 'next/server';
 import { readForm, reply, tooMany } from '@/lib/api';
-import { buildCheckupReport } from '@/lib/checkup-report';
+import { buildCheckupReport, newReportId } from '@/lib/checkup-report';
 import { alertOwners } from '@/lib/alerts';
 import { db, ready } from '@/lib/db';
 import { cleanEmail } from '@/lib/email';
@@ -54,6 +54,8 @@ export async function POST(req: Request) {
     'Who posts': role,
     Form: 'Crackem Instagram checkup (/checkup)',
   });
+  const reportId = newReportId();
+  await db()`insert into checkup_reports (id, request_id, status) values (${reportId}, ${row.id}, 'building')`;
   after(async () => {
     try {
       await buildCheckupReport(row.id);
@@ -61,5 +63,8 @@ export async function POST(req: Request) {
       console.error('checkup report build failed', err);
     }
   });
-  return reply(`Thanks! We'll email the report for @${handle} to ${email} within a couple of days.`);
+  const thanks = `Thanks! We'll email the report for @${handle} to ${email} within a couple of days.`;
+  // On preview deployments, hand the tester the draft link so they can check the report.
+  if (process.env.VERCEL_ENV === 'preview') return reply(`${thanks} Preview only: the draft will be at /checkup/report/${reportId} in about a minute.`);
+  return reply(thanks);
 }

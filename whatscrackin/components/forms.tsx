@@ -33,7 +33,7 @@ export function HeroForm({ cities, initial }: { cities: LiveCity[]; initial: str
     const f = new FormData(form);
     setStatus({ kind: 'busy' });
     const email = String(f.get('email') || '');
-    const hp = String(f.get('company') || '');
+    const hp = String(f.get('hp_x') || '');
     const result = other
       ? await post('/api/request-city', { email, city: String(f.get('otherCity') || ''), company: hp })
       : await post('/api/subscribe', { email, city, company: hp });
@@ -67,7 +67,7 @@ export function HeroForm({ cities, initial }: { cities: LiveCity[]; initial: str
           <input className="input" type="email" name="email" placeholder="you@example.com" autoComplete="email" required maxLength={254} />
         </label>
       </div>
-      <input className="hp" tabIndex={-1} aria-hidden="true" name="company" autoComplete="off" />
+      <input className="hp" tabIndex={-1} aria-hidden="true" name="hp_x" autoComplete="off" />
       <div className="form-actions">
         <button className="btn btn-accent" type="submit" disabled={status.kind === 'busy'}>
           {status.kind === 'busy' ? 'Sending…' : other ? 'Request my city' : 'Subscribe free'}
@@ -95,7 +95,7 @@ export function CityRequestForm() {
     const result = await post('/api/request-city', {
       email: String(f.get('email') || ''),
       city: String(f.get('city') || ''),
-      company: String(f.get('company') || ''),
+      company: String(f.get('hp_x') || ''),
     });
     setStatus(result);
     if (result.kind === 'ok') form.reset();
@@ -111,7 +111,7 @@ export function CityRequestForm() {
         Email
         <input className="input" type="email" name="email" placeholder="you@example.com" autoComplete="email" required maxLength={254} />
       </label>
-      <input className="hp" tabIndex={-1} aria-hidden="true" name="company" autoComplete="off" />
+      <input className="hp" tabIndex={-1} aria-hidden="true" name="hp_x" autoComplete="off" />
       <button className="btn btn-accent" type="submit" style={{ gridColumn: '1 / -1' }} disabled={status.kind === 'busy'}>
         {status.kind === 'busy' ? 'Sending…' : 'Request my city'}
       </button>
@@ -131,7 +131,7 @@ export function TripWaitlistForm() {
     const result = await post('/api/trip-waitlist', {
       email: String(f.get('email') || ''),
       city: String(f.get('city') || ''),
-      company: String(f.get('company') || ''),
+      company: String(f.get('hp_x') || ''),
     });
     setStatus(result);
     if (result.kind === 'ok') form.reset();
@@ -147,7 +147,7 @@ export function TripWaitlistForm() {
         Email
         <input className="input" type="email" name="email" placeholder="you@example.com" autoComplete="email" required maxLength={254} />
       </label>
-      <input className="hp" tabIndex={-1} aria-hidden="true" name="company" autoComplete="off" />
+      <input className="hp" tabIndex={-1} aria-hidden="true" name="hp_x" autoComplete="off" />
       <button className="btn btn-accent" type="submit" disabled={status.kind === 'busy'}>
         {status.kind === 'busy' ? 'Sending…' : 'Tell me when trips launch'}
       </button>
@@ -175,7 +175,7 @@ export function CheckupForm() {
       email: get('email'),
       role: get('role'),
       consent: f.get('consent') ? 'yes' : '',
-      company: get('company'),
+      company: get('hp_x'),
     });
     setStatus(result);
     if (result.kind === 'ok') form.reset();
@@ -240,7 +240,7 @@ export function CheckupForm() {
         <input type="checkbox" name="consent" required />
         <span>Crackem can email me my report and a few follow-up tips. I can unsubscribe anytime.</span>
       </label>
-      <input className="hp" tabIndex={-1} aria-hidden="true" name="company" autoComplete="off" />
+      <input className="hp" tabIndex={-1} aria-hidden="true" name="hp_x" autoComplete="off" />
       <button className="btn btn-accent" type="submit" disabled={status.kind === 'busy'}>
         {status.kind === 'busy' ? 'Sending…' : 'Get my free report'}
       </button>

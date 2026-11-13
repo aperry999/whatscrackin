@@ -159,3 +159,38 @@ export async function removeAdmin(formData: FormData) {
   await db()`delete from admins where email = ${email}`;
   done(`Removed ${email}.`);
 }
+
+// --- Instagram checkups ---
+
+export async function rebuildCheckupReport(formData: FormData) {
+  await requireAdmin();
+  const id = optInt(str(formData, 'request_id'));
+  if (!id) done('Missing checkup request.');
+  const { buildCheckupReport } = await import('@/lib/checkup-report');
+  const r = await buildCheckupReport(id);
+  done(r.status === 'draft' ? 'Report rebuilt. Review it before sending.' : 'The report failed again. See the reason in the list.');
+}
+
+export async function sendCheckupReport(formData: FormData) {
+  await requireAdmin();
+  const reportId = str(formData, 'report_id');
+  await ready();
+  const [r] = await db()<{ id: string; status: string; email: string; name: string; brewery: string; ig_handle: string }[]>`
+    select rep.id, rep.status, req.email, req.name, req.brewery, req.ig_handle
+    from checkup_reports rep join checkup_requests req on req.id = rep.request_id where rep.id = ${reportId}`;
+  if (!r) done('Report not found.');
+  if (r.status === 'failed') done('That report failed. Rebuild it first.');
+  const { reportUrl } = await import('@/lib/checkup-report');
+  const link = reportUrl(r.id);
+  const first = r.name.split(/\s+/)[0] || 'there';
+  const text = `Hi ${first},\n\nYour free Instagram checkup for ${r.brewery} (@${r.ig_handle}) is ready:\n${link}\n\nIt covers what's working, what's holding you back, three things to try this month, and a sample event ad built from one of your own posts.\n\nQuestions? Just reply to this email.\n\nCrackem`;
+  const html = `<p>Hi ${first.replace(/[<>&]/g, '')},</p><p>Your free Instagram checkup for <b>${r.brewery.replace(/[<>&]/g, '')}</b> (@${r.ig_handle}) is ready.</p><p><a href="${link}" style="display:inline-block;padding:12px 20px;background:#E8A33D;color:#1A1206;text-decoration:none;border-radius:6px;font-weight:600">See your report</a></p><p>It covers what's working, what's holding you back, three things to try this month, and a sample event ad built from one of your own posts.</p><p>Questions? Just reply to this email.</p><p>Crackem</p>`;
+  try {
+    await sendEmail(r.email, `Your Instagram checkup for ${r.brewery}`, text, html, 'Crackem');
+  } catch (err) {
+    console.error(err);
+    done('The email could not be sent. Check SendGrid and try again.');
+  }
+  await db()`update checkup_reports set status = 'sent', sent_at = now() where id = ${r.id}`;
+  done(`Report sent to ${r.email}.`);
+}

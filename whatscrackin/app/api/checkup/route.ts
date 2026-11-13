@@ -1,7 +1,12 @@
+import { after } from 'next/server';
 import { readForm, reply, tooMany } from '@/lib/api';
+import { buildCheckupReport } from '@/lib/checkup-report';
 import { alertOwners } from '@/lib/alerts';
 import { db, ready } from '@/lib/db';
 import { cleanEmail } from '@/lib/email';
+
+// The report is built after the response is sent; give that work room to finish.
+export const maxDuration = 300;
 
 const ROLES = ['Owner', 'Taproom manager', 'Bartender or staff', 'Marketing person or agency', 'Nobody really'];
 const clean = (v: string | undefined, max: number) => (v || '').replace(/[<>{}\\]/g, '').trim().slice(0, max);
@@ -38,8 +43,8 @@ export async function POST(req: Request) {
   if (form.consent !== 'yes') return reply('Tick the box so we can email you the report.', 400);
 
   await ready();
-  await db()`insert into checkup_requests (brewery, city, ig_handle, name, email, who_posts)
-    values (${brewery}, ${city}, ${handle}, ${name}, ${email}, ${role})`;
+  const [row] = await db()<{ id: number }[]>`insert into checkup_requests (brewery, city, ig_handle, name, email, who_posts)
+    values (${brewery}, ${city}, ${handle}, ${name}, ${email}, ${role}) returning id`;
   alertOwners('Instagram checkup request', {
     Brewery: brewery,
     City: city,
@@ -48,6 +53,13 @@ export async function POST(req: Request) {
     Email: email,
     'Who posts': role,
     Form: 'Crackem Instagram checkup (/checkup)',
+  });
+  after(async () => {
+    try {
+      await buildCheckupReport(row.id);
+    } catch (err) {
+      console.error('checkup report build failed', err);
+    }
   });
   return reply(`Thanks! We'll email the report for @${handle} to ${email} within a couple of days.`);
 }

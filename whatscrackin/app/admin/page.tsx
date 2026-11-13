@@ -6,10 +6,12 @@ import { getAdmin } from '@/lib/auth';
 import { getCitiesWithCounts, goalFor } from '@/lib/cities';
 import { db } from '@/lib/db';
 import { getSettings } from '@/lib/settings';
-import { addCity, deleteCity, inviteAdmin, removeAdmin, signOut, updateCity, updateSettings } from './actions';
+import { addCity, deleteCity, inviteAdmin, rebuildCheckupReport, removeAdmin, sendCheckupReport, signOut, updateCity, updateSettings } from './actions';
 
 export const metadata: Metadata = { title: "Admin · What's Crackin'", robots: { index: false } };
 export const dynamic = 'force-dynamic';
+// Rebuilding a checkup report runs the Instagram lookup and the writer in the request.
+export const maxDuration = 300;
 
 const SOURCE = { custom: 'Custom', suggested: 'From brewery count', default: 'Default' } as const;
 
@@ -24,7 +26,10 @@ export default async function AdminPage({ searchParams }: { searchParams: Promis
     getCitiesWithCounts(),
     db()<{ email: string; role: string; invited_by: string | null }[]>`select email, role, invited_by from admins order by role desc, created_at`,
     db()<{ n: number }[]>`select count(*)::int as n from trip_waitlist`,
-    db()<{ n: number }[]>`select count(*)::int as n from checkup_requests`,
+    db()<{ request_id: number; brewery: string; ig_handle: string; email: string; created_at: Date; report_id: string | null; status: string | null; error: string | null }[]>`
+      select req.id as request_id, req.brewery, req.ig_handle, req.email, req.created_at, rep.id as report_id, rep.status, rep.error
+      from checkup_requests req left join checkup_reports rep on rep.request_id = req.id
+      order by req.created_at desc limit 25`,
   ]);
 
   const rows = cities.map((c) => {
@@ -149,8 +154,30 @@ export default async function AdminPage({ searchParams }: { searchParams: Promis
 
           <section className="admin-card">
             <h2>Instagram checkups</h2>
-            <p className="muted">{checkups[0].n} {checkups[0].n === 1 ? 'brewery has' : 'breweries have'} asked for a Crackem Instagram report at /checkup.</p>
-            {checkups[0].n > 0 && <a className="btn btn-ghost sm" href="/admin/export?type=checkups" style={{ alignSelf: 'flex-start' }}>Export checkup requests</a>}
+            {checkups.length === 0 ? (
+              <p className="muted">No breweries have asked for a report at /checkup yet.</p>
+            ) : (
+              <ul className="team">
+                {checkups.map((k) => (
+                  <li key={k.request_id}>
+                    <span>
+                      <b>{k.brewery} · @{k.ig_handle}</b>
+                      <small>
+                        {k.status === 'sent' ? 'Sent' : k.status === 'draft' ? 'Ready to review' : k.status === 'failed' ? `Failed: ${k.error}` : 'Building…'} · {k.email}
+                      </small>
+                    </span>
+                    <span style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+                      {k.report_id && k.status !== 'failed' && <a href={`/checkup/report/${k.report_id}`} target="_blank" rel="noreferrer">View</a>}
+                      {k.report_id && k.status === 'draft' && (
+                        <form action={sendCheckupReport}><input type="hidden" name="report_id" value={k.report_id} /><button className="linkish" type="submit">Send to brewery</button></form>
+                      )}
+                      <form action={rebuildCheckupReport}><input type="hidden" name="request_id" value={k.request_id} /><button className="linkish" type="submit">{k.report_id ? 'Rebuild' : 'Build'}</button></form>
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            )}
+            {checkups.length > 0 && <a className="btn btn-ghost sm" href="/admin/export?type=checkups" style={{ alignSelf: 'flex-start' }}>Export checkup requests</a>}
           </section>
 
           {isOwner && (

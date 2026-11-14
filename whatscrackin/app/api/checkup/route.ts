@@ -4,7 +4,6 @@ import { buildCheckupReport, newReportId } from '@/lib/checkup-report';
 import { alertOwners } from '@/lib/alerts';
 import { db, ready } from '@/lib/db';
 import { cleanEmail } from '@/lib/email';
-import { isPreview } from '@/lib/preview';
 
 // The report is built after the response is sent; give that work room to finish.
 export const maxDuration = 300;
@@ -66,9 +65,6 @@ export async function POST(req: Request) {
     }
   });
   const thanks = `Thanks! We'll email the report for @${handle} to ${email} in a few minutes.`;
-  // On preview deployments, hand the tester the draft link so they can check the report.
-  if (isPreview(req.headers.get('x-forwarded-host') || req.headers.get('host'))) {
-    return NextResponse.json({ message: thanks, previewLink: `/checkup/report/${reportId}` });
-  }
-  return reply(thanks);
+  // The thank-you screen links straight to the report, which fills in about a minute later.
+  return NextResponse.json({ message: thanks, reportLink: `/checkup/report/${reportId}` });
 }

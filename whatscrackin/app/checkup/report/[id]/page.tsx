@@ -24,18 +24,32 @@ export default async function CheckupReportPage({ params }: { params: Promise<{ 
   // Preview deployments (behind Vercel's login) show drafts so reports can be checked before launch.
   const h = await headers();
   const canSeeDraft = isPreview(h.get('x-forwarded-host') || h.get('host')) || Boolean(await getAdmin());
-  if (r.status !== 'sent' && !canSeeDraft) {
+  // Anyone with the link can watch the report build; it reloads itself until it's done.
+  if (r.status === 'building') {
+    return (
+      <main className="wrap checkup-report">
+        <meta httpEquiv="refresh" content="8" />
+        <h1>Building your report…</h1>
+        <p className="muted">We&apos;re reading {r.brewery}&apos;s recent posts and writing it up. This takes about a minute and the page refreshes on its own.</p>
+      </main>
+    );
+  }
+  if (r.status === 'failed' && !canSeeDraft) {
+    return (
+      <main className="wrap checkup-report">
+        <h1>We couldn&apos;t read this Instagram account.</h1>
+        <p className="muted">
+          Usually that means the handle has a typo or the account isn&apos;t set up as a Business or Creator account. We&apos;ve been
+          notified and will follow up by email.
+        </p>
+      </main>
+    );
+  }
+  if (r.status === 'draft' && !canSeeDraft) {
     return (
       <main className="wrap checkup-report">
         <h1>Your report is on its way.</h1>
         <p className="muted">We&apos;re putting the finishing touches on it. You&apos;ll get an email when it&apos;s ready.</p>
-      </main>
-    );
-  }
-  if (r.status === 'building') {
-    return (
-      <main className="wrap checkup-report">
-        <p className="report-banner">Draft: this report is still being built. Refresh in a minute.</p>
       </main>
     );
   }

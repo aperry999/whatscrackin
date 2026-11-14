@@ -3,13 +3,13 @@
 import { useState } from 'react';
 import { Chevron } from './chrome';
 
-type Status = { kind: 'idle' | 'busy' | 'ok' | 'err'; text?: string; previewLink?: string };
+type Status = { kind: 'idle' | 'busy' | 'ok' | 'err'; text?: string; reportLink?: string };
 
 async function post(url: string, body: Record<string, string>): Promise<Status> {
   try {
     const res = await fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
-    const data = (await res.json().catch(() => ({}))) as { message?: string; previewLink?: string };
-    return { kind: res.ok ? 'ok' : 'err', text: data.message || (res.ok ? 'Done.' : 'Something went wrong. Try again.'), previewLink: data.previewLink };
+    const data = (await res.json().catch(() => ({}))) as { message?: string; reportLink?: string };
+    return { kind: res.ok ? 'ok' : 'err', text: data.message || (res.ok ? 'Done.' : 'Something went wrong. Try again.'), reportLink: data.reportLink };
   } catch {
     return { kind: 'err', text: 'Could not reach the server. Check your connection and try again.' };
   }
@@ -185,10 +185,10 @@ export function CheckupForm() {
       <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
         <h2>You&apos;re on the list.</h2>
         <p className="muted">{status.text}</p>
-        {status.previewLink && (
-          <p className="report-banner">
-            Preview only: <a href={status.previewLink}>open the draft report</a>. It takes about a minute to fill in, so refresh if it&apos;s still building.
-          </p>
+        {status.reportLink && (
+          <a className="btn btn-accent" href={status.reportLink} style={{ alignSelf: 'flex-start' }}>
+            See your report now
+          </a>
         )}
         <button className="btn btn-ghost sm" type="button" style={{ alignSelf: 'flex-start' }} onClick={() => setStatus({ kind: 'idle' })}>
           Add another brewery

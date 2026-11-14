@@ -5,6 +5,7 @@ import { getAdmin } from '@/lib/auth';
 import type { CheckupContent, CheckupMetrics } from '@/lib/checkup-report';
 import { db, ready } from '@/lib/db';
 import { isPreview } from '@/lib/preview';
+import { SaveReportButton } from '@/components/print-button';
 
 export const dynamic = 'force-dynamic';
 export const metadata: Metadata = { title: 'Your Instagram checkup · Crackem', robots: { index: false } };
@@ -68,12 +69,13 @@ export default async function CheckupReportPage({ params }: { params: Promise<{ 
   return (
     <main className="wrap checkup-report">
       {r.status !== 'sent' && (
-        <p className="report-banner">Draft: breweries can't see this until you send it from the admin page.</p>
+        <p className="report-banner no-print">Draft: breweries can't see this until you send it from the admin page.</p>
       )}
       <header className="report-head">
         <span className="eyebrow">Crackem Instagram checkup · @{m.username}</span>
         <h1>{c.headline}</h1>
         <p className="report-owner">{c.owner_summary}</p>
+        <SaveReportButton fileName={`Crackem Instagram checkup - ${r.brewery}`} />
       </header>
 
       <section className="report-stats" aria-label="Your numbers">

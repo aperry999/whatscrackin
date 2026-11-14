@@ -3,6 +3,7 @@ import { betaZodOutputFormat } from '@anthropic-ai/sdk/helpers/beta/zod';
 import { z } from 'zod';
 import { sendOwnerAlert } from './alerts';
 import { db, ready } from './db';
+import { sendEmail } from './email';
 import { siteUrl } from './site';
 import { InstagramLookupError, lookupInstagram, type IgPost, type IgProfile } from './instagram';
 
@@ -235,7 +236,29 @@ export const newReportId = () => crypto.randomUUID().replace(/-/g, '').slice(0, 
 export const reportUrl = (id: string) => `${siteUrl()}/checkup/report/${id}`;
 
 // Builds (or rebuilds) the report for one checkup request and stores it as a draft for review.
-export async function buildCheckupReport(requestId: number): Promise<{ id: string; status: 'draft' | 'failed' }> {
+// Emails the brewery its report link and marks the report sent.
+export async function emailCheckupReport(reportId: string): Promise<{ email: string }> {
+  await ready();
+  const [r] = await db()<{ id: string; status: string; email: string; name: string; brewery: string; ig_handle: string }[]>`
+    select rep.id, rep.status, req.email, req.name, req.brewery, req.ig_handle
+    from checkup_reports rep join checkup_requests req on req.id = rep.request_id where rep.id = ${reportId}`;
+  if (!r) throw new Error('Report not found.');
+  if (r.status === 'failed' || r.status === 'building') throw new Error('That report is not ready. Rebuild it first.');
+  const link = reportUrl(r.id);
+  const first = r.name.split(/\s+/)[0] || 'there';
+  const esc = (v: string) => v.replace(/[<>&]/g, '');
+  const text = `Hi ${first},\n\nYour free Instagram checkup for ${r.brewery} (@${r.ig_handle}) is ready:\n${link}\n\nIt covers what's working, what's holding you back, three things to try this month, and a sample event ad built from one of your own posts.\n\nQuestions? Just reply to this email.\n\nCrackem`;
+  const html = `<p>Hi ${esc(first)},</p><p>Your free Instagram checkup for <b>${esc(r.brewery)}</b> (@${r.ig_handle}) is ready.</p><p><a href="${link}" style="display:inline-block;padding:12px 20px;background:#E8A33D;color:#1A1206;text-decoration:none;border-radius:6px;font-weight:600">See your report</a></p><p>It covers what's working, what's holding you back, three things to try this month, and a sample event ad built from one of your own posts.</p><p>Questions? Just reply to this email.</p><p>Crackem</p>`;
+  await sendEmail(r.email, `Your Instagram checkup for ${r.brewery}`, text, html, 'Crackem');
+  await db()`update checkup_reports set status = 'sent', sent_at = now() where id = ${r.id}`;
+  return { email: r.email };
+}
+
+// Builds (or rebuilds) the report for a request. With autoSend, a successful report is emailed to the brewery right away.
+export async function buildCheckupReport(
+  requestId: number,
+  { autoSend = false }: { autoSend?: boolean } = {},
+): Promise<{ id: string; status: 'draft' | 'sent' | 'failed' }> {
   await ready();
   const [req] = await db()<{ id: number; brewery: string; ig_handle: string }[]>`
     select id, brewery, ig_handle from checkup_requests where id = ${requestId}`;
@@ -276,13 +299,32 @@ export async function buildCheckupReport(requestId: number): Promise<{ id: strin
       status = excluded.status, metrics = excluded.metrics, content = excluded.content,
       error = excluded.error, updated_at = now(), sent_at = null`;
 
-  await sendOwnerAlert(status === 'draft' ? 'Checkup report ready to review' : 'Checkup report failed', {
+  let finalStatus: 'draft' | 'sent' | 'failed' = status;
+  let sendError: string | null = null;
+  if (status === 'draft' && autoSend) {
+    try {
+      await emailCheckupReport(id);
+      finalStatus = 'sent';
+    } catch (err) {
+      sendError = err instanceof Error ? err.message : String(err);
+      console.error('checkup report email failed', requestId, err);
+    }
+  }
+
+  const subject =
+    finalStatus === 'sent' ? 'Checkup report sent' : finalStatus === 'failed' ? 'Checkup report failed' : sendError ? 'Checkup report built but email failed' : 'Checkup report ready to review';
+  await sendOwnerAlert(subject, {
     Brewery: req.brewery,
     Instagram: `@${req.ig_handle}`,
-    Report: status === 'draft' ? reportUrl(id) : null,
-    Problem: error,
-    Next: status === 'draft' ? 'Review it, then send it from admin.' : 'Fix the handle or try again from admin.',
+    Report: finalStatus === 'failed' ? null : reportUrl(id),
+    Problem: error || sendError,
+    Next:
+      finalStatus === 'sent'
+        ? 'Nothing to do. The brewery has the link.'
+        : finalStatus === 'failed'
+          ? 'Fix the handle or try again from admin.'
+          : 'Send it from admin.',
   }).catch((e) => console.error('report alert failed', e));
 
-  return { id, status };
+  return { id, status: finalStatus };
 }

@@ -60,12 +60,12 @@ export async function POST(req: Request) {
   await db()`insert into checkup_reports (id, request_id, status) values (${reportId}, ${row.id}, 'building')`;
   after(async () => {
     try {
-      await buildCheckupReport(row.id);
+      await buildCheckupReport(row.id, { autoSend: true });
     } catch (err) {
       console.error('checkup report build failed', err);
     }
   });
-  const thanks = `Thanks! We'll email the report for @${handle} to ${email} within a couple of days.`;
+  const thanks = `Thanks! We'll email the report for @${handle} to ${email} in a few minutes.`;
   // On preview deployments, hand the tester the draft link so they can check the report.
   if (isPreview(req.headers.get('x-forwarded-host') || req.headers.get('host'))) {
     return NextResponse.json({ message: thanks, previewLink: `/checkup/report/${reportId}` });

@@ -282,3 +282,25 @@ p { margin: 0; text-wrap: pretty; }
 .trips-intro .section-head { flex: 1 1 420px; max-width: 680px; }
 .trips-intro .section-head .btn { align-self: flex-start; margin-top: 12px; }
 @media (max-width: 640px) { .explainer { width: min(240px, 100%); } }
+
+/* Crackem Instagram checkup (/checkup) */
+.checkup-hero { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(440px, 100%), 1fr)); gap: 56px; align-items: start; padding-block: 72px 40px; }
+.checkup-hero .copy { display: flex; flex-direction: column; gap: 24px; padding-top: 8px; }
+.checkup-hero h1 { font-size: clamp(34px, 5vw, 52px); line-height: 1.08; letter-spacing: -0.02em; }
+.checkup-lede { font-size: 18px; max-width: 32em; margin: 0; }
+.checkup-gets { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; max-width: 32em; }
+.checkup-gets li { border-left: 3px solid var(--accent); padding-left: 14px; color: var(--ink-2); }
+.checkup-gets b { color: var(--ink); }
+.checkup-hint { font: 14px var(--body); letter-spacing: 0; text-transform: none; color: var(--muted); }
+.checkup-roles { border: 0; padding: 0; margin: 0; min-width: 0; }
+.checkup-roles legend { padding: 0; margin-bottom: 10px; }
+.checkup-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.checkup-chip { position: relative; }
+.checkup-chip input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
+.checkup-chip span { display: inline-block; padding: 9px 14px; border: 1px solid var(--field-line); border-radius: 999px; background: var(--surface); font-size: 15px; cursor: pointer; }
+.checkup-chip input:checked + span { background: var(--accent); border-color: var(--accent); color: var(--on-accent); font-weight: 600; }
+.checkup-chip input:focus-visible + span { outline: 2px solid var(--accent-ink); outline-offset: 2px; }
+.checkup-consent { display: flex; gap: 10px; align-items: flex-start; font-size: 15px; color: var(--muted); }
+.checkup-consent input { margin-top: 3px; width: 18px; height: 18px; accent-color: var(--accent-ink); flex: none; }
+.checkup-foot { font-size: 14px; padding-bottom: 48px; }
+@media (max-width: 640px) { .checkup-hero { padding-block: 40px 24px; gap: 32px; } }

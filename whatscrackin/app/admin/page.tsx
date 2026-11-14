@@ -19,11 +19,12 @@ export default async function AdminPage({ searchParams }: { searchParams: Promis
   const { msg } = await searchParams;
   const isOwner = admin.role === 'owner';
 
-  const [settings, cities, team, waitlist] = await Promise.all([
+  const [settings, cities, team, waitlist, checkups] = await Promise.all([
     getSettings(),
     getCitiesWithCounts(),
     db()<{ email: string; role: string; invited_by: string | null }[]>`select email, role, invited_by from admins order by role desc, created_at`,
     db()<{ n: number }[]>`select count(*)::int as n from trip_waitlist`,
+    db()<{ n: number }[]>`select count(*)::int as n from checkup_requests`,
   ]);
 
   const rows = cities.map((c) => {
@@ -144,6 +145,12 @@ export default async function AdminPage({ searchParams }: { searchParams: Promis
             <h2>Trip waitlist</h2>
             <p className="muted">{waitlist[0].n} {waitlist[0].n === 1 ? 'person wants' : 'people want'} to know when trip lists launch.</p>
             {waitlist[0].n > 0 && <a className="btn btn-ghost sm" href="/admin/export?type=waitlist" style={{ alignSelf: 'flex-start' }}>Export waitlist</a>}
+          </section>
+
+          <section className="admin-card">
+            <h2>Instagram checkups</h2>
+            <p className="muted">{checkups[0].n} {checkups[0].n === 1 ? 'brewery has' : 'breweries have'} asked for a Crackem Instagram report at /checkup.</p>
+            {checkups[0].n > 0 && <a className="btn btn-ghost sm" href="/admin/export?type=checkups" style={{ alignSelf: 'flex-start' }}>Export checkup requests</a>}
           </section>
 
           {isOwner && (

@@ -167,7 +167,7 @@ export async function rebuildCheckupReport(formData: FormData) {
   const id = optInt(str(formData, 'request_id'));
   if (!id) done('Missing checkup request.');
   const { buildCheckupReport } = await import('@/lib/checkup-report');
-  const r = await buildCheckupReport(id);
+  const r = await buildCheckupReport(id, { origin: await currentOrigin() });
   done(r.status === 'draft' ? 'Report rebuilt. Review it before sending.' : 'The report failed again. See the reason in the list.');
 }
 
@@ -177,7 +177,7 @@ export async function sendCheckupReport(formData: FormData) {
   const { emailCheckupReport } = await import('@/lib/checkup-report');
   let email: string;
   try {
-    ({ email } = await emailCheckupReport(reportId));
+    ({ email } = await emailCheckupReport(reportId, await currentOrigin()));
   } catch (err) {
     console.error(err);
     done(err instanceof Error ? `Not sent: ${err.message}` : 'The email could not be sent. Check SendGrid and try again.');

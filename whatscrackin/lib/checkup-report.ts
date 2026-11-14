@@ -233,18 +233,19 @@ async function writeReport(m: CheckupMetrics, recentCaptions: string[]): Promise
 
 export const newReportId = () => crypto.randomUUID().replace(/-/g, '').slice(0, 20);
 
-export const reportUrl = (id: string) => `${siteUrl()}/checkup/report/${id}`;
+// origin: the address the brewery used (e.g. a preview), so emailed links open the same site. Defaults to SITE_URL.
+export const reportUrl = (id: string, origin?: string) => `${origin || siteUrl()}/checkup/report/${id}`;
 
 // Builds (or rebuilds) the report for one checkup request and stores it as a draft for review.
 // Emails the brewery its report link and marks the report sent.
-export async function emailCheckupReport(reportId: string): Promise<{ email: string }> {
+export async function emailCheckupReport(reportId: string, origin?: string): Promise<{ email: string }> {
   await ready();
   const [r] = await db()<{ id: string; status: string; email: string; name: string; brewery: string; ig_handle: string }[]>`
     select rep.id, rep.status, req.email, req.name, req.brewery, req.ig_handle
     from checkup_reports rep join checkup_requests req on req.id = rep.request_id where rep.id = ${reportId}`;
   if (!r) throw new Error('Report not found.');
   if (r.status === 'failed' || r.status === 'building') throw new Error('That report is not ready. Rebuild it first.');
-  const link = reportUrl(r.id);
+  const link = reportUrl(r.id, origin);
   const first = r.name.split(/\s+/)[0] || 'there';
   const esc = (v: string) => v.replace(/[<>&]/g, '');
   const text = `Hi ${first},\n\nYour free Instagram checkup for ${r.brewery} (@${r.ig_handle}) is ready:\n${link}\n\nIt covers what's working, what's holding you back, three things to try this month, and a sample event ad built from one of your own posts.\n\nQuestions? Just reply to this email.\n\nCrackem`;
@@ -257,7 +258,7 @@ export async function emailCheckupReport(reportId: string): Promise<{ email: str
 // Builds (or rebuilds) the report for a request. With autoSend, a successful report is emailed to the brewery right away.
 export async function buildCheckupReport(
   requestId: number,
-  { autoSend = false }: { autoSend?: boolean } = {},
+  { autoSend = false, origin }: { autoSend?: boolean; origin?: string } = {},
 ): Promise<{ id: string; status: 'draft' | 'sent' | 'failed' }> {
   await ready();
   const [req] = await db()<{ id: number; brewery: string; ig_handle: string }[]>`
@@ -303,7 +304,7 @@ export async function buildCheckupReport(
   let sendError: string | null = null;
   if (status === 'draft' && autoSend) {
     try {
-      await emailCheckupReport(id);
+      await emailCheckupReport(id, origin);
       finalStatus = 'sent';
     } catch (err) {
       sendError = err instanceof Error ? err.message : String(err);
@@ -316,7 +317,7 @@ export async function buildCheckupReport(
   await sendOwnerAlert(subject, {
     Brewery: req.brewery,
     Instagram: `@${req.ig_handle}`,
-    Report: finalStatus === 'failed' ? null : reportUrl(id),
+    Report: finalStatus === 'failed' ? null : reportUrl(id, origin),
     Problem: error || sendError,
     Next:
       finalStatus === 'sent'

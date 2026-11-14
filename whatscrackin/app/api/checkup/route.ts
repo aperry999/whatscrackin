@@ -3,6 +3,7 @@ import { readForm, reply, tooMany } from '@/lib/api';
 import { buildCheckupReport, newReportId } from '@/lib/checkup-report';
 import { alertOwners } from '@/lib/alerts';
 import { db, ready } from '@/lib/db';
+import { currentOrigin } from '@/lib/site';
 import { cleanEmail } from '@/lib/email';
 
 // The report is built after the response is sent; give that work room to finish.
@@ -57,9 +58,10 @@ export async function POST(req: Request) {
   });
   const reportId = newReportId();
   await db()`insert into checkup_reports (id, request_id, status) values (${reportId}, ${row.id}, 'building')`;
+  const origin = await currentOrigin(); // read now: request headers aren't available inside after()
   after(async () => {
     try {
-      await buildCheckupReport(row.id, { autoSend: true });
+      await buildCheckupReport(row.id, { autoSend: true, origin });
     } catch (err) {
       console.error('checkup report build failed', err);
     }

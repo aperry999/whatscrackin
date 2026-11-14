@@ -351,3 +351,17 @@ p { margin: 0; text-wrap: pretty; }
   .checkup-report a { text-decoration: none; }
 }
 .report-question { display: flex; flex-direction: column; gap: 12px; padding: 20px; border: 1px solid var(--line, #ddd); border-radius: 10px; }
+
+/* Checkup thank-you: report build progress */
+.progress { display: flex; flex-direction: column; gap: 14px; }
+.progress-bar { height: 8px; border-radius: 99px; background: var(--line); overflow: hidden; }
+.progress-bar span { display: block; height: 100%; background: var(--accent-ink); border-radius: inherit; transition: width 1.2s ease; }
+.progress-steps { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.progress-steps li { display: flex; align-items: center; gap: 10px; transition: color .4s, opacity .4s; }
+.progress-steps .step-todo { opacity: .45; }
+.progress-steps .step-now { font-weight: 600; }
+.step-mark { width: 18px; height: 18px; flex: none; border-radius: 50%; border: 1.5px solid currentColor; display: grid; place-items: center; font-size: 11px; line-height: 1; }
+.step-done .step-mark { background: var(--accent-ink); border-color: var(--accent-ink); color: var(--bg, #fff); }
+.step-now .step-mark { border-top-color: transparent; animation: step-spin .9s linear infinite; }
+@keyframes step-spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .step-now .step-mark { animation: none; } .progress-bar span { transition: none; } }

@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { Chevron } from './chrome';
+import { ReportProgress } from './report-progress';
 
 type Status = { kind: 'idle' | 'busy' | 'ok' | 'err'; text?: string; reportLink?: string };
 
@@ -160,13 +161,17 @@ const CHECKUP_ROLES = ['Owner', 'Taproom manager', 'Bartender or staff', 'Market
 
 export function CheckupForm() {
   const [status, setStatus] = useState<Status>({ kind: 'idle' });
+  const [handle, setHandle] = useState('');
+  const [reportReady, setReportReady] = useState(false);
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = e.currentTarget;
     const f = new FormData(form);
     setStatus({ kind: 'busy' });
+    setReportReady(false);
     const get = (k: string) => String(f.get(k) || '');
+    setHandle(get('handle').trim().replace(/^.*instagram\.com\//i, '').replace(/[/?#].*$/, '').replace(/^@+/, '').toLowerCase());
     const result = await post('/api/checkup', {
       brewery: get('brewery'),
       city: get('city'),
@@ -183,13 +188,9 @@ export function CheckupForm() {
   if (status.kind === 'ok') {
     return (
       <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
-        <h2>You&apos;re on the list.</h2>
+        <h2>{!status.reportLink ? 'You\u2019re on the list.' : reportReady ? 'Your report is ready.' : 'Building your report…'}</h2>
         <p className="muted">{status.text}</p>
-        {status.reportLink && (
-          <a className="btn btn-accent" href={status.reportLink} style={{ alignSelf: 'flex-start' }}>
-            See your report now
-          </a>
-        )}
+        {status.reportLink && <ReportProgress link={status.reportLink} handle={handle} onReady={() => setReportReady(true)} />}
         <button className="btn btn-ghost sm" type="button" style={{ alignSelf: 'flex-start' }} onClick={() => setStatus({ kind: 'idle' })}>
           Add another brewery
         </button>

@@ -159,3 +159,28 @@ export async function removeAdmin(formData: FormData) {
   await db()`delete from admins where email = ${email}`;
   done(`Removed ${email}.`);
 }
+
+// --- Instagram checkups ---
+
+export async function rebuildCheckupReport(formData: FormData) {
+  await requireAdmin();
+  const id = optInt(str(formData, 'request_id'));
+  if (!id) done('Missing checkup request.');
+  const { buildCheckupReport } = await import('@/lib/checkup-report');
+  const r = await buildCheckupReport(id);
+  done(r.status === 'draft' ? 'Report rebuilt. Review it before sending.' : 'The report failed again. See the reason in the list.');
+}
+
+export async function sendCheckupReport(formData: FormData) {
+  await requireAdmin();
+  const reportId = str(formData, 'report_id');
+  const { emailCheckupReport } = await import('@/lib/checkup-report');
+  let email: string;
+  try {
+    ({ email } = await emailCheckupReport(reportId));
+  } catch (err) {
+    console.error(err);
+    done(err instanceof Error ? `Not sent: ${err.message}` : 'The email could not be sent. Check SendGrid and try again.');
+  }
+  done(`Report sent to ${email}.`);
+}

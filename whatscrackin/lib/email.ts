@@ -7,7 +7,7 @@ export function cleanEmail(raw: unknown): string | null {
 
 
 // Sends a plain transactional email through SendGrid. Without an API key outside production, it logs instead.
-export async function sendEmail(to: string, subject: string, text: string, html: string) {
+export async function sendEmail(to: string, subject: string, text: string, html: string, fromName = "What's Crackin'") {
   const key = process.env.SENDGRID_API_KEY;
   const from = process.env.EMAIL_FROM || 'hello@whatscrackin.us';
   if (!key) {
@@ -20,7 +20,7 @@ export async function sendEmail(to: string, subject: string, text: string, html:
     headers: { Authorization: `Bearer ${key}`, 'Content-Type': 'application/json' },
     body: JSON.stringify({
       personalizations: [{ to: [{ email: to }] }],
-      from: { email: from, name: "What's Crackin'" },
+      from: { email: from, name: fromName },
       subject,
       content: [
         { type: 'text/plain', value: text },

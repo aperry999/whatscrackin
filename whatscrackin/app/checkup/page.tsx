@@ -1,5 +1,10 @@
 import type { Metadata } from 'next';
+import { headers } from 'next/headers';
 import { CheckupForm } from '@/components/forms';
+import { isPreview } from '@/lib/preview';
+import { CHECKUP_VERSION } from '@/lib/version';
+
+export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
   title: 'Free Instagram checkup for breweries · Crackem',
@@ -7,7 +12,9 @@ export const metadata: Metadata = {
   robots: { index: false },
 };
 
-export default function CheckupPage() {
+export default async function CheckupPage() {
+  const h = await headers();
+  const preview = isPreview(h.get('x-forwarded-host') || h.get('host'));
   return (
     <main className="checkup">
       <section className="wrap checkup-hero">
@@ -29,7 +36,9 @@ export default function CheckupPage() {
           <CheckupForm />
         </div>
       </section>
-      <p className="wrap checkup-foot muted">Crackem. We only read public Instagram data for the free report.</p>
+      <p className="wrap checkup-foot muted">Crackem. We only read public Instagram data for the free report.{' '}
+        <span className="checkup-version">{CHECKUP_VERSION}{preview ? ' · preview' : ''}</span>
+      </p>
     </main>
   );
 }

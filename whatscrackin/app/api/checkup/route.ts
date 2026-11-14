@@ -1,7 +1,12 @@
+import { after, NextResponse } from 'next/server';
 import { readForm, reply, tooMany } from '@/lib/api';
+import { buildCheckupReport, newReportId } from '@/lib/checkup-report';
 import { alertOwners } from '@/lib/alerts';
 import { db, ready } from '@/lib/db';
 import { cleanEmail } from '@/lib/email';
+
+// The report is built after the response is sent; give that work room to finish.
+export const maxDuration = 300;
 
 const ROLES = ['Owner', 'Taproom manager', 'Bartender or staff', 'Marketing person or agency', 'Nobody really'];
 const clean = (v: string | undefined, max: number) => (v || '').replace(/[<>{}\\]/g, '').trim().slice(0, max);
@@ -20,8 +25,9 @@ function cleanHandle(raw: string | undefined): string | null {
 export async function POST(req: Request) {
   if (tooMany(req)) return reply('Too many tries. Wait a few minutes and try again.', 429);
   const form = await readForm(req);
-  if (form === 'bot') return reply("Thanks! We'll email your report within a couple of days.");
-  if (!form) return reply('Something went wrong. Try again.', 400);
+  // The checkup form has no hidden spam-trap field (browser autofill kept tripping it);
+  // the rate limit and manual review before sending cover abuse.
+  if (!form || form === 'bot') return reply('Something went wrong. Try again.', 400);
 
   const brewery = clean(form.brewery, 120);
   const city = clean(form.city, 80);
@@ -38,8 +44,8 @@ export async function POST(req: Request) {
   if (form.consent !== 'yes') return reply('Tick the box so we can email you the report.', 400);
 
   await ready();
-  await db()`insert into checkup_requests (brewery, city, ig_handle, name, email, who_posts)
-    values (${brewery}, ${city}, ${handle}, ${name}, ${email}, ${role})`;
+  const [row] = await db()<{ id: number }[]>`insert into checkup_requests (brewery, city, ig_handle, name, email, who_posts)
+    values (${brewery}, ${city}, ${handle}, ${name}, ${email}, ${role}) returning id`;
   alertOwners('Instagram checkup request', {
     Brewery: brewery,
     City: city,
@@ -49,5 +55,16 @@ export async function POST(req: Request) {
     'Who posts': role,
     Form: 'Crackem Instagram checkup (/checkup)',
   });
-  return reply(`Thanks! We'll email the report for @${handle} to ${email} within a couple of days.`);
+  const reportId = newReportId();
+  await db()`insert into checkup_reports (id, request_id, status) values (${reportId}, ${row.id}, 'building')`;
+  after(async () => {
+    try {
+      await buildCheckupReport(row.id, { autoSend: true });
+    } catch (err) {
+      console.error('checkup report build failed', err);
+    }
+  });
+  const thanks = `Thanks! We'll email the report for @${handle} to ${email} in a few minutes.`;
+  // The thank-you screen links straight to the report, which fills in about a minute later.
+  return NextResponse.json({ message: thanks, reportLink: `/checkup/report/${reportId}` });
 }

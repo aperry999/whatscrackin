@@ -80,3 +80,6 @@ create table if not exists checkup_reports (
   updated_at timestamptz not null default now(),
   sent_at timestamptz
 );
+
+-- The brewery's one-tap answer at the end of its report: yes, no or boosted (boosted posts only).
+alter table checkup_reports add column if not exists ran_ads text;

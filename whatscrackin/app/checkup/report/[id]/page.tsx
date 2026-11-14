@@ -6,11 +6,12 @@ import type { CheckupContent, CheckupMetrics } from '@/lib/checkup-report';
 import { db, ready } from '@/lib/db';
 import { isPreview } from '@/lib/preview';
 import { SaveReportButton } from '@/components/print-button';
+import { AdsQuestion } from '@/components/ads-question';
 
 export const dynamic = 'force-dynamic';
 export const metadata: Metadata = { title: 'Your Instagram checkup · Crackem', robots: { index: false } };
 
-type Row = { id: string; status: string; metrics: CheckupMetrics | null; content: CheckupContent | null; error: string | null; brewery: string; updated_at: Date };
+type Row = { id: string; status: string; metrics: CheckupMetrics | null; content: CheckupContent | null; error: string | null; ran_ads: string | null; brewery: string; updated_at: Date };
 
 const fmt = (n: number) => n.toLocaleString('en-US');
 
@@ -19,7 +20,7 @@ export default async function CheckupReportPage({ params }: { params: Promise<{ 
   if (!/^[a-f0-9]{20}$/.test(id)) notFound();
   await ready();
   const [r] = await db()<Row[]>`
-    select rep.id, rep.status, rep.metrics, rep.content, rep.error, req.brewery, rep.updated_at
+    select rep.id, rep.status, rep.metrics, rep.content, rep.error, rep.ran_ads, req.brewery, rep.updated_at
     from checkup_reports rep join checkup_requests req on req.id = rep.request_id where rep.id = ${id}`;
   if (!r) notFound();
   // Preview deployments (behind Vercel's login) show drafts so reports can be checked before launch.
@@ -139,6 +140,8 @@ export default async function CheckupReportPage({ params }: { params: Promise<{ 
           </div>
         </div>
       </section>
+
+      <AdsQuestion reportId={r.id} initial={r.ran_ads} />
 
       <p className="muted report-note">Crackem · Report updated {r.updated_at.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</p>
     </main>

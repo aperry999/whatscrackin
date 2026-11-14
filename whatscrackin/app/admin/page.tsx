@@ -10,6 +10,10 @@ import { addCity, deleteCity, inviteAdmin, rebuildCheckupReport, removeAdmin, se
 
 export const metadata: Metadata = { title: "Admin · What's Crackin'", robots: { index: false } };
 export const dynamic = 'force-dynamic';
+// Opens Meta's Ad Library searched for the brewery, to see at a glance whether it runs ads.
+const adLibraryUrl = (brewery: string) =>
+  `https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=US&search_type=keyword_unordered&q=${encodeURIComponent(brewery)}`;
+
 // Rebuilding a checkup report runs the Instagram lookup and the writer in the request.
 export const maxDuration = 300;
 
@@ -26,8 +30,8 @@ export default async function AdminPage({ searchParams }: { searchParams: Promis
     getCitiesWithCounts(),
     db()<{ email: string; role: string; invited_by: string | null }[]>`select email, role, invited_by from admins order by role desc, created_at`,
     db()<{ n: number }[]>`select count(*)::int as n from trip_waitlist`,
-    db()<{ request_id: number; brewery: string; ig_handle: string; email: string; created_at: Date; report_id: string | null; status: string | null; error: string | null }[]>`
-      select req.id as request_id, req.brewery, req.ig_handle, req.email, req.created_at, rep.id as report_id, rep.status, rep.error
+    db()<{ request_id: number; brewery: string; ig_handle: string; email: string; created_at: Date; report_id: string | null; status: string | null; error: string | null; ran_ads: string | null }[]>`
+      select req.id as request_id, req.brewery, req.ig_handle, req.email, req.created_at, rep.id as report_id, rep.status, rep.error, rep.ran_ads
       from checkup_requests req left join checkup_reports rep on rep.request_id = req.id
       order by req.created_at desc limit 25`,
   ]);
@@ -164,10 +168,12 @@ export default async function AdminPage({ searchParams }: { searchParams: Promis
                       <b>{k.brewery} · @{k.ig_handle}</b>
                       <small>
                         {k.status === 'sent' ? 'Sent' : k.status === 'draft' ? 'Ready to review' : k.status === 'failed' ? `Failed: ${k.error}` : 'Building…'} · {k.email}
+                        {k.ran_ads && ` · Ran ads: ${k.ran_ads === 'yes' ? 'yes' : k.ran_ads === 'boosted' ? 'boosted posts' : 'no'}`}
                       </small>
                     </span>
                     <span style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
                       {k.report_id && k.status !== 'failed' && <a href={`/checkup/report/${k.report_id}`} target="_blank" rel="noreferrer">View</a>}
+                      <a href={adLibraryUrl(k.brewery)} target="_blank" rel="noreferrer">Check their ads</a>
                       {k.report_id && k.status === 'draft' && (
                         <form action={sendCheckupReport}><input type="hidden" name="report_id" value={k.report_id} /><button className="linkish" type="submit">Send to brewery</button></form>
                       )}

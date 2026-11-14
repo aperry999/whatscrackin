@@ -350,3 +350,4 @@ p { margin: 0; text-wrap: pretty; }
   .checkup-report * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   .checkup-report a { text-decoration: none; }
 }
+.report-question { display: flex; flex-direction: column; gap: 12px; padding: 20px; border: 1px solid var(--line, #ddd); border-radius: 10px; }

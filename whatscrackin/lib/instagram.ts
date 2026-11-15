@@ -58,9 +58,19 @@ async function crackemIgId(): Promise<string> {
 
 export async function lookupInstagram(handle: string, postLimit = 30): Promise<IgProfile> {
   const igId = await crackemIgId();
-  const media = `media.limit(${postLimit}){id,timestamp,media_type,like_count,comments_count,caption,permalink,media_url}`;
-  const fields = `business_discovery.username(${handle}){username,name,biography,website,followers_count,media_count,${media}}`;
-  const data = await graph(`${igId}?fields=${encodeURIComponent(fields)}`);
+  const query = (withThumbs: boolean) => {
+    const mediaFields = `id,timestamp,media_type,like_count,comments_count,caption,permalink,media_url${withThumbs ? ',thumbnail_url' : ''}`;
+    const fields = `business_discovery.username(${handle}){username,name,biography,website,followers_count,media_count,media.limit(${postLimit}){${mediaFields}}}`;
+    return graph(`${igId}?fields=${encodeURIComponent(fields)}`);
+  };
+  // thumbnail_url gives a still image for reels and videos. If Meta refuses the field, ask again without it.
+  let data: Record<string, any>;
+  try {
+    data = await query(true);
+  } catch (err) {
+    if (err instanceof InstagramLookupError && err.reason === 'api' && /thumbnail/i.test(err.message)) data = await query(false);
+    else throw err;
+  }
   const b = data.business_discovery as Record<string, any> | undefined;
   if (!b) throw new InstagramLookupError('No data returned for that handle', 'not_found');
   const posts: IgPost[] = ((b.media?.data as Array<Record<string, any>>) || []).map((m) => ({
@@ -71,7 +81,7 @@ export async function lookupInstagram(handle: string, postLimit = 30): Promise<I
     comments: Number(m.comments_count ?? 0),
     caption: String(m.caption || ''),
     permalink: String(m.permalink || ''),
-    mediaUrl: m.media_type === 'IMAGE' || m.media_type === 'CAROUSEL_ALBUM' ? (m.media_url ?? null) : null,
+    mediaUrl: m.media_type === 'VIDEO' ? (m.thumbnail_url ?? null) : (m.media_url ?? null),
   }));
   return {
     username: String(b.username),

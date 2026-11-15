@@ -255,6 +255,21 @@ export async function emailCheckupReport(reportId: string, origin?: string): Pro
   return { email: r.email };
 }
 
+// Instagram's image links expire within days, so keep our own copy of the picture used in the sample ad.
+async function downloadAdImage(url: string | null | undefined): Promise<{ data: Buffer; type: string } | null> {
+  if (!url) return null;
+  try {
+    const res = await fetch(url, { cache: 'no-store', signal: AbortSignal.timeout(10_000) });
+    const type = (res.headers.get('content-type') || '').split(';')[0].trim();
+    if (!res.ok || !type.startsWith('image/')) return null;
+    const data = Buffer.from(await res.arrayBuffer());
+    return data.length > 0 && data.length <= 5 * 1024 * 1024 ? { data, type } : null;
+  } catch (err) {
+    console.error('ad image download failed', err);
+    return null;
+  }
+}
+
 // Builds (or rebuilds) the report for a request. With autoSend, a successful report is emailed to the brewery right away.
 export async function buildCheckupReport(
   requestId: number,
@@ -272,6 +287,7 @@ export async function buildCheckupReport(
   let metrics: CheckupMetrics | null = null;
   let content: CheckupContent | null = null;
   let error: string | null = null;
+  let adImage: { data: Buffer; type: string } | null = null;
   try {
     const profile = await lookupInstagram(req.ig_handle);
     metrics = computeMetrics(profile);
@@ -282,6 +298,8 @@ export async function buildCheckupReport(
       .map((p) => p.caption.replace(/\s+/g, ' ').slice(0, 300))
       .filter(Boolean);
     content = await writeReport(metrics, recent);
+    const adPost = metrics.topPosts[content.mock_ad.post_index] || metrics.topPosts[0];
+    adImage = await downloadAdImage(adPost?.mediaUrl);
   } catch (err) {
     status = 'failed';
     error =
@@ -294,11 +312,12 @@ export async function buildCheckupReport(
   }
 
   await db()`
-    insert into checkup_reports (id, request_id, status, metrics, content, error)
-    values (${id}, ${requestId}, ${status}, ${metrics ? db().json(metrics as any) : null}, ${content ? db().json(content as any) : null}, ${error})
+    insert into checkup_reports (id, request_id, status, metrics, content, error, ad_image, ad_image_type)
+    values (${id}, ${requestId}, ${status}, ${metrics ? db().json(metrics as any) : null}, ${content ? db().json(content as any) : null}, ${error},
+      ${adImage?.data ?? null}, ${adImage?.type ?? null})
     on conflict (request_id) do update set
       status = excluded.status, metrics = excluded.metrics, content = excluded.content,
-      error = excluded.error, updated_at = now(), sent_at = null`;
+      error = excluded.error, ad_image = excluded.ad_image, ad_image_type = excluded.ad_image_type, updated_at = now(), sent_at = null`;
 
   let finalStatus: 'draft' | 'sent' | 'failed' = status;
   let sendError: string | null = null;

@@ -83,3 +83,7 @@ create table if not exists checkup_reports (
 
 -- The brewery's one-tap answer at the end of its report: yes, no or boosted (boosted posts only).
 alter table checkup_reports add column if not exists ran_ads text;
+
+-- Our copy of the picture used in the sample ad (Instagram's own image links expire).
+alter table checkup_reports add column if not exists ad_image bytea;
+alter table checkup_reports add column if not exists ad_image_type text;

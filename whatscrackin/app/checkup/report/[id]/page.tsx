@@ -11,7 +11,7 @@ import { AdsQuestion } from '@/components/ads-question';
 export const dynamic = 'force-dynamic';
 export const metadata: Metadata = { title: 'Your Instagram checkup · Crackem', robots: { index: false } };
 
-type Row = { id: string; status: string; metrics: CheckupMetrics | null; content: CheckupContent | null; error: string | null; ran_ads: string | null; brewery: string; updated_at: Date };
+type Row = { id: string; status: string; metrics: CheckupMetrics | null; content: CheckupContent | null; error: string | null; ran_ads: string | null; has_ad_image: boolean; brewery: string; updated_at: Date };
 
 const fmt = (n: number) => n.toLocaleString('en-US');
 
@@ -20,7 +20,7 @@ export default async function CheckupReportPage({ params }: { params: Promise<{ 
   if (!/^[a-f0-9]{20}$/.test(id)) notFound();
   await ready();
   const [r] = await db()<Row[]>`
-    select rep.id, rep.status, rep.metrics, rep.content, rep.error, rep.ran_ads, req.brewery, rep.updated_at
+    select rep.id, rep.status, rep.metrics, rep.content, rep.error, rep.ran_ads, (rep.ad_image is not null) as has_ad_image, req.brewery, rep.updated_at
     from checkup_reports rep join checkup_requests req on req.id = rep.request_id where rep.id = ${id}`;
   if (!r) notFound();
   // Preview deployments (behind Vercel's login) show drafts so reports can be checked before launch.
@@ -126,9 +126,9 @@ export default async function CheckupReportPage({ params }: { params: Promise<{ 
           <div className="ad-card">
             <div className="ad-top"><b>{m.name}</b><small>Sponsored</small></div>
             <p>{c.mock_ad.primary_text}</p>
-            {adPost?.mediaUrl ? (
+            {r.has_ad_image ? (
               // eslint-disable-next-line @next/next/no-img-element
-              <img src={adPost.mediaUrl} alt="Your post used in the ad" />
+              <img src={`/checkup/report/${r.id}/ad-image`} alt="Your post used in the ad" />
             ) : (
               <a className="ad-media" href={adPost?.permalink} target="_blank" rel="noreferrer">Built from your post from {adPost?.date}. View it on Instagram</a>
             )}

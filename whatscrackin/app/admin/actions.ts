@@ -65,14 +65,18 @@ export async function sendLoginLink(formData: FormData) {
 export async function signIn(formData: FormData) {
   const admin = await consumeLoginToken(str(formData, 'token'));
   if (!admin) redirect('/admin/login?error=expired');
-  let ok = true;
-  try {
-    await startSession(admin.email);
-  } catch (err) {
-    console.error('admin sign-in failed', err);
-    ok = false;
+  // Say which setting is wrong (never its value), so it can be fixed in Vercel.
+  const secretLen = (process.env.SESSION_SECRET || '').length;
+  let problem = secretLen === 0 ? 'secret-missing' : secretLen < 32 ? 'secret-short' : '';
+  if (!problem) {
+    try {
+      await startSession(admin.email);
+    } catch (err) {
+      console.error('admin sign-in failed', err);
+      problem = 'session-failed';
+    }
   }
-  redirect(ok ? '/admin' : '/admin/login?error=setup');
+  redirect(problem ? `/admin/login?error=${problem}` : '/admin');
 }
 
 export async function signOut() {

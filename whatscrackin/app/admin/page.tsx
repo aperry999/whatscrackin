@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { PendingButton } from '@/components/pending-button';
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
 import { Wordmark } from '@/components/chrome';
@@ -175,9 +176,9 @@ export default async function AdminPage({ searchParams }: { searchParams: Promis
                       {k.report_id && k.status !== 'failed' && <a href={`/checkup/report/${k.report_id}`} target="_blank" rel="noreferrer">View</a>}
                       <a href={adLibraryUrl(k.brewery)} target="_blank" rel="noreferrer">Check their ads</a>
                       {k.report_id && k.status === 'draft' && (
-                        <form action={sendCheckupReport}><input type="hidden" name="report_id" value={k.report_id} /><button className="linkish" type="submit">Send to brewery</button></form>
+                        <form action={sendCheckupReport}><input type="hidden" name="report_id" value={k.report_id} /><PendingButton label="Send to brewery" pendingLabel="Sending…" /></form>
                       )}
-                      <form action={rebuildCheckupReport}><input type="hidden" name="request_id" value={k.request_id} /><button className="linkish" type="submit">{k.report_id ? 'Rebuild' : 'Build'}</button></form>
+                      <form action={rebuildCheckupReport}><input type="hidden" name="request_id" value={k.request_id} /><PendingButton label={k.report_id ? 'Rebuild' : 'Build'} pendingLabel="Rebuilding, about a minute…" /></form>
                     </span>
                   </li>
                 ))}

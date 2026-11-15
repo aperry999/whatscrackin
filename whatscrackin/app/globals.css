@@ -365,3 +365,9 @@ p { margin: 0; text-wrap: pretty; }
 .step-now .step-mark { border-top-color: transparent; animation: step-spin .9s linear infinite; }
 @keyframes step-spin { to { transform: rotate(360deg); } }
 @media (prefers-reduced-motion: reduce) { .step-now .step-mark { animation: none; } .progress-bar span { transition: none; } }
+
+/* Busy state for slow admin buttons */
+.pending-label { display: inline-flex; align-items: center; gap: 6px; }
+.pending-spin { width: 12px; height: 12px; border-radius: 50%; border: 2px solid currentColor; border-top-color: transparent; animation: step-spin .8s linear infinite; }
+button[aria-busy="true"] { cursor: progress; opacity: .8; }
+@media (prefers-reduced-motion: reduce) { .pending-spin { animation: none; } }

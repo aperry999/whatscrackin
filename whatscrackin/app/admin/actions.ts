@@ -178,7 +178,7 @@ export async function rebuildCheckupReport(formData: FormData) {
   if (!id) done('Missing checkup request.');
   const { buildCheckupReport } = await import('@/lib/checkup-report');
   const r = await buildCheckupReport(id, { origin: await currentOrigin() });
-  done(r.status === 'draft' ? 'Report rebuilt. Review it before sending.' : 'The report failed again. See the reason in the list.');
+  done(r.status === 'draft' ? 'Report rebuilt. View it, then use Send to brewery if you want to email the new version.' : 'The report failed again. See the reason in the list.');
 }
 
 export async function sendCheckupReport(formData: FormData) {

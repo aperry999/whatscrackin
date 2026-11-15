@@ -65,8 +65,14 @@ export async function sendLoginLink(formData: FormData) {
 export async function signIn(formData: FormData) {
   const admin = await consumeLoginToken(str(formData, 'token'));
   if (!admin) redirect('/admin/login?error=expired');
-  await startSession(admin.email);
-  redirect('/admin');
+  let ok = true;
+  try {
+    await startSession(admin.email);
+  } catch (err) {
+    console.error('admin sign-in failed', err);
+    ok = false;
+  }
+  redirect(ok ? '/admin' : '/admin/login?error=setup');
 }
 
 export async function signOut() {

@@ -4,7 +4,7 @@ import { z } from 'zod';
 import { sendOwnerAlert } from './alerts';
 import { db, ready } from './db';
 import { sendEmail } from './email';
-import { siteUrl } from './site';
+import { checkupOrigin } from './site';
 import { InstagramLookupError, lookupInstagram, type IgPost, type IgProfile } from './instagram';
 
 const TZ = process.env.SITE_TZ || 'America/New_York';
@@ -237,7 +237,7 @@ async function writeReport(m: CheckupMetrics, recentCaptions: string[]): Promise
 export const newReportId = () => crypto.randomUUID().replace(/-/g, '').slice(0, 20);
 
 // origin: the address the brewery used (e.g. a preview), so emailed links open the same site. Defaults to SITE_URL.
-export const reportUrl = (id: string, origin?: string) => `${origin || siteUrl()}/checkup/report/${id}`;
+export const reportUrl = (id: string, origin?: string) => `${checkupOrigin(origin)}/checkup/report/${id}`;
 
 // Builds (or rebuilds) the report for one checkup request and stores it as a draft for review.
 // Emails the brewery its report link and marks the report sent.

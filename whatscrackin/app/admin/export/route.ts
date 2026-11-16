@@ -1,6 +1,6 @@
 import { getAdmin } from '@/lib/auth';
 import { db } from '@/lib/db';
-import { currentOrigin } from '@/lib/site';
+import { checkupOrigin, currentOrigin } from '@/lib/site';
 
 export const dynamic = 'force-dynamic';
 
@@ -32,7 +32,7 @@ export async function GET(req: Request) {
       'followers', 'posts_per_week', 'engagement_pct', 'days_since_last_post', 'ran_ads_before', 'problem', 'came_from', 'request_type'];
     const body = rows.map((r) =>
       [r.brewery, r.city, r.ig_handle, r.name, r.email, r.who_posts, r.created_at, r.status, r.sent_at,
-        r.report_id ? `${origin}/checkup/report/${r.report_id}` : '',
+        r.report_id ? `${checkupOrigin(origin)}/checkup/report/${r.report_id}` : '',
         r.followers, r.posts_per_week, r.engagement_pct, r.days_since_last_post, r.ran_ads, r.error, r.campaign, r.reused_report ? 'repeat' : r.source].map(cell).join(','),
     );
     return new Response([header.join(','), ...body].join('\n') + '\n', {

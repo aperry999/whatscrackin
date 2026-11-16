@@ -2,14 +2,15 @@
 
 import { useState } from 'react';
 import { Chevron } from './chrome';
+import { ReportProgress } from './report-progress';
 
-type Status = { kind: 'idle' | 'busy' | 'ok' | 'err'; text?: string };
+type Status = { kind: 'idle' | 'busy' | 'ok' | 'err'; text?: string; reportLink?: string; existing?: boolean };
 
 async function post(url: string, body: Record<string, string>): Promise<Status> {
   try {
     const res = await fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
-    const data = (await res.json().catch(() => ({}))) as { message?: string };
-    return { kind: res.ok ? 'ok' : 'err', text: data.message || (res.ok ? 'Done.' : 'Something went wrong. Try again.') };
+    const data = (await res.json().catch(() => ({}))) as { message?: string; reportLink?: string; existing?: boolean };
+    return { kind: res.ok ? 'ok' : 'err', text: data.message || (res.ok ? 'Done.' : 'Something went wrong. Try again.'), reportLink: data.reportLink, existing: data.existing };
   } catch {
     return { kind: 'err', text: 'Could not reach the server. Check your connection and try again.' };
   }
@@ -33,7 +34,7 @@ export function HeroForm({ cities, initial }: { cities: LiveCity[]; initial: str
     const f = new FormData(form);
     setStatus({ kind: 'busy' });
     const email = String(f.get('email') || '');
-    const hp = String(f.get('company') || '');
+    const hp = String(f.get('hp_x') || '');
     const result = other
       ? await post('/api/request-city', { email, city: String(f.get('otherCity') || ''), company: hp })
       : await post('/api/subscribe', { email, city, company: hp });
@@ -67,7 +68,7 @@ export function HeroForm({ cities, initial }: { cities: LiveCity[]; initial: str
           <input className="input" type="email" name="email" placeholder="you@example.com" autoComplete="email" required maxLength={254} />
         </label>
       </div>
-      <input className="hp" tabIndex={-1} aria-hidden="true" name="company" autoComplete="off" />
+      <input className="hp" tabIndex={-1} aria-hidden="true" name="hp_x" autoComplete="off" />
       <div className="form-actions">
         <button className="btn btn-accent" type="submit" disabled={status.kind === 'busy'}>
           {status.kind === 'busy' ? 'Sending…' : other ? 'Request my city' : 'Subscribe free'}
@@ -95,7 +96,7 @@ export function CityRequestForm() {
     const result = await post('/api/request-city', {
       email: String(f.get('email') || ''),
       city: String(f.get('city') || ''),
-      company: String(f.get('company') || ''),
+      company: String(f.get('hp_x') || ''),
     });
     setStatus(result);
     if (result.kind === 'ok') form.reset();
@@ -111,7 +112,7 @@ export function CityRequestForm() {
         Email
         <input className="input" type="email" name="email" placeholder="you@example.com" autoComplete="email" required maxLength={254} />
       </label>
-      <input className="hp" tabIndex={-1} aria-hidden="true" name="company" autoComplete="off" />
+      <input className="hp" tabIndex={-1} aria-hidden="true" name="hp_x" autoComplete="off" />
       <button className="btn btn-accent" type="submit" style={{ gridColumn: '1 / -1' }} disabled={status.kind === 'busy'}>
         {status.kind === 'busy' ? 'Sending…' : 'Request my city'}
       </button>
@@ -131,7 +132,7 @@ export function TripWaitlistForm() {
     const result = await post('/api/trip-waitlist', {
       email: String(f.get('email') || ''),
       city: String(f.get('city') || ''),
-      company: String(f.get('company') || ''),
+      company: String(f.get('hp_x') || ''),
     });
     setStatus(result);
     if (result.kind === 'ok') form.reset();
@@ -147,9 +148,108 @@ export function TripWaitlistForm() {
         Email
         <input className="input" type="email" name="email" placeholder="you@example.com" autoComplete="email" required maxLength={254} />
       </label>
-      <input className="hp" tabIndex={-1} aria-hidden="true" name="company" autoComplete="off" />
+      <input className="hp" tabIndex={-1} aria-hidden="true" name="hp_x" autoComplete="off" />
       <button className="btn btn-accent" type="submit" disabled={status.kind === 'busy'}>
         {status.kind === 'busy' ? 'Sending…' : 'Tell me when trips launch'}
+      </button>
+      <Msg s={status} />
+    </form>
+  );
+}
+
+const CHECKUP_ROLES = ['Owner', 'Taproom manager', 'Bartender or staff', 'Marketing person or agency', 'Nobody really'];
+
+export function CheckupForm({ campaign = null }: { campaign?: string | null }) {
+  const [status, setStatus] = useState<Status>({ kind: 'idle' });
+  const [handle, setHandle] = useState('');
+  const [reportReady, setReportReady] = useState(false);
+
+  async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const f = new FormData(form);
+    setStatus({ kind: 'busy' });
+    setReportReady(false);
+    const get = (k: string) => String(f.get(k) || '');
+    setHandle(get('handle').trim().replace(/^.*instagram\.com\//i, '').replace(/[/?#].*$/, '').replace(/^@+/, '').toLowerCase());
+    const result = await post('/api/checkup', {
+      brewery: get('brewery'),
+      city: get('city'),
+      handle: get('handle'),
+      name: get('name'),
+      email: get('email'),
+      role: get('role'),
+      consent: f.get('consent') ? 'yes' : '',
+      src: campaign || '',
+    });
+    setStatus(result);
+    if (result.kind === 'ok') form.reset();
+  }
+
+  if (status.kind === 'ok') {
+    return (
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+        <h2>
+          {status.existing ? 'You already have a report.' : !status.reportLink ? 'You\u2019re on the list.' : reportReady ? 'Your report is ready.' : 'Building your report…'}
+        </h2>
+        <p className="muted">{status.text}</p>
+        {status.existing && status.reportLink && (
+          <a className="btn btn-accent" href={status.reportLink} style={{ alignSelf: 'flex-start' }}>
+            See the report
+          </a>
+        )}
+        {!status.existing && status.reportLink && <ReportProgress link={status.reportLink} handle={handle} onReady={() => setReportReady(true)} />}
+        <button className="btn btn-ghost sm" type="button" style={{ alignSelf: 'flex-start' }} onClick={() => setStatus({ kind: 'idle' })}>
+          Add another brewery
+        </button>
+      </div>
+    );
+  }
+
+  return (
+    <form onSubmit={onSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+      <div className="form-grid">
+        <label className="label">
+          Brewery name
+          <input className="input" name="brewery" autoComplete="organization" required maxLength={120} />
+        </label>
+        <label className="label">
+          City
+          <input className="input" name="city" placeholder="Orlando, FL" autoComplete="address-level2" required maxLength={80} />
+        </label>
+      </div>
+      <label className="label">
+        Instagram handle
+        <input className="input" name="handle" placeholder="@yourbrewery" autoCapitalize="off" autoCorrect="off" spellCheck={false} required maxLength={80} />
+        <span className="checkup-hint">Needs to be a Business or Creator account. Not sure? We&apos;ll check for you.</span>
+      </label>
+      <div className="form-grid">
+        <label className="label">
+          Your name
+          <input className="input" name="name" autoComplete="name" required maxLength={80} />
+        </label>
+        <label className="label">
+          Email
+          <input className="input" type="email" name="email" placeholder="you@yourbrewery.com" autoComplete="email" required maxLength={254} />
+        </label>
+      </div>
+      <fieldset className="checkup-roles">
+        <legend className="label">Who posts on your Instagram?</legend>
+        <div className="checkup-chips">
+          {CHECKUP_ROLES.map((r) => (
+            <label key={r} className="checkup-chip">
+              <input type="radio" name="role" value={r} />
+              <span>{r}</span>
+            </label>
+          ))}
+        </div>
+      </fieldset>
+      <label className="checkup-consent">
+        <input type="checkbox" name="consent" required />
+        <span>Crackem can email me my report and a few follow-up tips. I can unsubscribe anytime.</span>
+      </label>
+      <button className="btn btn-accent" type="submit" disabled={status.kind === 'busy'}>
+        {status.kind === 'busy' ? 'Sending…' : 'Get my free report'}
       </button>
       <Msg s={status} />
     </form>

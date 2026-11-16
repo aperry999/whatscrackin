@@ -65,8 +65,18 @@ export async function sendLoginLink(formData: FormData) {
 export async function signIn(formData: FormData) {
   const admin = await consumeLoginToken(str(formData, 'token'));
   if (!admin) redirect('/admin/login?error=expired');
-  await startSession(admin.email);
-  redirect('/admin');
+  // Say which setting is wrong (never its value), so it can be fixed in Vercel.
+  const secretLen = (process.env.SESSION_SECRET || '').length;
+  let problem = secretLen === 0 ? 'secret-missing' : secretLen < 32 ? 'secret-short' : '';
+  if (!problem) {
+    try {
+      await startSession(admin.email);
+    } catch (err) {
+      console.error('admin sign-in failed', err);
+      problem = 'session-failed';
+    }
+  }
+  redirect(problem ? `/admin/login?error=${problem}` : '/admin');
 }
 
 export async function signOut() {
@@ -158,4 +168,29 @@ export async function removeAdmin(formData: FormData) {
   if (owners < 1) done('Keep at least one owner.');
   await db()`delete from admins where email = ${email}`;
   done(`Removed ${email}.`);
+}
+
+// --- Instagram checkups ---
+
+export async function rebuildCheckupReport(formData: FormData) {
+  await requireAdmin();
+  const id = optInt(str(formData, 'request_id'));
+  if (!id) done('Missing checkup request.');
+  const { buildCheckupReport } = await import('@/lib/checkup-report');
+  const r = await buildCheckupReport(id, { origin: await currentOrigin() });
+  done(r.status === 'draft' ? 'Report rebuilt. View it, then use Send to brewery if you want to email the new version.' : 'The report failed again. See the reason in the list.');
+}
+
+export async function sendCheckupReport(formData: FormData) {
+  await requireAdmin();
+  const reportId = str(formData, 'report_id');
+  const { emailCheckupReport } = await import('@/lib/checkup-report');
+  let email: string;
+  try {
+    ({ email } = await emailCheckupReport(reportId, await currentOrigin()));
+  } catch (err) {
+    console.error(err);
+    done(err instanceof Error ? `Not sent: ${err.message}` : 'The email could not be sent. Check SendGrid and try again.');
+  }
+  done(`Report sent to ${email}.`);
 }

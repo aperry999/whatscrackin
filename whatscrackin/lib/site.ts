@@ -19,10 +19,28 @@ export async function currentOrigin() {
   const configured = new URL(siteUrl()).host;
   const trusted =
     host === configured ||
+    host === checkupHost() ||
     host === 'www.' + configured ||
     /^[a-z0-9-]+(\.[a-z0-9-]+)*\.vercel\.app$/.test(host) ||
     /^localhost(:\d+)?$/.test(host);
   if (!host || !trusted) return siteUrl();
   const proto = host.startsWith('localhost') ? 'http' : 'https';
   return `${proto}://${host}`;
+}
+
+// The brewery checkup's own address (see proxy.ts). Trusted for emailed links like the main site's.
+export const checkupHost = () => (process.env.CHECKUP_HOST || 'checkup.crackem.us').toLowerCase();
+
+// Where checkup report links point. With CHECKUP_SITE_URL set (e.g. https://checkup.crackem.us once its DNS works),
+// every report link uses it, including ones sent from admin. Otherwise links use the address the person is on.
+export function checkupOrigin(fallback?: string) {
+  const raw = (process.env.CHECKUP_SITE_URL || '').trim().replace(/\/+$/, '');
+  if (raw) {
+    try {
+      return new URL(/^https?:\/\//i.test(raw) ? raw : 'https://' + raw).origin;
+    } catch {
+      // fall through
+    }
+  }
+  return fallback || siteUrl();
 }

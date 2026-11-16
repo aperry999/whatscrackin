@@ -10,12 +10,8 @@ export function proxy(request: NextRequest) {
   if (host !== CHECKUP_HOST) return NextResponse.next();
   const { pathname } = request.nextUrl;
   if (ALLOWED.test(pathname)) return NextResponse.next();
-  const url = request.nextUrl.clone();
-  url.pathname = '/checkup';
-  // Keep the public host (and the ?src= tag, which clone() carries over) in the redirect.
-  url.protocol = 'https:';
-  url.host = host;
-  url.port = '';
+  // Keep the public host and the ?src= tag in the redirect.
+  const url = new URL(`https://${host}/checkup${request.nextUrl.search}`);
   return NextResponse.redirect(url, pathname === '/' ? 307 : 308);
 }
 

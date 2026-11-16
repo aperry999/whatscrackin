@@ -238,7 +238,12 @@ export const reportUrl = (id: string, origin?: string) => `${origin || siteUrl()
 
 // Builds (or rebuilds) the report for one checkup request and stores it as a draft for review.
 // Emails the brewery its report link and marks the report sent.
-export async function emailCheckupReport(reportId: string, origin?: string): Promise<{ email: string }> {
+// to: send a copy to someone else (e.g. a second person from the same brewery) without changing the report's status.
+export async function emailCheckupReport(
+  reportId: string,
+  origin?: string,
+  to?: { email: string; name: string },
+): Promise<{ email: string }> {
   await ready();
   const [r] = await db()<{ id: string; status: string; email: string; name: string; brewery: string; ig_handle: string }[]>`
     select rep.id, rep.status, req.email, req.name, req.brewery, req.ig_handle
@@ -246,13 +251,33 @@ export async function emailCheckupReport(reportId: string, origin?: string): Pro
   if (!r) throw new Error('Report not found.');
   if (r.status === 'failed' || r.status === 'building') throw new Error('That report is not ready. Rebuild it first.');
   const link = reportUrl(r.id, origin);
-  const first = r.name.split(/\s+/)[0] || 'there';
+  const first = (to?.name || r.name).split(/\s+/)[0] || 'there';
   const esc = (v: string) => v.replace(/[<>&]/g, '');
   const text = `Hi ${first},\n\nYour free Instagram checkup for ${r.brewery} (@${r.ig_handle}) is ready:\n${link}\n\nIt covers what's working, what's holding you back, three things to try this month, and a sample event ad built from one of your own posts.\n\nQuestions? Just reply to this email.\n\nCrackem`;
   const html = `<p>Hi ${esc(first)},</p><p>Your free Instagram checkup for <b>${esc(r.brewery)}</b> (@${r.ig_handle}) is ready.</p><p><a href="${link}" style="display:inline-block;padding:12px 20px;background:#E8A33D;color:#1A1206;text-decoration:none;border-radius:6px;font-weight:600">See your report</a></p><p>It covers what's working, what's holding you back, three things to try this month, and a sample event ad built from one of your own posts.</p><p>Questions? Just reply to this email.</p><p>Crackem</p>`;
-  await sendEmail(r.email, `Your Instagram checkup for ${r.brewery}`, text, html, 'Crackem');
+  await sendEmail(to?.email || r.email, `Your Instagram checkup for ${r.brewery}`, text, html, 'Crackem');
+  if (to) return { email: to.email };
   await db()`update checkup_reports set status = 'sent', sent_at = now() where id = ${r.id}`;
   return { email: r.email };
+}
+
+// One free report per Instagram handle in this many days. Breweries ask for a refresh from their report page after that.
+export const FREE_REFRESH_DAYS = 30;
+
+export const nextFreeDate = (createdAt: Date) => new Date(createdAt.getTime() + FREE_REFRESH_DAYS * 86400000);
+
+export const formatDay = (d: Date) =>
+  d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', timeZone: process.env.SITE_TZ || 'America/New_York' });
+
+// The newest report for a handle that isn't a failure: used for the 30-day limit and the refresh button.
+export async function latestReportFor(handle: string): Promise<{ id: string; status: string; created_at: Date } | null> {
+  await ready();
+  const [r] = await db()<{ id: string; status: string; created_at: Date }[]>`
+    select rep.id, rep.status, rep.created_at from checkup_reports rep
+    join checkup_requests req on req.id = rep.request_id
+    where req.ig_handle = ${handle} and rep.status <> 'failed'
+    order by rep.created_at desc limit 1`;
+  return r ?? null;
 }
 
 // Instagram's image links expire within days, so keep our own copy of the picture used in the sample ad.

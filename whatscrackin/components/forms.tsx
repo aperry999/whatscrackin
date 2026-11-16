@@ -4,13 +4,13 @@ import { useState } from 'react';
 import { Chevron } from './chrome';
 import { ReportProgress } from './report-progress';
 
-type Status = { kind: 'idle' | 'busy' | 'ok' | 'err'; text?: string; reportLink?: string };
+type Status = { kind: 'idle' | 'busy' | 'ok' | 'err'; text?: string; reportLink?: string; existing?: boolean };
 
 async function post(url: string, body: Record<string, string>): Promise<Status> {
   try {
     const res = await fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
-    const data = (await res.json().catch(() => ({}))) as { message?: string; reportLink?: string };
-    return { kind: res.ok ? 'ok' : 'err', text: data.message || (res.ok ? 'Done.' : 'Something went wrong. Try again.'), reportLink: data.reportLink };
+    const data = (await res.json().catch(() => ({}))) as { message?: string; reportLink?: string; existing?: boolean };
+    return { kind: res.ok ? 'ok' : 'err', text: data.message || (res.ok ? 'Done.' : 'Something went wrong. Try again.'), reportLink: data.reportLink, existing: data.existing };
   } catch {
     return { kind: 'err', text: 'Could not reach the server. Check your connection and try again.' };
   }
@@ -188,9 +188,16 @@ export function CheckupForm() {
   if (status.kind === 'ok') {
     return (
       <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
-        <h2>{!status.reportLink ? 'You\u2019re on the list.' : reportReady ? 'Your report is ready.' : 'Building your report…'}</h2>
+        <h2>
+          {status.existing ? 'You already have a report.' : !status.reportLink ? 'You\u2019re on the list.' : reportReady ? 'Your report is ready.' : 'Building your report…'}
+        </h2>
         <p className="muted">{status.text}</p>
-        {status.reportLink && <ReportProgress link={status.reportLink} handle={handle} onReady={() => setReportReady(true)} />}
+        {status.existing && status.reportLink && (
+          <a className="btn btn-accent" href={status.reportLink} style={{ alignSelf: 'flex-start' }}>
+            See the report
+          </a>
+        )}
+        {!status.existing && status.reportLink && <ReportProgress link={status.reportLink} handle={handle} onReady={() => setReportReady(true)} />}
         <button className="btn btn-ghost sm" type="button" style={{ alignSelf: 'flex-start' }} onClick={() => setStatus({ kind: 'idle' })}>
           Add another brewery
         </button>

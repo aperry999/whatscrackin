@@ -32,8 +32,8 @@ export default async function AdminPage({ searchParams }: { searchParams: Promis
     getCitiesWithCounts(),
     db()<{ email: string; role: string; invited_by: string | null }[]>`select email, role, invited_by from admins order by role desc, created_at`,
     db()<{ n: number }[]>`select count(*)::int as n from trip_waitlist`,
-    db()<{ request_id: number; brewery: string; ig_handle: string; email: string; created_at: Date; report_id: string | null; status: string | null; error: string | null; ran_ads: string | null; ig_name: string | null }[]>`
-      select req.id as request_id, req.brewery, req.ig_handle, req.email, req.created_at, rep.id as report_id, rep.status, rep.error, rep.ran_ads, rep.metrics->>'name' as ig_name
+    db()<{ request_id: number; brewery: string; ig_handle: string; email: string; created_at: Date; report_id: string | null; status: string | null; error: string | null; ran_ads: string | null; ig_name: string | null; source: string; reused_report: string | null }[]>`
+      select req.id as request_id, req.brewery, req.ig_handle, req.email, req.created_at, rep.id as report_id, rep.status, rep.error, rep.ran_ads, rep.metrics->>'name' as ig_name, req.source, req.reused_report
       from checkup_requests req left join checkup_reports rep on rep.request_id = req.id
       order by req.created_at desc limit 25`,
   ]);
@@ -169,17 +169,19 @@ export default async function AdminPage({ searchParams }: { searchParams: Promis
                     <span>
                       <b>{k.brewery} · @{k.ig_handle}</b>
                       <small>
-                        {k.status === 'sent' ? 'Sent' : k.status === 'draft' ? 'Ready to review' : k.status === 'failed' ? `Failed: ${k.error}` : 'Building…'} · {k.email}
+                        {k.reused_report ? 'Repeat signup: sent the existing report' : k.status === 'sent' ? 'Sent' : k.status === 'draft' ? 'Ready to review' : k.status === 'failed' ? `Failed: ${k.error}` : 'Building…'} · {k.email}
+                        {k.source === 'refresh' && ' · Asked for a refresh'}
                         {k.ran_ads && ` · Ran ads: ${k.ran_ads === 'yes' ? 'yes' : k.ran_ads === 'boosted' ? 'boosted posts' : 'no'}`}
                       </small>
                     </span>
                     <span style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
                       {k.report_id && k.status !== 'failed' && <a href={`/checkup/report/${k.report_id}`} target="_blank" rel="noreferrer">View</a>}
+                      {k.reused_report && <a href={`/checkup/report/${k.reused_report}`} target="_blank" rel="noreferrer">View</a>}
                       <a href={adLibraryUrl(k.ig_name || k.brewery)} target="_blank" rel="noreferrer">Check their ads</a>
                       {k.report_id && k.status === 'draft' && (
                         <form action={sendCheckupReport}><input type="hidden" name="report_id" value={k.report_id} /><PendingButton label="Send to brewery" pendingLabel="Sending…" /></form>
                       )}
-                      <form action={rebuildCheckupReport}><input type="hidden" name="request_id" value={k.request_id} /><PendingButton label={k.report_id ? 'Rebuild' : 'Build'} pendingLabel="Rebuilding, about a minute…" /></form>
+                      {!k.reused_report && <form action={rebuildCheckupReport}><input type="hidden" name="request_id" value={k.request_id} /><PendingButton label={k.report_id ? 'Rebuild' : 'Build'} pendingLabel="Rebuilding, about a minute…" /></form>}
                     </span>
                   </li>
                 ))}

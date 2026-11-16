@@ -87,3 +87,8 @@ alter table checkup_reports add column if not exists ran_ads text;
 -- Our copy of the picture used in the sample ad (Instagram's own image links expire).
 alter table checkup_reports add column if not exists ad_image bytea;
 alter table checkup_reports add column if not exists ad_image_type text;
+
+-- form (signup page) or refresh (asked for an update from their report page); reused_report is set when a
+-- repeat signup within 30 days was sent the existing report instead of a new one.
+alter table checkup_requests add column if not exists source text not null default 'form';
+alter table checkup_requests add column if not exists reused_report text;

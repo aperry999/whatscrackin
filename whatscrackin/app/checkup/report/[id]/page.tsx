@@ -7,11 +7,13 @@ import { db, ready } from '@/lib/db';
 import { isPreview } from '@/lib/preview';
 import { SaveReportButton } from '@/components/print-button';
 import { AdsQuestion } from '@/components/ads-question';
+import { RefreshReport } from '@/components/refresh-report';
+import { formatDay, latestReportFor, nextFreeDate } from '@/lib/checkup-report';
 
 export const dynamic = 'force-dynamic';
 export const metadata: Metadata = { title: 'Your Instagram checkup · Crackem', robots: { index: false } };
 
-type Row = { id: string; status: string; metrics: CheckupMetrics | null; content: CheckupContent | null; error: string | null; ran_ads: string | null; has_ad_image: boolean; brewery: string; updated_at: Date };
+type Row = { id: string; status: string; metrics: CheckupMetrics | null; content: CheckupContent | null; error: string | null; ran_ads: string | null; has_ad_image: boolean; ig_handle: string; created_at: Date; brewery: string; updated_at: Date };
 
 const fmt = (n: number) => n.toLocaleString('en-US');
 
@@ -20,7 +22,7 @@ export default async function CheckupReportPage({ params }: { params: Promise<{ 
   if (!/^[a-f0-9]{20}$/.test(id)) notFound();
   await ready();
   const [r] = await db()<Row[]>`
-    select rep.id, rep.status, rep.metrics, rep.content, rep.error, rep.ran_ads, (rep.ad_image is not null) as has_ad_image, req.brewery, rep.updated_at
+    select rep.id, rep.status, rep.metrics, rep.content, rep.error, rep.ran_ads, (rep.ad_image is not null) as has_ad_image, req.ig_handle, rep.created_at, req.brewery, rep.updated_at
     from checkup_reports rep join checkup_requests req on req.id = rep.request_id where rep.id = ${id}`;
   if (!r) notFound();
   // Preview deployments (behind Vercel's login) show drafts so reports can be checked before launch.
@@ -65,6 +67,9 @@ export default async function CheckupReportPage({ params }: { params: Promise<{ 
 
   const m = r.metrics;
   const c = r.content;
+  const newer = await latestReportFor(r.ig_handle);
+  // eslint-disable-next-line react-hooks/purity
+  const refreshOpen = Date.now() >= nextFreeDate(r.created_at).getTime();
   const adPost = m.topPosts[c.mock_ad.post_index] || m.topPosts[0];
 
   return (
@@ -142,6 +147,25 @@ export default async function CheckupReportPage({ params }: { params: Promise<{ 
       </section>
 
       <AdsQuestion reportId={r.id} initial={r.ran_ads} />
+
+      <section className="report-question no-print">
+        <h2>Want updated numbers?</h2>
+        {newer && newer.id !== r.id ? (
+          <p>
+            There&apos;s a newer report for @{r.ig_handle}. <a href={`/checkup/report/${newer.id}`}>See the latest one</a>.
+          </p>
+        ) : refreshOpen ? (
+          <>
+            <p>It&apos;s been 30 days. Get a fresh report to see what changed since this one.</p>
+            <RefreshReport reportId={r.id} />
+          </>
+        ) : (
+          <p>
+            Try this month&apos;s tasks, then come back to this page on <b>{formatDay(nextFreeDate(r.created_at))}</b> to get an
+            updated report and see what changed.
+          </p>
+        )}
+      </section>
 
       <p className="muted report-note">Crackem · Report updated {r.updated_at.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</p>
     </main>

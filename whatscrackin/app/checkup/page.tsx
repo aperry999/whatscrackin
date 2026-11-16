@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { headers } from 'next/headers';
 import { CheckupForm } from '@/components/forms';
 import { isPreview } from '@/lib/preview';
+import { cleanCampaign } from '@/lib/campaign';
 import { CHECKUP_VERSION } from '@/lib/version';
 
 export const dynamic = 'force-dynamic';
@@ -12,7 +13,8 @@ export const metadata: Metadata = {
   robots: { index: false },
 };
 
-export default async function CheckupPage() {
+export default async function CheckupPage({ searchParams }: { searchParams: Promise<{ src?: string }> }) {
+  const campaign = cleanCampaign((await searchParams).src);
   const h = await headers();
   const preview = isPreview(h.get('x-forwarded-host') || h.get('host'));
   return (
@@ -33,7 +35,7 @@ export default async function CheckupPage() {
         </div>
         <div className="panel">
           <span className="eyebrow">Takes about 30 seconds</span>
-          <CheckupForm />
+          <CheckupForm campaign={campaign} />
         </div>
       </section>
       <p className="wrap checkup-foot muted">Crackem. We only read public Instagram data for the free report.{' '}

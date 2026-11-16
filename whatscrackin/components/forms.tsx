@@ -159,7 +159,7 @@ export function TripWaitlistForm() {
 
 const CHECKUP_ROLES = ['Owner', 'Taproom manager', 'Bartender or staff', 'Marketing person or agency', 'Nobody really'];
 
-export function CheckupForm() {
+export function CheckupForm({ campaign = null }: { campaign?: string | null }) {
   const [status, setStatus] = useState<Status>({ kind: 'idle' });
   const [handle, setHandle] = useState('');
   const [reportReady, setReportReady] = useState(false);
@@ -180,6 +180,7 @@ export function CheckupForm() {
       email: get('email'),
       role: get('role'),
       consent: f.get('consent') ? 'yes' : '',
+      src: campaign || '',
     });
     setStatus(result);
     if (result.kind === 'ok') form.reset();

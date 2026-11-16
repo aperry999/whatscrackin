@@ -5,6 +5,7 @@ import { alertCheckup, startCheckup, type CheckupLead } from '@/lib/checkup-star
 import { db, ready } from '@/lib/db';
 import { currentOrigin } from '@/lib/site';
 import { cleanEmail } from '@/lib/email';
+import { cleanCampaign } from '@/lib/campaign';
 
 // The report is built after the response is sent; give that work room to finish.
 export const maxDuration = 300;
@@ -46,7 +47,8 @@ export async function POST(req: Request) {
   if (form.consent !== 'yes') return reply('Tick the box so we can email you the report.', 400);
 
   await ready();
-  const lead: CheckupLead = { brewery, city, handle, name, email, role };
+  const campaign = cleanCampaign(form.src);
+  const lead: CheckupLead = { brewery, city, handle, name, email, role, campaign };
   const origin = await currentOrigin(); // read now: request headers aren't available inside after()
 
   // One person can't run free reports on lots of different breweries.
@@ -60,8 +62,8 @@ export async function POST(req: Request) {
   // One free report per Instagram account every 30 days. A second signup in that window gets the existing report.
   const existing = await latestReportFor(handle);
   if (existing && Date.now() < nextFreeDate(existing.created_at).getTime()) {
-    await db()`insert into checkup_requests (brewery, city, ig_handle, name, email, who_posts, source, reused_report)
-      values (${brewery}, ${city}, ${handle}, ${name}, ${email}, ${role}, 'form', ${existing.id})`;
+    await db()`insert into checkup_requests (brewery, city, ig_handle, name, email, who_posts, source, reused_report, campaign)
+      values (${brewery}, ${city}, ${handle}, ${name}, ${email}, ${role}, 'form', ${existing.id}, ${campaign})`;
     alertCheckup('Instagram checkup request (already had a report)', lead, { Note: 'Sent them the existing report; no new one built.' });
     if (existing.status !== 'building') {
       after(() => emailCheckupReport(existing.id, origin, { email, name }).catch((e) => console.error('repeat email failed', e)));

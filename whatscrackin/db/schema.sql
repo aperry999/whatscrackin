@@ -92,3 +92,6 @@ alter table checkup_reports add column if not exists ad_image_type text;
 -- repeat signup within 30 days was sent the existing report instead of a new one.
 alter table checkup_requests add column if not exists source text not null default 'form';
 alter table checkup_requests add column if not exists reused_report text;
+
+-- Where the lead came from, from the signup link's ?src= (e.g. cbp for the Tampa conference cards).
+alter table checkup_requests add column if not exists campaign text;

@@ -166,9 +166,12 @@ Every claim must come from the numbers or posts you are given; cite the number o
 
 Tasks must be small and concrete ("Film a 10-second pour of your next release and post it Thursday at 4 pm"), not "post more consistently".
 
-Captions should sound like the brewery's own recent captions and fit what they actually do.
+Captions should sound like the brewery's own recent captions and fit what they actually do. Match their emoji habit (the share of their captions with emojis is given): if under a third of their captions use emojis, use none; otherwise use at most two per caption. Never use emojis anywhere else in the report.
 
 The mock ad builds on one of their top posts and promotes something they clearly offer (an event, release or the taproom itself). Keep primary_text under 125 characters.`;
+
+const emojiShare = (caps: string[]) =>
+  caps.length ? Math.round((caps.filter((c) => /\p{Extended_Pictographic}/u.test(c)).length / caps.length) * 100) : 0;
 
 function userPrompt(m: CheckupMetrics, recentCaptions: string[]) {
   const { topPosts, bottomPosts, ...rest } = m;
@@ -184,7 +187,7 @@ ${JSON.stringify(strip(topPosts).map((p, i) => ({ ...p, index: i })), null, 2)}
 Lowest posts:
 ${JSON.stringify(strip(bottomPosts), null, 2)}
 
-Recent captions, newest first:
+Recent captions, newest first (${emojiShare(recentCaptions)}% contain emojis):
 ${recentCaptions.map((c, i) => `${i + 1}. ${c}`).join('\n')}
 
 Images of their top photo posts are attached when available.

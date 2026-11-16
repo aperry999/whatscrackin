@@ -20,6 +20,20 @@ export default async function LoginPage({ searchParams }: { searchParams: Promis
         ) : (
           <form action={sendLoginLink} style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
             {error === 'expired' && <p className="form-msg err">That link expired or was already used. Get a new one below.</p>}
+            {error === 'secret-missing' && (
+              <p className="form-msg err">
+                Sign-in isn&apos;t set up on this copy of the site: this deployment has no SESSION_SECRET value. Add it in Vercel for this
+                environment, then redeploy.
+              </p>
+            )}
+            {error === 'secret-short' && (
+              <p className="form-msg err">
+                This deployment&apos;s SESSION_SECRET is shorter than 32 characters. Set it to a longer random value in Vercel, then redeploy.
+              </p>
+            )}
+            {error === 'session-failed' && (
+              <p className="form-msg err">Sign-in failed while starting your session. Try a new link; if it happens again, check the Vercel logs.</p>
+            )}
             {error === 'send' && <p className="form-msg err">The email didn&apos;t send. Check the SendGrid settings and try again.</p>}
             <label className="label">
               Email

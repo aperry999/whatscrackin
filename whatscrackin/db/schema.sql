@@ -67,3 +67,31 @@ create table if not exists checkup_requests (
   created_at timestamptz not null default now()
 );
 create index if not exists checkup_requests_created_idx on checkup_requests (created_at);
+
+-- One generated report per checkup request. Drafts wait for an admin to send them.
+create table if not exists checkup_reports (
+  id text primary key,                -- unguessable, used in the report link
+  request_id integer not null unique references checkup_requests(id) on delete cascade,
+  status text not null check (status in ('building', 'draft', 'sent', 'failed')),
+  metrics jsonb,
+  content jsonb,
+  error text,
+  created_at timestamptz not null default now(),
+  updated_at timestamptz not null default now(),
+  sent_at timestamptz
+);
+
+-- The brewery's one-tap answer at the end of its report: yes, no or boosted (boosted posts only).
+alter table checkup_reports add column if not exists ran_ads text;
+
+-- Our copy of the picture used in the sample ad (Instagram's own image links expire).
+alter table checkup_reports add column if not exists ad_image bytea;
+alter table checkup_reports add column if not exists ad_image_type text;
+
+-- form (signup page) or refresh (asked for an update from their report page); reused_report is set when a
+-- repeat signup within 30 days was sent the existing report instead of a new one.
+alter table checkup_requests add column if not exists source text not null default 'form';
+alter table checkup_requests add column if not exists reused_report text;
+
+-- Where the lead came from, from the signup link's ?src= (e.g. cbp for the Tampa conference cards).
+alter table checkup_requests add column if not exists campaign text;

@@ -1,5 +1,6 @@
 import { getAdmin } from '@/lib/auth';
 import { db } from '@/lib/db';
+import { checkupOrigin, currentOrigin } from '@/lib/site';
 
 export const dynamic = 'force-dynamic';
 
@@ -19,9 +20,21 @@ export async function GET(req: Request) {
   let name: string;
 
   if (type === 'checkups') {
-    const rows = await db()`select brewery, city, ig_handle, name, email, who_posts, created_at from checkup_requests order by created_at`;
-    const header = ['brewery', 'city', 'instagram', 'name', 'email', 'who_posts', 'requested_at'];
-    const body = rows.map((r) => [r.brewery, r.city, r.ig_handle, r.name, r.email, r.who_posts, r.created_at].map(cell).join(','));
+    const origin = await currentOrigin();
+    const rows = await db()`
+      select req.brewery, req.city, req.ig_handle, req.name, req.email, req.who_posts, req.created_at, req.campaign, req.source, req.reused_report,
+        rep.id as report_id, rep.status, rep.sent_at, rep.ran_ads, rep.error,
+        rep.metrics->>'followers' as followers, rep.metrics->>'postsPerWeek' as posts_per_week,
+        rep.metrics->>'engagementRatePct' as engagement_pct, rep.metrics->>'daysSinceLastPost' as days_since_last_post
+      from checkup_requests req left join checkup_reports rep on rep.request_id = req.id
+      order by req.created_at`;
+    const header = ['brewery', 'city', 'instagram', 'name', 'email', 'who_posts', 'requested_at', 'report_status', 'report_sent_at', 'report_link',
+      'followers', 'posts_per_week', 'engagement_pct', 'days_since_last_post', 'ran_ads_before', 'problem', 'came_from', 'request_type'];
+    const body = rows.map((r) =>
+      [r.brewery, r.city, r.ig_handle, r.name, r.email, r.who_posts, r.created_at, r.status, r.sent_at,
+        r.report_id ? `${checkupOrigin(origin)}/checkup/report/${r.report_id}` : '',
+        r.followers, r.posts_per_week, r.engagement_pct, r.days_since_last_post, r.ran_ads, r.error, r.campaign, r.reused_report ? 'repeat' : r.source].map(cell).join(','),
+    );
     return new Response([header.join(','), ...body].join('\n') + '\n', {
       headers: {
         'Content-Type': 'text/csv; charset=utf-8',

@@ -8,6 +8,8 @@ import { InstagramLookupError, lookupInstagram } from './instagram';
 const DAY = 24 * 60 * 60 * 1000;
 // A group needs at least this many breweries with numbers before a report compares against it.
 export const MIN_GROUP = 8;
+// States compared as one group, never city by city (Aubrey, 2026-11-17: Orlando and Jacksonville form one Florida group).
+export const STATEWIDE = new Set(['FL']);
 // Numbers older than this are pulled again by "Pull numbers".
 export const STALE_DAYS = 30;
 
@@ -230,7 +232,7 @@ export async function benchmarkFor(rawCity: string, handle: string, m: CheckupMe
     state = fromBench || fromCities?.state || null;
   }
 
-  const inCity = rows.filter((r) => city && r.city.toLowerCase() === city.toLowerCase() && (!state || !r.state || r.state === state));
+  const inCity = rows.filter((r) => city && !(state && STATEWIDE.has(state)) && r.city.toLowerCase() === city.toLowerCase() && (!state || !r.state || r.state === state));
   const inState = state ? rows.filter((r) => r.state === state) : [];
   const [group, scope, label] =
     inCity.length >= MIN_GROUP

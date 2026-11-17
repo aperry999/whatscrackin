@@ -95,3 +95,25 @@ alter table checkup_requests add column if not exists reused_report text;
 
 -- Where the lead came from, from the signup link's ?src= (e.g. cbp for the Tampa conference cards).
 alter table checkup_requests add column if not exists campaign text;
+
+-- Benchmark set: public Instagram numbers for breweries listed by city in admin, used to compare
+-- each checkup report with breweries nearby. One row per handle with its latest numbers.
+create table if not exists benchmark_breweries (
+  handle text primary key,
+  city text not null,
+  state text,                          -- two-letter, e.g. FL
+  status text not null default 'pending' check (status in ('pending', 'ok', 'failed')),
+  error text,
+  brewery text,                        -- name on their Instagram profile
+  followers integer,
+  posts_analyzed integer,
+  posts_per_week real,
+  days_since_last_post integer,
+  engagement_pct real,
+  avg_likes real,
+  avg_comments real,
+  reel_share_pct integer,
+  pct_with_date_or_time integer,
+  added_at timestamptz not null default now(),
+  pulled_at timestamptz
+);

@@ -44,6 +44,26 @@ export async function GET(req: Request) {
     });
   }
 
+  if (type === 'benchmarks') {
+    const rows = await db()`
+      select handle, brewery, city, state, status, followers, posts_analyzed, posts_per_week, engagement_pct, days_since_last_post,
+        avg_likes, avg_comments, reel_share_pct, pct_with_date_or_time, pulled_at, error
+      from benchmark_breweries order by state nulls last, city, handle`;
+    const header = ['instagram', 'brewery', 'city', 'state', 'status', 'followers', 'posts_analyzed', 'posts_per_week', 'engagement_pct',
+      'days_since_last_post', 'avg_likes', 'avg_comments', 'reel_share_pct', 'pct_captions_with_date_or_time', 'pulled_at', 'problem'];
+    const body = rows.map((r) =>
+      [r.handle, r.brewery, r.city, r.state, r.status, r.followers, r.posts_analyzed, r.posts_per_week, r.engagement_pct, r.days_since_last_post,
+        r.avg_likes, r.avg_comments, r.reel_share_pct, r.pct_with_date_or_time, r.pulled_at, r.error].map(cell).join(','),
+    );
+    return new Response([header.join(','), ...body].join('\n') + '\n', {
+      headers: {
+        'Content-Type': 'text/csv; charset=utf-8',
+        'Content-Disposition': 'attachment; filename="brewery-benchmarks.csv"',
+        'Cache-Control': 'no-store',
+      },
+    });
+  }
+
   if (type === 'waitlist') {
     rows = await db()`select email, city, created_at from trip_waitlist order by created_at`;
     name = 'trip-waitlist';

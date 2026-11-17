@@ -4,6 +4,9 @@
 import { db, ready } from './db';
 import { computeMetrics, type CheckupMetrics } from './checkup-report';
 import { InstagramLookupError, lookupInstagram } from './instagram';
+import { cleanState, stateName, STATE_CODES } from './states';
+
+export { cleanState, stateName };
 
 const DAY = 24 * 60 * 60 * 1000;
 // A group needs at least this many breweries with numbers before a report compares against it.
@@ -13,26 +16,6 @@ export const STATEWIDE = new Set(['FL']);
 // Numbers older than this are pulled again by "Pull numbers".
 export const STALE_DAYS = 30;
 
-const STATES: Record<string, string> = {
-  alabama: 'AL', alaska: 'AK', arizona: 'AZ', arkansas: 'AR', california: 'CA', colorado: 'CO', connecticut: 'CT', delaware: 'DE',
-  florida: 'FL', georgia: 'GA', hawaii: 'HI', idaho: 'ID', illinois: 'IL', indiana: 'IN', iowa: 'IA', kansas: 'KS', kentucky: 'KY',
-  louisiana: 'LA', maine: 'ME', maryland: 'MD', massachusetts: 'MA', michigan: 'MI', minnesota: 'MN', mississippi: 'MS', missouri: 'MO',
-  montana: 'MT', nebraska: 'NE', nevada: 'NV', 'new hampshire': 'NH', 'new jersey': 'NJ', 'new mexico': 'NM', 'new york': 'NY',
-  'north carolina': 'NC', 'north dakota': 'ND', ohio: 'OH', oklahoma: 'OK', oregon: 'OR', pennsylvania: 'PA', 'rhode island': 'RI',
-  'south carolina': 'SC', 'south dakota': 'SD', tennessee: 'TN', texas: 'TX', utah: 'UT', vermont: 'VT', virginia: 'VA',
-  washington: 'WA', 'west virginia': 'WV', wisconsin: 'WI', wyoming: 'WY', 'district of columbia': 'DC',
-};
-const STATE_CODES = new Set(Object.values(STATES));
-const STATE_NAMES = Object.fromEntries(Object.entries(STATES).map(([n, c]) => [c, n.replace(/\b\w/g, (x) => x.toUpperCase())]));
-
-export function cleanState(raw: string | null | undefined): string | null {
-  const s = (raw || '').trim().replace(/\./g, '');
-  if (!s) return null;
-  if (STATE_CODES.has(s.toUpperCase())) return s.toUpperCase();
-  return STATES[s.toLowerCase()] || null;
-}
-
-export const stateName = (code: string) => STATE_NAMES[code] || code;
 
 const titleCase = (s: string) => s.trim().replace(/\s+/g, ' ').toLowerCase().replace(/(^|[\s-])\w/g, (x) => x.toUpperCase());
 

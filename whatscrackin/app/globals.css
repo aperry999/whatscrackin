@@ -100,6 +100,8 @@ p { margin: 0; text-wrap: pretty; }
 .live-dot i { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px rgba(232, 163, 61, 0.25); }
 .hero h1 { font-size: clamp(38px, 5.2vw, 58px); line-height: 1.08; letter-spacing: -0.02em; }
 .hero .lede { max-width: 34em; font-size: 19px; color: var(--muted); }
+.city-state { display: grid; grid-template-columns: minmax(0, 1fr) 132px; gap: 12px; }
+.city-state .select { width: 100%; }
 .form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr)); gap: 12px; }
 .form-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; }
 @media (max-width: 640px) { .hero { padding-block: 48px 64px; gap: 40px; } }
@@ -317,6 +319,18 @@ p { margin: 0; text-wrap: pretty; }
 .report-stats b { font: 600 30px var(--display); font-variant-numeric: tabular-nums; }
 .report-stats span { color: var(--muted); font-size: 14px; }
 .report-note { font-size: 14px; margin: -24px 0 0; }
+.compare-table { display: flex; flex-direction: column; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); overflow: hidden; }
+.compare-row { display: grid; grid-template-columns: minmax(0, 1fr) 72px 72px; gap: 12px; align-items: center; padding: 12px 16px; border-top: 1px solid var(--line); }
+.compare-row:first-child { border-top: 0; }
+.compare-row > :not(:first-child) { text-align: right; font-variant-numeric: tabular-nums; }
+.compare-row b { font: 600 20px var(--display); }
+.compare-row small { display: block; color: var(--muted); font-size: 13px; margin-top: 2px; }
+.compare-head { font: 12px var(--mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); padding-block: 8px; }
+.bench-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.bench-table th, .bench-table td { text-align: left; padding: 8px 10px; border-top: 1px solid var(--line); vertical-align: top; }
+.bench-table th { font: 12px var(--mono); letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); border-top: 0; }
+.bench-table .num { text-align: right; font-variant-numeric: tabular-nums; }
+.bench-wrap { overflow-x: auto; }
 .report-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(380px, 100%), 1fr)); gap: 32px; }
 .report-list { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 14px; }
 .report-list li { padding-left: 14px; border-left: 3px solid var(--line); }

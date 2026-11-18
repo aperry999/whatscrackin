@@ -5,6 +5,7 @@ import { sendOwnerAlert } from './alerts';
 import { db, ready } from './db';
 import { sendEmail } from './email';
 import { checkupOrigin } from './site';
+import { benchmarkFor, type Benchmark } from './benchmarks';
 import { InstagramLookupError, lookupInstagram, type IgPost, type IgProfile } from './instagram';
 
 const TZ = process.env.SITE_TZ || 'America/New_York';
@@ -47,6 +48,8 @@ export type CheckupMetrics = {
   bio_checks: { mentionsHours: boolean; hasWebsite: boolean };
   topPosts: PostSummary[];
   bottomPosts: PostSummary[];
+  // How they compare with breweries nearby (from the admin benchmark set); missing until enough breweries are pulled.
+  benchmark?: Benchmark | null;
 };
 
 const round = (n: number, d = 1) => Math.round(n * 10 ** d) / 10 ** d;
@@ -162,7 +165,7 @@ const SYSTEM = `You write Crackem's free Instagram checkup for craft breweries.
 
 The reader is usually a bartender or taproom manager who posts between shifts, not a marketer. The owner reads only the summary. Write like a friendly regular who knows marketing: plain words, short sentences, no jargon. If you must use a term like "engagement", explain it in a few words.
 
-Every claim must come from the numbers or posts you are given; cite the number or the post date. Never invent follower counts, benchmarks, events, prices or results. If the data is thin (few posts), say so and keep advice general.
+Every claim must come from the numbers or posts you are given; cite the number or the post date. Never invent follower counts, benchmarks, events, prices or results. When a benchmark is given, compare them with it in plain words and name the group (for example "the typical Florida brewery we track posts 3 times a week"); never cite any other comparison. Without one, don't compare them with other breweries. If the data is thin (few posts), say so and keep advice general. You only see feed posts and reels: Stories, reach, saves and shares are not visible to you, so never say they don't post Stories or judge their Stories; if you mention posting frequency, it's about feed posts and reels.
 
 Tasks must be small and concrete ("Film a 10-second pour of your next release and post it Thursday at 4 pm"), not "post more consistently".
 
@@ -180,7 +183,7 @@ function userPrompt(m: CheckupMetrics, recentCaptions: string[]) {
 
 Metrics (computed from their last ${m.postsAnalyzed} posts, dates in ${TZ}):
 ${JSON.stringify(rest, null, 2)}
-
+${m.benchmark ? `\nIn benchmark, "typical" is the median of ${m.benchmark.breweries} ${m.benchmark.label}, and betterThanPct is the share of them this brewery beats on that number.\n` : '\nNo benchmark is available for this brewery yet.\n'}
 Top posts by likes + comments (post_index refers to this list, 0-2):
 ${JSON.stringify(strip(topPosts).map((p, i) => ({ ...p, index: i })), null, 2)}
 
@@ -304,8 +307,8 @@ export async function buildCheckupReport(
   { autoSend = false, origin }: { autoSend?: boolean; origin?: string } = {},
 ): Promise<{ id: string; status: 'draft' | 'sent' | 'failed' }> {
   await ready();
-  const [req] = await db()<{ id: number; brewery: string; ig_handle: string }[]>`
-    select id, brewery, ig_handle from checkup_requests where id = ${requestId}`;
+  const [req] = await db()<{ id: number; brewery: string; ig_handle: string; city: string }[]>`
+    select id, brewery, ig_handle, city from checkup_requests where id = ${requestId}`;
   if (!req) throw new Error(`No checkup request ${requestId}`);
 
   const [existing] = await db()<{ id: string }[]>`select id from checkup_reports where request_id = ${requestId}`;
@@ -320,6 +323,10 @@ export async function buildCheckupReport(
     const profile = await lookupInstagram(req.ig_handle);
     metrics = computeMetrics(profile);
     if (metrics.postsAnalyzed === 0) throw new InstagramLookupError('This account has no posts yet.', 'not_found');
+    metrics.benchmark = await benchmarkFor(req.city, req.ig_handle, metrics).catch((e) => {
+      console.error('benchmark failed', requestId, e);
+      return null;
+    });
     const recent = [...profile.posts]
       .sort((a, b) => Date.parse(b.timestamp) - Date.parse(a.timestamp))
       .slice(0, 15)

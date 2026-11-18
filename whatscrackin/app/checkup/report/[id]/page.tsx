@@ -90,7 +90,34 @@ export default async function CheckupReportPage({ params }: { params: Promise<{ 
         <div><b>{fmt(m.avgLikes)}</b><span>average likes a post</span></div>
         <div><b>{m.engagementRatePct}%</b><span>of followers like or comment on a typical post</span></div>
       </section>
-      <p className="muted report-note">Based on your last {m.postsAnalyzed} posts. Only public numbers: we can&apos;t see reach or saves.</p>
+      <p className="muted report-note">Based on your last {m.postsAnalyzed} posts. Instagram only shares public post numbers with us, so this doesn&apos;t include your Stories, reach, saves or shares. If you post a lot of Stories, you&apos;re doing more than these numbers show.</p>
+
+      {m.benchmark && (
+        <section className="report-compare" aria-label="How you compare">
+          <h2>How you compare</h2>
+          <p className="muted">Against {m.benchmark.breweries} {m.benchmark.label}. &ldquo;Typical&rdquo; is the middle brewery.</p>
+          <div className="compare-table" role="table">
+            <div className="compare-row compare-head" role="row">
+              <span role="columnheader"><span className="sr">Measure</span></span>
+              <span role="columnheader">You</span>
+              <span role="columnheader">Typical</span>
+            </div>
+            {m.benchmark.stats.filter((st) => st.you !== null).map((st) => {
+              const unit = st.key === 'engagementRatePct' || st.key === 'reelSharePct' ? '%' : '';
+              return (
+                <div className="compare-row" role="row" key={st.key}>
+                  <span role="cell">
+                    {st.label}
+                    {st.betterThanPct !== null && <small>{st.betterThanPct >= 50 ? `Better than ${st.betterThanPct}% of them` : `Behind ${100 - st.betterThanPct}% of them`}</small>}
+                  </span>
+                  <b role="cell">{st.you}{unit}</b>
+                  <span role="cell">{st.typical}{unit}</span>
+                </div>
+              );
+            })}
+          </div>
+        </section>
+      )}
 
       <section className="report-grid">
         <div>

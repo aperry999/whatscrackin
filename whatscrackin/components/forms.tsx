@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Chevron } from './chrome';
 import { ReportProgress } from './report-progress';
+import { STATE_OPTIONS } from '@/lib/states';
 
 type Status = { kind: 'idle' | 'busy' | 'ok' | 'err'; text?: string; reportLink?: string; existing?: boolean };
 
@@ -175,6 +176,7 @@ export function CheckupForm({ campaign = null }: { campaign?: string | null }) {
     const result = await post('/api/checkup', {
       brewery: get('brewery'),
       city: get('city'),
+      state: get('state'),
       handle: get('handle'),
       name: get('name'),
       email: get('email'),
@@ -213,10 +215,22 @@ export function CheckupForm({ campaign = null }: { campaign?: string | null }) {
           Brewery name
           <input className="input" name="brewery" autoComplete="organization" required maxLength={120} />
         </label>
-        <label className="label">
-          City
-          <input className="input" name="city" placeholder="Orlando, FL" autoComplete="address-level2" required maxLength={80} />
-        </label>
+        <div className="city-state">
+          <label className="label">
+            City
+            <input className="input" name="city" placeholder="Orlando" autoComplete="address-level2" required maxLength={80} />
+          </label>
+          <label className="label">
+            State
+            <select className="select" name="state" autoComplete="address-level1" required defaultValue="">
+              <option value="" disabled>Pick</option>
+              {STATE_OPTIONS.map((s) => (
+                <option key={s.code} value={s.code}>{s.name}</option>
+              ))}
+              <option value="other">Outside the US</option>
+            </select>
+          </label>
+        </div>
       </div>
       <label className="label">
         Instagram handle

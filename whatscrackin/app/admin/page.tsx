@@ -188,7 +188,10 @@ export default async function AdminPage({ searchParams }: { searchParams: Promis
                 ))}
               </ul>
             )}
-            {checkups.length > 0 && <a className="btn btn-ghost sm" href="/admin/export?type=checkups" style={{ alignSelf: 'flex-start' }}>Export checkup requests</a>}
+            <span style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+              {checkups.length > 0 && <a className="btn btn-ghost sm" href="/admin/export?type=checkups">Export checkup requests</a>}
+              <Link className="btn btn-ghost sm" href="/admin/benchmarks">Brewery benchmarks</Link>
+            </span>
           </section>
 
           {isOwner && (

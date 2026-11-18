@@ -6,6 +6,8 @@ import { db, ready } from '@/lib/db';
 import { currentOrigin } from '@/lib/site';
 import { cleanEmail } from '@/lib/email';
 import { cleanCampaign } from '@/lib/campaign';
+import { splitCity } from '@/lib/benchmarks';
+import { cleanState } from '@/lib/states';
 
 // The report is built after the response is sent; give that work room to finish.
 export const maxDuration = 300;
@@ -33,7 +35,11 @@ export async function POST(req: Request) {
   if (!form || form === 'bot') return reply('Something went wrong. Try again.', 400);
 
   const brewery = clean(form.brewery, 120);
-  const city = clean(form.city, 80);
+  // The form sends the state separately; it's stored with the city ("Tampa, FL") so reports can compare
+  // the brewery with others in its state. Older clients send only a city.
+  const rawCity = clean(form.city, 80);
+  const state = form.state === 'other' ? null : cleanState(form.state);
+  const city = rawCity && state && !splitCity(rawCity).state ? `${rawCity}, ${state}` : rawCity;
   const handle = cleanHandle(form.handle);
   const name = clean(form.name, 80);
   const email = cleanEmail(form.email);
@@ -41,6 +47,7 @@ export async function POST(req: Request) {
 
   if (!brewery) return reply('Add your brewery name.', 400);
   if (!city) return reply('Add your city.', 400);
+  if (form.state !== undefined && form.state !== 'other' && !state) return reply('Pick your state.', 400);
   if (!handle) return reply('Add your Instagram handle, like yourbrewery.', 400);
   if (!name) return reply('Add your name.', 400);
   if (!email) return reply('Enter a valid email address.', 400);

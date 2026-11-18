@@ -15,6 +15,8 @@ export const MIN_GROUP = 8;
 export const STATEWIDE = new Set(['FL']);
 // Numbers older than this are pulled again by "Pull numbers".
 export const STALE_DAYS = 30;
+// Accounts with no post in this many days are left out of comparisons (usually closed or abandoned).
+export const DORMANT_DAYS = 90;
 
 
 const titleCase = (s: string) => s.trim().replace(/\s+/g, ' ').toLowerCase().replace(/(^|[\s-])\w/g, (x) => x.toUpperCase());
@@ -204,7 +206,8 @@ export async function benchmarkFor(rawCity: string, handle: string, m: CheckupMe
   await ready();
   const rows = await db()<Row[]>`
     select handle, city, state, posts_per_week, engagement_pct, days_since_last_post, reel_share_pct
-    from benchmark_breweries where status = 'ok' and posts_analyzed > 0 and handle <> ${handle.toLowerCase()}`;
+    from benchmark_breweries where status = 'ok' and posts_analyzed > 0 and handle <> ${handle.toLowerCase()}
+      and coalesce(days_since_last_post, 0) <= ${DORMANT_DAYS}`;
   if (rows.length < MIN_GROUP) return null;
 
   const { city, state: typedState } = splitCity(rawCity || '');

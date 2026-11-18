@@ -4,7 +4,7 @@ import { redirect } from 'next/navigation';
 import { Wordmark } from '@/components/chrome';
 import { PendingButton } from '@/components/pending-button';
 import { getAdmin } from '@/lib/auth';
-import { MIN_GROUP, STALE_DAYS, STATEWIDE, stateName } from '@/lib/benchmarks';
+import { DORMANT_DAYS, MIN_GROUP, STALE_DAYS, STATEWIDE, stateName } from '@/lib/benchmarks';
 import { db, ready } from '@/lib/db';
 import { addBenchmarkBreweries, pullBenchmarkNumbers, removeBenchmarkBrewery } from './actions';
 
@@ -37,7 +37,7 @@ const median = (xs: number[]) => {
 const fmt = (n: number | null | undefined, d = 1) => (n === null || n === undefined ? '–' : String(Math.round(n * 10 ** d) / 10 ** d));
 
 function summarize(label: string, rows: Row[]) {
-  const ok = rows.filter((r) => r.status === 'ok');
+  const ok = rows.filter((r) => r.status === 'ok' && (r.days_since_last_post ?? 0) <= DORMANT_DAYS);
   return {
     label,
     total: rows.length,
@@ -92,7 +92,7 @@ export default async function BenchmarksPage({ searchParams }: { searchParams: P
             <h1>Brewery benchmarks</h1>
             <p className="muted">
               Public Instagram numbers for breweries you list, so each checkup report can say how a brewery compares with others.
-              A report compares with its own city once {MIN_GROUP} breweries there have numbers, then its state, then everyone. {[...STATEWIDE].map(stateName).join(', ')} breweries are always compared as one state group.
+              A report compares with its own city once {MIN_GROUP} breweries there have numbers, then its state, then everyone. {[...STATEWIDE].map(stateName).join(', ')} breweries are always compared as one state group. Accounts with no post in {DORMANT_DAYS} days are left out of the typical numbers.
             </p>
           </div>
 

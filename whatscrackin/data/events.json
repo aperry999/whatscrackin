@@ -3,751 +3,11 @@
 {
 "cat": "drink_special",
 "city": "charlotte",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/p/Dd4TTu1FxtG/",
-"time": "14:00",
-"title": "Mix It Up Tuesday",
-"venue": "Americana Beer Company",
-"weekly": true
-},
-{
-"cat": "festival_party",
-"city": "charlotte",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/reel/DgEKPnrJZcC/",
-"time": "15:00",
-"title": "Downtown Mooresville Christmas Parade",
-"venue": "King Canary Brewing"
-},
-{
-"cat": "drink_special",
-"city": "charlotte",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/p/Dfkm5AwAUze/",
-"time": "15:00",
-"title": "Tap It Tuesdays",
-"venue": "Sugar Creek Brewing Company",
-"weekly": true
-},
-{
-"cat": "drink_special",
-"city": "charlotte",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/p/DgGaE95HdvJ/",
-"time": "15:00",
-"title": "$5 Pints All Day",
-"venue": "The Print Shop"
-},
-{
-"cat": "other",
-"city": "charlotte",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/p/DfP_vXvG3HD/",
-"time": "15:30",
-"title": "Line Dancing",
-"venue": "Lake Norman Brewery",
-"weekly": true
-},
-{
-"cat": "other",
-"city": "charlotte",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/reel/DgFuMUfJqSe/",
-"time": "16:00",
-"title": "Bring Your Own Vinyl",
-"venue": "Divine Barrel Brewing",
-"weekly": true
-},
-{
-"cat": "food_truck_food_special",
-"city": "charlotte",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/p/DgFshZplWEZ/",
-"time": "17:00",
-"title": "Muchachos Tacos",
-"venue": "Hoptown Brewing Company"
-},
-{
-"cat": "food_truck_food_special",
-"city": "charlotte",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/p/DfPhAI4j6WB/",
-"time": "17:00",
-"title": "Sully's Steamers",
-"venue": "Hoptown Brewing Company",
-"weekly": true
-},
-{
-"cat": "food_truck_food_special",
-"city": "charlotte",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/reel/Df8hiRDJO1g/",
-"time": "17:00",
-"title": "All You Can Eat Pierogi by QC Pierogi",
-"venue": "King Canary Brewing"
-},
-{
-"cat": "food_truck_food_special",
-"city": "charlotte",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/p/DgFjffmoKoP/",
-"time": "17:00",
-"title": "Food Truck: Maya Cuisine",
-"venue": "Lost Worlds Brewing Company"
-},
-{
-"cat": "food_truck_food_special",
-"city": "charlotte",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/p/DgFpu4JpsZ6/",
-"time": "17:00",
-"title": "Food Truck: Golosinas De Mi Tierra Honduras",
-"venue": "Primal Brewery"
-},
-{
-"cat": "food_truck_food_special",
-"city": "charlotte",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/p/DfVZm3FNYCP/",
-"time": "17:00",
-"title": "Happy City Cairo Food Truck",
-"venue": "Slow Play Brewing"
-},
-{
-"cat": "food_truck_food_special",
-"city": "charlotte",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/p/DfUz8dllfAY/",
-"time": "17:00",
-"title": "Deejai Thai Food Truck",
-"venue": "Vaulted Oak Brewing"
-},
-{
-"cat": "fitness_run_club",
-"city": "charlotte",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/p/DeHaunPlSCo/",
-"time": "17:30",
-"title": "MAC Ride Hosted by Hoptown",
-"venue": "Hoptown Brewing Company",
-"weekly": true
-},
-{
-"cat": "food_truck_food_special",
-"city": "charlotte",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/p/DfqauvWDhwh/",
-"time": "18:00",
-"title": "Praise Cheeses food truck",
-"venue": "Burial Beer Co. Charlotte Taproom",
-"weekly": true
-},
-{
-"cat": "trivia_games",
-"city": "charlotte",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/p/De3QoFADJiL/",
-"time": "18:00",
-"title": "Mahjong Open Play",
-"venue": "Eleven Lakes Brewing Company",
-"weekly": true
-},
-{
-"cat": "trivia_games",
-"city": "charlotte",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/p/DgHDHmhlvUV/",
-"time": "18:00",
-"title": "Game Night",
-"venue": "Percent Tap House",
-"weekly": true
-},
-{
-"cat": "trivia_games",
-"city": "charlotte",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/p/DgETSawGa9Y/",
-"time": "18:00",
-"title": "Gamer's Social",
-"venue": "Resident Culture"
-},
-{
-"cat": "trivia_games",
-"city": "charlotte",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/p/DgA7mULiUil/",
-"time": "18:00",
-"title": "Loteria with Tacos Las Catrinas",
-"venue": "Sweet Union Brewing"
-},
-{
-"cat": "fitness_run_club",
-"city": "charlotte",
-"date": "2026-11-24",
-"featured": true,
-"link": "https://www.instagram.com/p/DgEVDUioTl8/",
-"time": "18:15",
-"title": "Neoteric Run Club",
-"venue": "Neoteric Brewing"
-},
-{
-"cat": "fitness_run_club",
-"city": "charlotte",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/p/DeKtQHJiTME/",
-"time": "18:30",
-"title": "Run Club",
-"venue": "Armored Cow Brewing Co.",
-"weekly": true
-},
-{
-"cat": "trivia_games",
-"city": "charlotte",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/p/DgF5kY9oEDm/",
-"time": "18:30",
-"title": "Music Bingo",
-"venue": "Club West Brewing",
-"weekly": true
-},
-{
-"cat": "fitness_run_club",
-"city": "charlotte",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/p/DgFshZplWEZ/",
-"time": "18:30",
-"title": "Run Club",
-"venue": "Hoptown Brewing Company",
-"weekly": true
-},
-{
-"cat": "fitness_run_club",
-"city": "charlotte",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/p/DgFjffmoKoP/",
-"time": "18:30",
-"title": "Beer Trekkers Run Club",
-"venue": "Lost Worlds Brewing Company",
-"weekly": true
-},
-{
-"cat": "fitness_run_club",
-"city": "charlotte",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/p/DeABr3uDPJo/",
-"time": "18:30",
-"title": "Run Club",
-"venue": "The Olde Mecklenburg Brewery & Biergarten",
-"weekly": true
-},
-{
-"cat": "fitness_run_club",
-"city": "charlotte",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/p/DgFmWH-CP54/",
-"time": "18:30",
-"title": "CLT Yoga Club",
-"venue": "Triple C Brewing Company",
-"weekly": true
-},
-{
-"cat": "fitness_run_club",
-"city": "charlotte",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/p/Dd17jmqypOX/",
-"time": "18:30",
-"title": "RunBots Run Club",
-"venue": "Wooden Robot Brewery",
-"weekly": true
-},
-{
-"cat": "trivia_games",
-"city": "charlotte",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/p/DeczS7bmLnP/",
-"time": "19:00",
-"title": "General Knowledge Trivia",
-"venue": "760 Craft Works",
-"weekly": true
-},
-{
-"cat": "food_truck_food_special",
-"city": "charlotte",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/p/Dfm66zoR5kJ/",
-"time": "19:00",
-"title": "Friendsgiving Beer Dinner",
-"venue": "Brewers at 4001 Yancey"
-},
-{
-"cat": "trivia_games",
-"city": "charlotte",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/p/Dd4gc7SF-p2/",
-"time": "19:00",
-"title": "Trivia Night",
-"venue": "Durty Bull Brewing Company",
-"weekly": true
-},
-{
-"cat": "other",
-"city": "charlotte",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/p/DgEKuKYhWP3/",
-"time": "19:00",
-"title": "Traitors Event",
-"venue": "Heist Brewery and Barrel Arts"
-},
-{
-"cat": "trivia_games",
-"city": "charlotte",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/p/DgEKuKYhWP3/",
-"time": "19:00",
-"title": "Trivia",
-"venue": "Heist Brewery and Barrel Arts"
-},
-{
-"cat": "trivia_games",
-"city": "charlotte",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/p/DfPhAI4j6WB/",
-"time": "19:00",
-"title": "Bunco",
-"venue": "Hoptown Brewing Company",
-"weekly": true
-},
-{
-"cat": "trivia_games",
-"city": "charlotte",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/p/DfP_vXvG3HD/",
-"time": "19:00",
-"title": "Trivia with Mike D",
-"venue": "Lake Norman Brewery",
-"weekly": true
-},
-{
-"cat": "trivia_games",
-"city": "charlotte",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/p/DfVRQObGIC6/",
-"time": "19:00",
-"title": "General Trivia w/ Carnival of Knowledge",
-"venue": "Lake Wylie Brewing Co.",
-"weekly": true
-},
-{
-"cat": "fundraiser_community",
-"city": "charlotte",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/p/Df2sluaHT_z/",
-"time": "19:00",
-"title": "Music Bingo & Toys for Tots Campaign Kickoff Party",
-"venue": "Lore Brewing Company"
-},
-{
-"cat": "trivia_games",
-"city": "charlotte",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/p/DgFjffmoKoP/",
-"time": "19:00",
-"title": "Music Bingo with Seabrooks Entertainment",
-"venue": "Lost Worlds Brewing Company",
-"weekly": true
-},
-{
-"cat": "trivia_games",
-"city": "charlotte",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/reel/DgFlWEGR68t/",
-"time": "19:00",
-"title": "Marvel Trivia",
-"venue": "Middle James Brewing Company"
-},
-{
-"cat": "trivia_games",
-"city": "charlotte",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/p/DgF7WsWmEco/",
-"time": "19:00",
-"title": "Team Speed Puzzle",
-"venue": "Pilot Brewing"
-},
-{
-"cat": "trivia_games",
-"city": "charlotte",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/p/DgFpu4JpsZ6/",
-"time": "19:00",
-"title": "Social Dart League",
-"venue": "Primal Brewery",
-"weekly": true
-},
-{
-"cat": "trivia_games",
-"city": "charlotte",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/p/DgFpu4JpsZ6/",
-"time": "19:00",
-"title": "Trivia Night",
-"venue": "Primal Brewery",
-"weekly": true
-},
-{
-"cat": "trivia_games",
-"city": "charlotte",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/p/DgFpu4JpsZ6/",
-"time": "19:00",
-"title": "Social Dart League",
-"venue": "Primal Brewery Belmont",
-"weekly": true
-},
-{
-"cat": "trivia_games",
-"city": "charlotte",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/p/Dd9EvozxBd1/",
-"time": "19:00",
-"title": "Trivia",
-"venue": "Slow Play Brewing",
-"weekly": true
-},
-{
-"cat": "trivia_games",
-"city": "charlotte",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/p/DgFmWH-CP54/",
-"time": "19:00",
-"title": "Taps & Tiles",
-"venue": "Triple C Brewing Company",
-"weekly": true
-},
-{
-"cat": "trivia_games",
-"city": "charlotte",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/p/Dd_uibSFaBr/",
-"time": "19:00",
-"title": "Trivia",
-"venue": "Vaulted Oak Brewing",
-"weekly": true
-},
-{
-"cat": "class_workshop",
-"city": "charlotte",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/p/DfPzkR9lold/",
-"time": "19:00",
-"title": "Pasta Cooking Class",
-"venue": "Wooden Robot Brewery"
-},
-{
-"cat": "trivia_games",
-"city": "charlotte",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/p/DeHVI-wEXba/",
-"time": "19:00",
-"title": "Trivia Tuesdays",
-"venue": "Wooden Robot Brewery",
-"weekly": true
-},
-{
-"cat": "class_workshop",
-"city": "charlotte",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/reel/DeKfMMmvqz_/",
-"time": "19:30",
-"title": "Line Dancing and Partner Swing Lessons",
-"venue": "Ghostface Brewing",
-"weekly": true
-},
-{
-"cat": "comedy_open_mic",
-"city": "charlotte",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/p/DeFYp-_vR_n/",
-"time": "19:30",
-"title": "Open Mic with Jared Evans",
-"venue": "Heist Brewery",
-"weekly": true
-},
-{
-"cat": "sports_viewing",
-"city": "charlotte",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/p/DgF5kY9oEDm/",
-"time": "20:00",
-"title": "Dancing with the Stars Finale Watch Party",
-"venue": "Club West Brewing"
-},
-{
-"cat": "drink_special",
-"city": "charlotte",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/p/DeIfXnnAC7B/",
-"title": "$4 Rotating Tappy Tuesday",
-"venue": "Birdsong Brewing Co.",
-"weekly": true
-},
-{
-"cat": "drink_special",
-"city": "charlotte",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/p/DfSho8kFk34/",
-"title": "$6 House Margaritas",
-"venue": "Cabarrus Brewing Company",
-"weekly": true
-},
-{
-"cat": "food_truck_food_special",
-"city": "charlotte",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/p/DfKjZ4ERJJb/",
-"title": "Kids Eat Free",
-"venue": "Cabarrus Brewing Company",
-"weekly": true
-},
-{
-"cat": "food_truck_food_special",
-"city": "charlotte",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/p/DfSho8kFk34/",
-"title": "Taco Tuesday",
-"venue": "Cabarrus Brewing Company",
-"weekly": true
-},
-{
-"cat": "food_truck_food_special",
-"city": "charlotte",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/reel/Df22yCtAWk9/",
-"title": "$8 Pizzas",
-"venue": "Club West Brewing",
-"weekly": true
-},
-{
-"cat": "drink_special",
-"city": "charlotte",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/p/DgF5kY9oEDm/",
-"title": "Tuesday Pizza & Wine Special",
-"venue": "Club West Brewing",
-"weekly": true
-},
-{
-"cat": "drink_special",
-"city": "charlotte",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/p/Dd4ehphtLzn/",
-"title": "Tuesday Pint and Wine Specials",
-"venue": "Edge City Brewery",
-"weekly": true
-},
-{
-"cat": "drink_special",
-"city": "charlotte",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/p/DeJ4r_YF8kT/",
-"title": "Tuesday Flight & Wine Special",
-"venue": "Eleven Lakes Brewing Company",
-"weekly": true
-},
-{
-"cat": "food_truck_food_special",
-"city": "charlotte",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/reel/DeKfMMmvqz_/",
-"title": "$10 Large Cheese Pie",
-"venue": "Ghostface Brewing",
-"weekly": true
-},
-{
-"cat": "food_truck_food_special",
-"city": "charlotte",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/reel/DeuRNBap90I/",
-"title": "Tuesday Pizza Special",
-"venue": "Ghostface Brewing",
-"weekly": true
-},
-{
-"cat": "food_truck_food_special",
-"city": "charlotte",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/reel/DfkxPhPOAqr/",
-"title": "Kids Eat Free",
-"venue": "Gilde Brewery",
-"weekly": true
-},
-{
-"cat": "drink_special",
-"city": "charlotte",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/p/DgEKuKYhWP3/",
-"title": "$2 Off 4-Packs To-Go & $2 Off Apps",
-"venue": "Heist Brewery and Barrel Arts"
-},
-{
-"cat": "drink_special",
-"city": "charlotte",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/p/Df2zj29jDZ3/",
-"title": "Flagship Pint Tuesday",
-"venue": "Hi-Wire Brewing",
-"weekly": true
-},
-{
-"cat": "food_truck_food_special",
-"city": "charlotte",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/p/DfzdtiMASxv/",
-"title": "Delivery from local restaurants",
-"venue": "Hoptown Brewing Company",
-"weekly": true
-},
-{
-"cat": "drink_special",
-"city": "charlotte",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/reel/DgEKPnrJZcC/",
-"title": "10% off Tuesdays",
-"venue": "King Canary Brewing",
-"weekly": true
-},
-{
-"cat": "food_truck_food_special",
-"city": "charlotte",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/p/DfiUlCQn5Kq/",
-"title": "Queen City Pierogi food truck",
-"venue": "King Canary Brewing"
-},
-{
-"cat": "food_truck_food_special",
-"city": "charlotte",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/p/Dd1bqfOkRMa/",
-"title": "Taco Tuesday",
-"venue": "Lore Brewing Company",
-"weekly": true
-},
-{
-"cat": "drink_special",
-"city": "charlotte",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/p/DeciciBO6b-/",
-"title": "All Day Happy Hour",
-"venue": "Off The Tracks Brewing",
-"weekly": true
-},
-{
-"cat": "trivia_games",
-"city": "charlotte",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/p/DfOKWTXldGt/",
-"title": "Poker",
-"venue": "Old Armor Beer Company",
-"weekly": true
-},
-{
-"cat": "drink_special",
-"city": "charlotte",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/p/DgHDHmhlvUV/",
-"title": "Teacher Tuesday",
-"venue": "Percent Tap House",
-"weekly": true
-},
-{
-"cat": "trivia_games",
-"city": "charlotte",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/p/DebprQ6IK05/",
-"title": "Mindless Minutia Trivia",
-"venue": "Petty Thieves Brewing Co",
-"weekly": true
-},
-{
-"cat": "drink_special",
-"city": "charlotte",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/p/DgF7WsWmEco/",
-"title": "Tuesday Specials",
-"venue": "Pilot Brewing"
-},
-{
-"cat": "drink_special",
-"city": "charlotte",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/p/DgFpu4JpsZ6/",
-"title": "Wine Night",
-"venue": "Primal Brewery Belmont",
-"weekly": true
-},
-{
-"cat": "trivia_games",
-"city": "charlotte",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/reel/Der52uhBcaH/",
-"title": "Tabletop Tuesday",
-"venue": "Replay Brewing",
-"weekly": true
-},
-{
-"cat": "food_truck_food_special",
-"city": "charlotte",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/p/Dd9QUI5kTvs/",
-"title": "Pizza & Wings",
-"venue": "Royal Bliss Brewing Co.",
-"weekly": true
-},
-{
-"cat": "sports_viewing",
-"city": "charlotte",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/reel/DfAVA_FRnWV/",
-"title": "DWTS Watch Party",
-"venue": "Suffolk Punch Brewing",
-"weekly": true
-},
-{
-"cat": "sports_viewing",
-"city": "charlotte",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/reel/DfAVA_FRnWV/",
-"title": "DWTS Watch Party",
-"venue": "Suffolk Punch Brewing - SouthPark",
-"weekly": true
-},
-{
-"cat": "drink_special",
-"city": "charlotte",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/p/DeZ2nUYxNAv/",
-"title": "$6 32 oz. Fills & $5 Pints",
-"venue": "Sugar Creek Brewing Company",
-"weekly": true
-},
-{
-"cat": "drink_special",
-"city": "charlotte",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/p/DfzmNbSFS-P/",
-"title": "$1 Off Glasses of Wine",
-"venue": "Sweet Union Brewing",
-"weekly": true
-},
-{
-"cat": "food_truck_food_special",
-"city": "charlotte",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/p/Dd2GYfXh7eZ/",
-"title": "Taco Tuesday at Izzy's",
-"venue": "Triple C Brewing Company",
-"weekly": true
+"date": "2026-11-25",
+"link": "https://www.instagram.com/p/DgJFh2uNUNC/",
+"time": "11:00",
+"title": "Day-Before-Thanksgiving Specials",
+"venue": "Protagonist Beer"
 },
 {
 "cat": "drink_special",
@@ -757,6 +17,15 @@
 "time": "11:00",
 "title": "BOGO Beer Case Sale",
 "venue": "Town Brewing Company"
+},
+{
+"cat": "drink_special",
+"city": "charlotte",
+"date": "2026-11-25",
+"link": "https://www.instagram.com/p/DgJhkuKgKB4/",
+"time": "12:00",
+"title": "$4 Core Pints",
+"venue": "Birdsong Brewing Co."
 },
 {
 "cat": "drink_special",
@@ -775,6 +44,24 @@
 "time": "12:00",
 "title": "Thanksgiving Eve To-Go Sales & Can Release",
 "venue": "Keepsake Brewery"
+},
+{
+"cat": "beer_release_tap_takeover",
+"city": "charlotte",
+"date": "2026-11-25",
+"link": "https://www.instagram.com/reel/DgIHvaaOuVg/",
+"time": "12:00",
+"title": "Underwood IPA 4-Pack Release",
+"venue": "Keepsake Brewery"
+},
+{
+"cat": "festival_party",
+"city": "charlotte",
+"date": "2026-11-25",
+"link": "https://www.instagram.com/p/DgJHKTwHbm_/",
+"time": "12:00",
+"title": "Pre-Holiday Gathering",
+"venue": "Petty Thieves Brewing Co"
 },
 {
 "cat": "drink_special",
@@ -828,6 +115,15 @@
 "cat": "fundraiser_community",
 "city": "charlotte",
 "date": "2026-11-25",
+"link": "https://www.instagram.com/p/DgJA2fhh9MF/",
+"time": "16:00",
+"title": "Youth Villages Holiday Heroes Ornament & Tree Decorating Party",
+"venue": "The Chamber by Wooden Robot"
+},
+{
+"cat": "fundraiser_community",
+"city": "charlotte",
+"date": "2026-11-25",
 "link": "https://www.instagram.com/p/DfPzkR9lold/",
 "time": "16:00",
 "title": "Tree & Ornament Decorating Party",
@@ -846,11 +142,20 @@
 "cat": "food_truck_food_special",
 "city": "charlotte",
 "date": "2026-11-25",
-"link": "https://www.instagram.com/p/Df48_X4INr_/",
+"link": "https://www.instagram.com/p/DgI3EuamMjE/",
 "time": "17:00",
-"title": "Five Little Birds Food Truck",
+"title": "Food Truck: Tigers Halal",
 "venue": "760 Craft Works",
 "weekly": true
+},
+{
+"cat": "food_truck_food_special",
+"city": "charlotte",
+"date": "2026-11-25",
+"link": "https://www.instagram.com/p/DgJhkuKgKB4/",
+"time": "17:00",
+"title": "Chutney Cat Food Truck",
+"venue": "Birdsong Brewing Co."
 },
 {
 "cat": "food_truck_food_special",
@@ -969,6 +274,15 @@
 "venue": "Middle James Brewing Company"
 },
 {
+"cat": "live_music",
+"city": "charlotte",
+"date": "2026-11-25",
+"link": "https://www.instagram.com/reel/DgIE4A-xymJ/",
+"time": "18:00",
+"title": "Drinksgiving Live Music with Miles Mann",
+"venue": "Middle James Brewing Company"
+},
+{
 "cat": "class_workshop",
 "city": "charlotte",
 "date": "2026-11-25",
@@ -1000,7 +314,7 @@
 "cat": "fitness_run_club",
 "city": "charlotte",
 "date": "2026-11-25",
-"link": "https://www.instagram.com/p/Dd7HXj_GIqn/",
+"link": "https://www.instagram.com/p/DgI3EuamMjE/",
 "time": "18:30",
 "title": "Full Pond Run Club",
 "venue": "760 Craft Works",
@@ -1149,7 +463,7 @@
 "cat": "trivia_games",
 "city": "charlotte",
 "date": "2026-11-25",
-"link": "https://www.instagram.com/p/Dd7HXj_GIqn/",
+"link": "https://www.instagram.com/p/DgI3EuamMjE/",
 "time": "19:00",
 "title": "Music Bingo",
 "venue": "760 Craft Works",
@@ -1247,6 +561,15 @@
 "cat": "trivia_games",
 "city": "charlotte",
 "date": "2026-11-25",
+"link": "https://www.instagram.com/reel/DgIE4A-xymJ/",
+"time": "19:00",
+"title": "Puzzle Race Tournament Final",
+"venue": "Middle James Brewing Company"
+},
+{
+"cat": "trivia_games",
+"city": "charlotte",
+"date": "2026-11-25",
 "featured": true,
 "link": "https://www.instagram.com/p/DgEVDUioTl8/",
 "time": "19:00",
@@ -1329,21 +652,20 @@
 "weekly": true
 },
 {
-"cat": "drink_special",
-"city": "charlotte",
-"date": "2026-11-25",
-"link": "https://www.instagram.com/p/DeCz958iRLc/",
-"title": "$4 Drafts",
-"venue": "Birdsong Brewing Co.",
-"weekly": true
-},
-{
 "cat": "festival_party",
 "city": "charlotte",
 "date": "2026-11-25",
 "link": "https://www.instagram.com/p/DfuqjY3FLUs/",
 "title": "Drinksgiving",
 "venue": "Brewers at 4001 Yancey"
+},
+{
+"cat": "beer_release_tap_takeover",
+"city": "charlotte",
+"date": "2026-11-25",
+"link": "https://www.instagram.com/reel/DgJUQwbOtfI/",
+"title": "Holiday Countdown Coffee Calendar Release",
+"venue": "Burial Beer Co. Charlotte Taproom"
 },
 {
 "cat": "drink_special",
@@ -1463,10 +785,17 @@
 "cat": "drink_special",
 "city": "charlotte",
 "date": "2026-11-25",
-"link": "https://www.instagram.com/reel/DeHXNMdxo4K/",
-"title": "Half-Priced Wine Wednesday",
-"venue": "Middle James Brewing Company",
-"weekly": true
+"link": "https://www.instagram.com/reel/DgIE4A-xymJ/",
+"title": "Drinksgiving Half-Price Wine",
+"venue": "Middle James Brewing Company"
+},
+{
+"cat": "food_truck_food_special",
+"city": "charlotte",
+"date": "2026-11-25",
+"link": "https://www.instagram.com/reel/DgIE4A-xymJ/",
+"title": "Drinksgiving Handmade Sushi Rolls by Mob Sushi",
+"venue": "Middle James Brewing Company"
 },
 {
 "cat": "trivia_games",
@@ -1485,15 +814,6 @@
 "venue": "Middle James Brewing Company"
 },
 {
-"cat": "food_truck_food_special",
-"city": "charlotte",
-"date": "2026-11-25",
-"link": "https://www.instagram.com/reel/DeHXNMdxo4K/",
-"title": "Sushi Night with Mob Sushi",
-"venue": "Middle James Brewing Company",
-"weekly": true
-},
-{
 "cat": "drink_special",
 "city": "charlotte",
 "date": "2026-11-25",
@@ -1507,6 +827,22 @@
 "date": "2026-11-25",
 "link": "https://www.instagram.com/reel/DgHBiIcN4me/",
 "title": "DJ at Tipsy Hare",
+"venue": "Old Armor Beer Company"
+},
+{
+"cat": "festival_party",
+"city": "charlotte",
+"date": "2026-11-25",
+"link": "https://www.instagram.com/reel/DgJlaGptYFU/",
+"title": "Drinksgiving: DJ",
+"venue": "Old Armor Beer Company"
+},
+{
+"cat": "comedy_open_mic",
+"city": "charlotte",
+"date": "2026-11-25",
+"link": "https://www.instagram.com/reel/DgJlaGptYFU/",
+"title": "Drinksgiving: Karaoke",
 "venue": "Old Armor Beer Company"
 },
 {
@@ -1629,6 +965,14 @@
 "title": "Hump Day Hops",
 "venue": "Resident Culture Brewing Company",
 "weekly": true
+},
+{
+"cat": "beer_release_tap_takeover",
+"city": "charlotte",
+"date": "2026-11-25",
+"link": "https://www.instagram.com/p/DgJUE2WEaIq/",
+"title": "New Grand Jester Cider Release",
+"venue": "Royal Bliss Brewing Co."
 },
 {
 "cat": "drink_special",
@@ -2510,6 +1854,15 @@
 "cat": "food_truck_food_special",
 "city": "charlotte",
 "date": "2026-11-27",
+"link": "https://www.instagram.com/p/DgJhkuKgKB4/",
+"time": "17:00",
+"title": "Halal on Wheels Food Truck",
+"venue": "Birdsong Brewing Co."
+},
+{
+"cat": "food_truck_food_special",
+"city": "charlotte",
+"date": "2026-11-27",
 "link": "https://www.instagram.com/p/DfqauvWDhwh/",
 "time": "17:00",
 "title": "Praise Cheeses food truck",
@@ -2779,6 +2132,14 @@
 "venue": "Gilde Brewery"
 },
 {
+"cat": "beer_release_tap_takeover",
+"city": "charlotte",
+"date": "2026-11-27",
+"link": "https://www.instagram.com/reel/DgIHvaaOuVg/",
+"title": "Underwood IPA Draft Release",
+"venue": "Keepsake Brewery"
+},
+{
 "cat": "food_truck_food_special",
 "city": "charlotte",
 "date": "2026-11-27",
@@ -2812,6 +2173,14 @@
 "venue": "Lost Worlds Brewing Company"
 },
 {
+"cat": "drink_special",
+"city": "charlotte",
+"date": "2026-11-27",
+"link": "https://www.instagram.com/reel/DgJTQJYhdr6/",
+"title": "Black Friday Monstro Sale",
+"venue": "NoDa Brewing Company"
+},
+{
 "cat": "live_music",
 "city": "charlotte",
 "date": "2026-11-27",
@@ -2819,6 +2188,14 @@
 "title": "Live Music",
 "venue": "Old Armor Beer Company",
 "weekly": true
+},
+{
+"cat": "beer_release_tap_takeover",
+"city": "charlotte",
+"date": "2026-11-27",
+"link": "https://www.instagram.com/p/DgJHKTwHbm_/",
+"title": "Throne of Lies Christmas Ale Release",
+"venue": "Petty Thieves Brewing Co"
 },
 {
 "cat": "drink_special",
@@ -2979,6 +2356,24 @@
 "time": "11:00",
 "title": "Bottomless Mimosas",
 "venue": "The Print Shop"
+},
+{
+"cat": "food_truck_food_special",
+"city": "charlotte",
+"date": "2026-11-28",
+"link": "https://www.instagram.com/p/DgJhkuKgKB4/",
+"time": "12:00",
+"title": "Golosinas de mi Tierra Food Truck",
+"venue": "Birdsong Brewing Co."
+},
+{
+"cat": "market_vendor",
+"city": "charlotte",
+"date": "2026-11-28",
+"link": "https://www.instagram.com/p/DgIcpLwAb7C/",
+"time": "12:00",
+"title": "Krampus Alternative Holiday Market",
+"venue": "High Branch Brewing Co."
 },
 {
 "cat": "market_vendor",
@@ -3157,6 +2552,15 @@
 "cat": "live_music",
 "city": "charlotte",
 "date": "2026-11-28",
+"link": "https://www.instagram.com/p/DgJHKTwHbm_/",
+"time": "14:00",
+"title": "Live Music: J. Candeed",
+"venue": "Petty Thieves Brewing Co"
+},
+{
+"cat": "live_music",
+"city": "charlotte",
+"date": "2026-11-28",
 "link": "https://www.instagram.com/p/DgFpFXcx92d/",
 "time": "15:00",
 "title": "Live Music: David Childers",
@@ -3198,6 +2602,15 @@
 "time": "16:00",
 "title": "Tigers Halal Food Truck",
 "venue": "Vaulted Oak Brewing"
+},
+{
+"cat": "food_truck_food_special",
+"city": "charlotte",
+"date": "2026-11-28",
+"link": "https://www.instagram.com/p/DgJhkuKgKB4/",
+"time": "17:00",
+"title": "Out-n-About Food Truck",
+"venue": "Birdsong Brewing Co."
 },
 {
 "cat": "food_truck_food_special",
@@ -3404,6 +2817,22 @@
 "venue": "Brewers at 4001 Yancey"
 },
 {
+"cat": "market_vendor",
+"city": "charlotte",
+"date": "2026-11-28",
+"link": "https://www.instagram.com/reel/DgIrO3azr5z/",
+"title": "Annual Christmas Market",
+"venue": "Cabarrus Brewing Company"
+},
+{
+"cat": "beer_release_tap_takeover",
+"city": "charlotte",
+"date": "2026-11-28",
+"link": "https://www.instagram.com/reel/DgIrO3azr5z/",
+"title": "Peppermint Mocha Coffee Blonde Release",
+"venue": "Cabarrus Brewing Company"
+},
+{
 "cat": "drink_special",
 "city": "charlotte",
 "date": "2026-11-28",
@@ -3496,6 +2925,14 @@
 "venue": "Pilot Brewing"
 },
 {
+"cat": "food_truck_food_special",
+"city": "charlotte",
+"date": "2026-11-28",
+"link": "https://www.instagram.com/p/DgIWN8uEfgZ/",
+"title": "JREA Loaded Potatoes Food Truck",
+"venue": "Slow Play Brewing"
+},
+{
 "cat": "drink_special",
 "city": "charlotte",
 "date": "2026-11-28",
@@ -3542,6 +2979,15 @@
 "title": "Yoga by Om",
 "venue": "Amor Artis Brewing",
 "weekly": true
+},
+{
+"cat": "food_truck_food_special",
+"city": "charlotte",
+"date": "2026-11-29",
+"link": "https://www.instagram.com/p/DgJhkuKgKB4/",
+"time": "11:00",
+"title": "5th Sin Food Truck",
+"venue": "Birdsong Brewing Co."
 },
 {
 "cat": "festival_party",
@@ -3787,6 +3233,15 @@
 "cat": "food_truck_food_special",
 "city": "charlotte",
 "date": "2026-11-29",
+"link": "https://www.instagram.com/p/DgJhkuKgKB4/",
+"time": "16:00",
+"title": "Haute Street Food Truck",
+"venue": "Birdsong Brewing Co."
+},
+{
+"cat": "food_truck_food_special",
+"city": "charlotte",
+"date": "2026-11-29",
 "link": "https://www.instagram.com/reel/Dfn7y5RJrQW/",
 "time": "16:00",
 "title": "Sunday Brew & Boil with Topsail Steamer",
@@ -3853,10 +3308,9 @@
 "cat": "drink_special",
 "city": "charlotte",
 "date": "2026-11-29",
-"link": "https://www.instagram.com/p/DeIfXnnAC7B/",
-"title": "$6 Mimosas",
-"venue": "Birdsong Brewing Co.",
-"weekly": true
+"link": "https://www.instagram.com/p/DgJhkuKgKB4/",
+"title": "$6 Mimosas & Bloody Beers",
+"venue": "Birdsong Brewing Co."
 },
 {
 "cat": "drink_special",
@@ -4068,11 +3522,11 @@
 "weekly": true
 },
 {
-"cat": "food_truck_food_special",
+"cat": "sports_viewing",
 "city": "charlotte",
 "date": "2026-11-29",
-"link": "https://www.instagram.com/p/Dd9QUI5kTvs/",
-"title": "Pizza & Wings",
+"link": "https://www.instagram.com/p/DgJUE2WEaIq/",
+"title": "NFL Football and Pizza Menu",
 "venue": "Royal Bliss Brewing Co.",
 "weekly": true
 },
@@ -4641,6 +4095,16 @@
 "time": "17:00",
 "title": "Pita Palace Food Truck",
 "venue": "Slow Play Brewing"
+},
+{
+"cat": "trivia_games",
+"city": "charlotte",
+"date": "2026-12-01",
+"link": "https://www.instagram.com/p/DgInjfql_f2/",
+"time": "17:00",
+"title": "Taco Tuesday with Loteria",
+"venue": "Sweet Union Brewing",
+"weekly": true
 },
 {
 "cat": "fitness_run_club",
@@ -6821,6 +6285,15 @@
 "weekly": true
 },
 {
+"cat": "drink_special",
+"city": "charlotte",
+"date": "2026-12-04",
+"link": "https://www.instagram.com/reel/DgJTQJYhdr6/",
+"title": "Black Friday Monstro Sale",
+"venue": "NoDa Brewing Company",
+"weekly": true
+},
+{
 "cat": "live_music",
 "city": "charlotte",
 "date": "2026-12-04",
@@ -7043,6 +6516,16 @@
 "time": "18:00",
 "title": "Chess Club",
 "venue": "Armored Cow Brewing Co.",
+"weekly": true
+},
+{
+"cat": "live_music",
+"city": "charlotte",
+"date": "2026-12-05",
+"link": "https://www.instagram.com/p/DgJUE2WEaIq/",
+"time": "18:30",
+"title": "Small Business Saturday Live Music with The Ticket Band",
+"venue": "Royal Bliss Brewing Co.",
 "weekly": true
 },
 {
@@ -8133,6 +7616,619 @@
 "weekly": true
 },
 {
+"cat": "drink_special",
+"city": "charlotte",
+"date": "2026-12-08",
+"link": "https://www.instagram.com/p/DeKz_u7li46/",
+"time": "12:00",
+"title": "Teacher Tuesday",
+"venue": "Percent Tap House",
+"weekly": true
+},
+{
+"cat": "drink_special",
+"city": "charlotte",
+"date": "2026-12-08",
+"link": "https://www.instagram.com/p/Dd4TTu1FxtG/",
+"time": "14:00",
+"title": "Mix It Up Tuesday",
+"venue": "Americana Beer Company",
+"weekly": true
+},
+{
+"cat": "drink_special",
+"city": "charlotte",
+"date": "2026-12-08",
+"link": "https://www.instagram.com/p/Dfkm5AwAUze/",
+"time": "15:00",
+"title": "Tap It Tuesdays",
+"venue": "Sugar Creek Brewing Company",
+"weekly": true
+},
+{
+"cat": "other",
+"city": "charlotte",
+"date": "2026-12-08",
+"link": "https://www.instagram.com/p/DfP_vXvG3HD/",
+"time": "15:30",
+"title": "Line Dancing",
+"venue": "Lake Norman Brewery",
+"weekly": true
+},
+{
+"cat": "other",
+"city": "charlotte",
+"date": "2026-12-08",
+"link": "https://www.instagram.com/reel/DgFuMUfJqSe/",
+"time": "16:00",
+"title": "Bring Your Own Vinyl",
+"venue": "Divine Barrel Brewing",
+"weekly": true
+},
+{
+"cat": "food_truck_food_special",
+"city": "charlotte",
+"date": "2026-12-08",
+"link": "https://www.instagram.com/p/DfPhAI4j6WB/",
+"time": "17:00",
+"title": "Sully's Steamers",
+"venue": "Hoptown Brewing Company",
+"weekly": true
+},
+{
+"cat": "trivia_games",
+"city": "charlotte",
+"date": "2026-12-08",
+"link": "https://www.instagram.com/p/DgInjfql_f2/",
+"time": "17:00",
+"title": "Taco Tuesday with Loteria",
+"venue": "Sweet Union Brewing",
+"weekly": true
+},
+{
+"cat": "fitness_run_club",
+"city": "charlotte",
+"date": "2026-12-08",
+"link": "https://www.instagram.com/p/DeHaunPlSCo/",
+"time": "17:30",
+"title": "MAC Ride Hosted by Hoptown",
+"venue": "Hoptown Brewing Company",
+"weekly": true
+},
+{
+"cat": "food_truck_food_special",
+"city": "charlotte",
+"date": "2026-12-08",
+"link": "https://www.instagram.com/p/DfqauvWDhwh/",
+"time": "18:00",
+"title": "Praise Cheeses food truck",
+"venue": "Burial Beer Co. Charlotte Taproom",
+"weekly": true
+},
+{
+"cat": "trivia_games",
+"city": "charlotte",
+"date": "2026-12-08",
+"link": "https://www.instagram.com/p/De3QoFADJiL/",
+"time": "18:00",
+"title": "Mahjong Open Play",
+"venue": "Eleven Lakes Brewing Company",
+"weekly": true
+},
+{
+"cat": "trivia_games",
+"city": "charlotte",
+"date": "2026-12-08",
+"link": "https://www.instagram.com/p/DeKz_u7li46/",
+"time": "18:00",
+"title": "Game Night",
+"venue": "Percent Tap House",
+"weekly": true
+},
+{
+"cat": "fitness_run_club",
+"city": "charlotte",
+"date": "2026-12-08",
+"link": "https://www.instagram.com/p/DeKtQHJiTME/",
+"time": "18:30",
+"title": "Run Club",
+"venue": "Armored Cow Brewing Co.",
+"weekly": true
+},
+{
+"cat": "trivia_games",
+"city": "charlotte",
+"date": "2026-12-08",
+"link": "https://www.instagram.com/p/DeIALN6IG-1/",
+"time": "18:30",
+"title": "Music Bingo",
+"venue": "Club West Brewing",
+"weekly": true
+},
+{
+"cat": "fitness_run_club",
+"city": "charlotte",
+"date": "2026-12-08",
+"link": "https://www.instagram.com/p/DeHaunPlSCo/",
+"time": "18:30",
+"title": "Run Club",
+"venue": "Hoptown Brewing Company",
+"weekly": true
+},
+{
+"cat": "fitness_run_club",
+"city": "charlotte",
+"date": "2026-12-08",
+"link": "https://www.instagram.com/p/Dd1apxSoGzv/",
+"time": "18:30",
+"title": "Beer Trekkers Run Club",
+"venue": "Lost Worlds Brewing Company",
+"weekly": true
+},
+{
+"cat": "fitness_run_club",
+"city": "charlotte",
+"date": "2026-12-08",
+"featured": true,
+"link": "https://www.instagram.com/p/DeJpOiOox5V/",
+"time": "18:30",
+"title": "Run Club",
+"venue": "Neoteric Brewing",
+"weekly": true
+},
+{
+"cat": "fitness_run_club",
+"city": "charlotte",
+"date": "2026-12-08",
+"link": "https://www.instagram.com/p/DeABr3uDPJo/",
+"time": "18:30",
+"title": "Run Club",
+"venue": "The Olde Mecklenburg Brewery & Biergarten",
+"weekly": true
+},
+{
+"cat": "fitness_run_club",
+"city": "charlotte",
+"date": "2026-12-08",
+"link": "https://www.instagram.com/p/DeKu0y9insK/",
+"time": "18:30",
+"title": "CLT Yoga",
+"venue": "Triple C Brewing Company",
+"weekly": true
+},
+{
+"cat": "fitness_run_club",
+"city": "charlotte",
+"date": "2026-12-08",
+"link": "https://www.instagram.com/p/Dd17jmqypOX/",
+"time": "18:30",
+"title": "RunBots Run Club",
+"venue": "Wooden Robot Brewery",
+"weekly": true
+},
+{
+"cat": "trivia_games",
+"city": "charlotte",
+"date": "2026-12-08",
+"link": "https://www.instagram.com/p/DeczS7bmLnP/",
+"time": "19:00",
+"title": "General Knowledge Trivia",
+"venue": "760 Craft Works",
+"weekly": true
+},
+{
+"cat": "trivia_games",
+"city": "charlotte",
+"date": "2026-12-08",
+"link": "https://www.instagram.com/p/Dd4gc7SF-p2/",
+"time": "19:00",
+"title": "Trivia Night",
+"venue": "Durty Bull Brewing Company",
+"weekly": true
+},
+{
+"cat": "trivia_games",
+"city": "charlotte",
+"date": "2026-12-08",
+"link": "https://www.instagram.com/p/Dechyl3B88G/",
+"time": "19:00",
+"title": "Trivia",
+"venue": "Heist Brewery and Barrel Arts",
+"weekly": true
+},
+{
+"cat": "trivia_games",
+"city": "charlotte",
+"date": "2026-12-08",
+"link": "https://www.instagram.com/p/DfPhAI4j6WB/",
+"time": "19:00",
+"title": "Bunco",
+"venue": "Hoptown Brewing Company",
+"weekly": true
+},
+{
+"cat": "trivia_games",
+"city": "charlotte",
+"date": "2026-12-08",
+"link": "https://www.instagram.com/p/DfP_vXvG3HD/",
+"time": "19:00",
+"title": "Trivia with Mike D",
+"venue": "Lake Norman Brewery",
+"weekly": true
+},
+{
+"cat": "trivia_games",
+"city": "charlotte",
+"date": "2026-12-08",
+"link": "https://www.instagram.com/p/Dd9orp_KHUd/",
+"time": "19:00",
+"title": "General Trivia w/ Carnival of Knowledge",
+"venue": "Lake Wylie Brewing Co.",
+"weekly": true
+},
+{
+"cat": "trivia_games",
+"city": "charlotte",
+"date": "2026-12-08",
+"link": "https://www.instagram.com/p/DeKYp1eplod/",
+"time": "19:00",
+"title": "Music Bingo",
+"venue": "Lore Brewing Company",
+"weekly": true
+},
+{
+"cat": "trivia_games",
+"city": "charlotte",
+"date": "2026-12-08",
+"link": "https://www.instagram.com/p/Dd1apxSoGzv/",
+"time": "19:00",
+"title": "Music Bingo with Seabrooks Entertainment",
+"venue": "Lost Worlds Brewing Company",
+"weekly": true
+},
+{
+"cat": "trivia_games",
+"city": "charlotte",
+"date": "2026-12-08",
+"link": "https://www.instagram.com/p/DeHX8FADY_B/",
+"time": "19:00",
+"title": "Social Dart League",
+"venue": "Primal Brewery",
+"weekly": true
+},
+{
+"cat": "trivia_games",
+"city": "charlotte",
+"date": "2026-12-08",
+"link": "https://www.instagram.com/p/DeHX8FADY_B/",
+"time": "19:00",
+"title": "Trivia Night",
+"venue": "Primal Brewery",
+"weekly": true
+},
+{
+"cat": "trivia_games",
+"city": "charlotte",
+"date": "2026-12-08",
+"link": "https://www.instagram.com/p/DecIcojuhVG/",
+"time": "19:00",
+"title": "Social Darts",
+"venue": "Primal Brewery Belmont",
+"weekly": true
+},
+{
+"cat": "trivia_games",
+"city": "charlotte",
+"date": "2026-12-08",
+"link": "https://www.instagram.com/p/Dd9EvozxBd1/",
+"time": "19:00",
+"title": "Trivia",
+"venue": "Slow Play Brewing",
+"weekly": true
+},
+{
+"cat": "other",
+"city": "charlotte",
+"date": "2026-12-08",
+"link": "https://www.instagram.com/p/DeKu0y9insK/",
+"time": "19:00",
+"title": "Taps & Tiles",
+"venue": "Triple C Brewing Company",
+"weekly": true
+},
+{
+"cat": "trivia_games",
+"city": "charlotte",
+"date": "2026-12-08",
+"link": "https://www.instagram.com/p/Dd_uibSFaBr/",
+"time": "19:00",
+"title": "Trivia",
+"venue": "Vaulted Oak Brewing",
+"weekly": true
+},
+{
+"cat": "trivia_games",
+"city": "charlotte",
+"date": "2026-12-08",
+"link": "https://www.instagram.com/p/DeHVI-wEXba/",
+"time": "19:00",
+"title": "Trivia Tuesdays",
+"venue": "Wooden Robot Brewery",
+"weekly": true
+},
+{
+"cat": "class_workshop",
+"city": "charlotte",
+"date": "2026-12-08",
+"link": "https://www.instagram.com/reel/DeKfMMmvqz_/",
+"time": "19:30",
+"title": "Line Dancing and Partner Swing Lessons",
+"venue": "Ghostface Brewing",
+"weekly": true
+},
+{
+"cat": "comedy_open_mic",
+"city": "charlotte",
+"date": "2026-12-08",
+"link": "https://www.instagram.com/p/DeFYp-_vR_n/",
+"time": "19:30",
+"title": "Open Mic with Jared Evans",
+"venue": "Heist Brewery",
+"weekly": true
+},
+{
+"cat": "drink_special",
+"city": "charlotte",
+"date": "2026-12-08",
+"link": "https://www.instagram.com/p/DeIfXnnAC7B/",
+"title": "$4 Rotating Tappy Tuesday",
+"venue": "Birdsong Brewing Co.",
+"weekly": true
+},
+{
+"cat": "drink_special",
+"city": "charlotte",
+"date": "2026-12-08",
+"link": "https://www.instagram.com/p/DfSho8kFk34/",
+"title": "$6 House Margaritas",
+"venue": "Cabarrus Brewing Company",
+"weekly": true
+},
+{
+"cat": "food_truck_food_special",
+"city": "charlotte",
+"date": "2026-12-08",
+"link": "https://www.instagram.com/p/DfKjZ4ERJJb/",
+"title": "Kids Eat Free",
+"venue": "Cabarrus Brewing Company",
+"weekly": true
+},
+{
+"cat": "food_truck_food_special",
+"city": "charlotte",
+"date": "2026-12-08",
+"link": "https://www.instagram.com/p/DfSho8kFk34/",
+"title": "Taco Tuesday",
+"venue": "Cabarrus Brewing Company",
+"weekly": true
+},
+{
+"cat": "drink_special",
+"city": "charlotte",
+"date": "2026-12-08",
+"link": "https://www.instagram.com/p/DeIALN6IG-1/",
+"title": "Half Off Wine & $8 Pizzas",
+"venue": "Club West Brewing",
+"weekly": true
+},
+{
+"cat": "drink_special",
+"city": "charlotte",
+"date": "2026-12-08",
+"link": "https://www.instagram.com/p/Dd4ehphtLzn/",
+"title": "Tuesday Pint and Wine Specials",
+"venue": "Edge City Brewery",
+"weekly": true
+},
+{
+"cat": "drink_special",
+"city": "charlotte",
+"date": "2026-12-08",
+"link": "https://www.instagram.com/p/DeJ4r_YF8kT/",
+"title": "Tuesday Flight & Wine Special",
+"venue": "Eleven Lakes Brewing Company",
+"weekly": true
+},
+{
+"cat": "food_truck_food_special",
+"city": "charlotte",
+"date": "2026-12-08",
+"link": "https://www.instagram.com/reel/DeKfMMmvqz_/",
+"title": "$10 Large Cheese Pie",
+"venue": "Ghostface Brewing",
+"weekly": true
+},
+{
+"cat": "food_truck_food_special",
+"city": "charlotte",
+"date": "2026-12-08",
+"link": "https://www.instagram.com/reel/DeuRNBap90I/",
+"title": "Tuesday Pizza Special",
+"venue": "Ghostface Brewing",
+"weekly": true
+},
+{
+"cat": "food_truck_food_special",
+"city": "charlotte",
+"date": "2026-12-08",
+"link": "https://www.instagram.com/reel/DfkxPhPOAqr/",
+"title": "Kids Eat Free",
+"venue": "Gilde Brewery",
+"weekly": true
+},
+{
+"cat": "drink_special",
+"city": "charlotte",
+"date": "2026-12-08",
+"link": "https://www.instagram.com/p/Dd60zFuFdJO/",
+"title": "$2 Off Apps & To-Go 4-Packs",
+"venue": "Heist Brewery and Barrel Arts",
+"weekly": true
+},
+{
+"cat": "drink_special",
+"city": "charlotte",
+"date": "2026-12-08",
+"link": "https://www.instagram.com/p/Df2zj29jDZ3/",
+"title": "Flagship Pint Tuesday",
+"venue": "Hi-Wire Brewing",
+"weekly": true
+},
+{
+"cat": "food_truck_food_special",
+"city": "charlotte",
+"date": "2026-12-08",
+"link": "https://www.instagram.com/p/DfzdtiMASxv/",
+"title": "Delivery from local restaurants",
+"venue": "Hoptown Brewing Company",
+"weekly": true
+},
+{
+"cat": "drink_special",
+"city": "charlotte",
+"date": "2026-12-08",
+"link": "https://www.instagram.com/reel/DgEKPnrJZcC/",
+"title": "10% off Tuesdays",
+"venue": "King Canary Brewing",
+"weekly": true
+},
+{
+"cat": "food_truck_food_special",
+"city": "charlotte",
+"date": "2026-12-08",
+"link": "https://www.instagram.com/p/Dd1bqfOkRMa/",
+"title": "Taco Tuesday",
+"venue": "Lore Brewing Company",
+"weekly": true
+},
+{
+"cat": "trivia_games",
+"city": "charlotte",
+"date": "2026-12-08",
+"link": "https://www.instagram.com/p/Dd9kHFcNNJ8/",
+"title": "General Trivia & Taco Tuesday",
+"venue": "Middle James Brewing Company",
+"weekly": true
+},
+{
+"cat": "drink_special",
+"city": "charlotte",
+"date": "2026-12-08",
+"link": "https://www.instagram.com/p/DeciciBO6b-/",
+"title": "All Day Happy Hour",
+"venue": "Off The Tracks Brewing",
+"weekly": true
+},
+{
+"cat": "trivia_games",
+"city": "charlotte",
+"date": "2026-12-08",
+"link": "https://www.instagram.com/p/DfOKWTXldGt/",
+"title": "Poker",
+"venue": "Old Armor Beer Company",
+"weekly": true
+},
+{
+"cat": "trivia_games",
+"city": "charlotte",
+"date": "2026-12-08",
+"link": "https://www.instagram.com/p/DebprQ6IK05/",
+"title": "Mindless Minutia Trivia",
+"venue": "Petty Thieves Brewing Co",
+"weekly": true
+},
+{
+"cat": "drink_special",
+"city": "charlotte",
+"date": "2026-12-08",
+"link": "https://www.instagram.com/p/DeHh9V7kar6/",
+"title": "Tuesday Specials",
+"venue": "Pilot Brewing",
+"weekly": true
+},
+{
+"cat": "drink_special",
+"city": "charlotte",
+"date": "2026-12-08",
+"link": "https://www.instagram.com/p/DeHX8FADY_B/",
+"title": "Wine Night",
+"venue": "Primal Brewery Belmont",
+"weekly": true
+},
+{
+"cat": "trivia_games",
+"city": "charlotte",
+"date": "2026-12-08",
+"link": "https://www.instagram.com/reel/Der52uhBcaH/",
+"title": "Tabletop Tuesday",
+"venue": "Replay Brewing",
+"weekly": true
+},
+{
+"cat": "food_truck_food_special",
+"city": "charlotte",
+"date": "2026-12-08",
+"link": "https://www.instagram.com/p/Dd9QUI5kTvs/",
+"title": "Pizza & Wings",
+"venue": "Royal Bliss Brewing Co.",
+"weekly": true
+},
+{
+"cat": "sports_viewing",
+"city": "charlotte",
+"date": "2026-12-08",
+"link": "https://www.instagram.com/reel/DfAVA_FRnWV/",
+"title": "DWTS Watch Party",
+"venue": "Suffolk Punch Brewing",
+"weekly": true
+},
+{
+"cat": "sports_viewing",
+"city": "charlotte",
+"date": "2026-12-08",
+"link": "https://www.instagram.com/reel/DfAVA_FRnWV/",
+"title": "DWTS Watch Party",
+"venue": "Suffolk Punch Brewing - SouthPark",
+"weekly": true
+},
+{
+"cat": "drink_special",
+"city": "charlotte",
+"date": "2026-12-08",
+"link": "https://www.instagram.com/p/DeZ2nUYxNAv/",
+"title": "$6 32 oz. Fills & $5 Pints",
+"venue": "Sugar Creek Brewing Company",
+"weekly": true
+},
+{
+"cat": "drink_special",
+"city": "charlotte",
+"date": "2026-12-08",
+"link": "https://www.instagram.com/p/DfzmNbSFS-P/",
+"title": "$1 Off Glasses of Wine",
+"venue": "Sweet Union Brewing",
+"weekly": true
+},
+{
+"cat": "food_truck_food_special",
+"city": "charlotte",
+"date": "2026-12-08",
+"link": "https://www.instagram.com/p/Dd2GYfXh7eZ/",
+"title": "Taco Tuesday at Izzy's",
+"venue": "Triple C Brewing Company",
+"weekly": true
+},
+{
 "cat": "live_music",
 "city": "charlotte",
 "date": "2026-12-09",
@@ -8213,6 +8309,15 @@
 "cat": "market_vendor",
 "city": "charlotte",
 "date": "2026-12-13",
+"link": "https://www.instagram.com/p/DgIVcQVl6Hu/",
+"time": "12:00",
+"title": "Holiday Meet & Greet with Santa and Mrs. Claus + Local Vendor Market",
+"venue": "Resident Culture"
+},
+{
+"cat": "market_vendor",
+"city": "charlotte",
+"date": "2026-12-13",
 "link": "https://www.instagram.com/reel/Dfi1lAypzRw/",
 "time": "13:00",
 "title": "Market Days (final market of the year)",
@@ -8237,6 +8342,16 @@
 "venue": "Brewers at 4001 Yancey"
 },
 {
+"cat": "festival_party",
+"city": "charlotte",
+"date": "2026-12-16",
+"featured": true,
+"link": "https://www.instagram.com/p/DgIX_q2ofVk/",
+"time": "19:00",
+"title": "Holiday Party & Ugly Sweater Contest",
+"venue": "Neoteric Brewing"
+},
+{
 "cat": "class_workshop",
 "city": "charlotte",
 "date": "2026-12-17",
@@ -8247,197 +8362,39 @@
 "venue": "Neoteric Brewing"
 },
 {
-"cat": "drink_special",
-"city": "orlando",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/p/Der181giZId/",
-"time": "17:00",
-"title": "Tuesday Chug",
-"venue": "The Commission Beer Chamber",
-"weekly": true
-},
-{
-"cat": "fitness_run_club",
-"city": "orlando",
-"date": "2026-11-24",
-"featured": true,
-"link": "https://www.instagram.com/p/DeKLuMxEQRd/",
-"time": "18:15",
-"title": "Not So Serious Run Club",
-"venue": "Toll Road Brewing Company",
-"weekly": true
-},
-{
-"cat": "fitness_run_club",
-"city": "orlando",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/p/DgGcXfRRC2I/",
-"time": "18:30",
-"title": "Ten10 Run Club Thanksgiving Food Drive",
-"venue": "Ten10 Brewing Co.",
-"weekly": true
-},
-{
-"cat": "trivia_games",
-"city": "orlando",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/p/DgFqMKbEdnG/",
+"cat": "festival_party",
+"city": "charlotte",
+"date": "2026-12-18",
+"link": "https://www.instagram.com/p/DffTiGflEpB/",
 "time": "19:00",
-"title": "Trivia hosted by Puzzles Entertainment",
-"venue": "Crooked Can Winter Garden",
-"weekly": true
+"title": "Ugly Christmas Sweater Party",
+"venue": "Durty Bull Brewing Company"
 },
 {
-"cat": "fitness_run_club",
-"city": "orlando",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/p/Dd1_kChD5Oe/",
-"time": "19:00",
-"title": "Run Club for MFers That Don't Run",
-"venue": "Gravity Taproom",
-"weekly": true
+"cat": "market_vendor",
+"city": "charlotte",
+"date": "2026-12-18",
+"link": "https://www.instagram.com/p/DfSW7mzF1tl/",
+"title": "Christmas Market",
+"venue": "The Olde Mecklenburg Brewery & Biergarten"
 },
 {
-"cat": "trivia_games",
+"cat": "beer_release_tap_takeover",
 "city": "orlando",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/p/DgD4bNNj7wl/",
-"time": "19:00",
-"title": "Trivia Night",
-"venue": "Gravity Taproom",
-"weekly": true
-},
-{
-"cat": "trivia_games",
-"city": "orlando",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/p/Dd9Qva0FX3u/",
-"time": "19:00",
-"title": "Trivia Tuesday",
-"venue": "Hourglass Brewing",
-"weekly": true
-},
-{
-"cat": "trivia_games",
-"city": "orlando",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/p/DeuA-EflGEY/",
-"time": "19:00",
-"title": "Bingo Bash!",
-"venue": "Little Wekiva Brewery",
-"weekly": true
-},
-{
-"cat": "trivia_games",
-"city": "orlando",
-"date": "2026-11-24",
-"featured": true,
-"link": "https://www.instagram.com/reel/DgCvuZIhmZV/",
-"time": "19:00",
-"title": "Jeopardy Bar League",
-"venue": "RockPit Brewing & Distilling"
-},
-{
-"cat": "trivia_games",
-"city": "orlando",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/p/Dd2JHiTEQg2/",
-"time": "19:00",
-"title": "Bingo with Brenda",
-"venue": "Tactical Brewing Co.",
-"weekly": true
-},
-{
-"cat": "trivia_games",
-"city": "orlando",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/reel/DgG1JiKqkO_/",
-"time": "19:00",
-"title": "Trivia Night",
-"venue": "Windermere Brewing Company",
-"weekly": true
-},
-{
-"cat": "drink_special",
-"city": "orlando",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/p/DgFqMKbEdnG/",
-"title": "Service Industry Tuesday",
-"venue": "Crooked Can Minneola",
-"weekly": true
-},
-{
-"cat": "trivia_games",
-"city": "orlando",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/p/DeKDm7rjHhJ/",
-"title": "Tabletop Tuesday",
-"venue": "Deviant Wolfe Brewing",
-"weekly": true
-},
-{
-"cat": "sports_viewing",
-"city": "orlando",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/reel/DgGBx-_AW8u/",
-"title": "DWTS Finale Watch Party",
-"venue": "Home State Brewing Co."
-},
-{
-"cat": "drink_special",
-"city": "orlando",
-"date": "2026-11-24",
-"link": "https://ivanhoeparkbrewing.com/event/take-one-home-tuesday-5/",
-"title": "Take One Home Tuesday",
-"venue": "Ivanhoe Park Brewing Co",
-"weekly": true
-},
-{
-"cat": "drink_special",
-"city": "orlando",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/p/Dd0S8qcxJ8I/",
-"title": "Damn, It Feels Good to Be a Rep",
-"venue": "The Commission Beer Chamber",
-"weekly": true
-},
-{
-"cat": "drink_special",
-"city": "orlando",
-"date": "2026-11-24",
-"featured": true,
-"link": "https://www.instagram.com/p/DeKLuMxEQRd/",
-"title": "Service Industry Night",
-"venue": "Toll Road Brewing Company",
-"weekly": true
-},
-{
-"cat": "live_music",
-"city": "orlando",
-"date": "2026-11-24",
-"featured": true,
-"link": "https://www.instagram.com/p/DeKLuMxEQRd/",
-"title": "Turntable Tuesdays",
-"venue": "Toll Road Brewing Company",
-"weekly": true
+"date": "2026-11-25",
+"link": "https://www.instagram.com/p/DgIyQ-eFD_O/",
+"time": "11:00",
+"title": "Black Mass Beer + Merch Drop",
+"venue": "Sideward Brewing"
 },
 {
 "cat": "food_truck_food_special",
 "city": "orlando",
-"date": "2026-11-24",
-"link": "https://www.instagram.com/reel/DgG1JiKqkO_/",
-"title": "Food Truck: Ragazzi's Pizzas",
-"venue": "Windermere Brewing Company"
-},
-{
-"cat": "trivia_games",
-"city": "orlando",
-"date": "2026-11-24",
-"featured": true,
-"link": "https://www.instagram.com/p/Dd9_d-2STAI/",
-"title": "Trivia Tuesdays",
-"venue": "À La Cart Milk District",
-"weekly": true
+"date": "2026-11-25",
+"link": "https://www.instagram.com/p/DgIyQ-eFD_O/",
+"time": "11:00",
+"title": "Black Mass Food Specials: Smoked Pork Ribs and Chipotle Chicken Salad",
+"venue": "Sideward Brewing"
 },
 {
 "cat": "food_truck_food_special",
@@ -8453,11 +8410,31 @@
 "cat": "drink_special",
 "city": "orlando",
 "date": "2026-11-25",
+"featured": true,
+"link": "https://www.instagram.com/reel/DgH6I2XBVb3/",
+"time": "12:00",
+"title": "In-Law Prep Day",
+"venue": "RockPit Brewing & Distilling"
+},
+{
+"cat": "drink_special",
+"city": "orlando",
+"date": "2026-11-25",
 "link": "https://ivanhoeparkbrewing.com/event/happy-hour-6-drafts-15/",
 "time": "16:00",
 "title": "Happy Hour $6 Drafts",
 "venue": "Ivanhoe Park Lager House",
 "weekly": true
+},
+{
+"cat": "food_truck_food_special",
+"city": "orlando",
+"date": "2026-11-25",
+"featured": true,
+"link": "https://www.instagram.com/reel/DgIZjCNhC5-/",
+"time": "17:00",
+"title": "Sun-Kissed Eats Food Truck",
+"venue": "Toll Road Brewing Company"
 },
 {
 "cat": "live_music",
@@ -8478,6 +8455,15 @@
 "venue": "Crooked Can Winter Garden"
 },
 {
+"cat": "food_truck_food_special",
+"city": "orlando",
+"date": "2026-11-25",
+"link": "https://www.instagram.com/p/DgIfzUJKDuT/",
+"time": "18:00",
+"title": "Sicilian Delights",
+"venue": "Tactical Brewing Co."
+},
+{
 "cat": "trivia_games",
 "city": "orlando",
 "date": "2026-11-25",
@@ -8486,6 +8472,15 @@
 "title": "Tacos & Trivia",
 "venue": "Dees Brothers Brewery",
 "weekly": true
+},
+{
+"cat": "fitness_run_club",
+"city": "orlando",
+"date": "2026-11-25",
+"link": "https://www.instagram.com/p/DgIfzUJKDuT/",
+"time": "18:30",
+"title": "Turkey Trot with Tactical Run Club",
+"venue": "Tactical Brewing Co."
 },
 {
 "cat": "trivia_games",
@@ -8512,7 +8507,7 @@
 "cat": "fitness_run_club",
 "city": "orlando",
 "date": "2026-11-25",
-"link": "https://www.instagram.com/p/DeKDm7rjHhJ/",
+"link": "https://www.instagram.com/p/DgI086OoV5X/",
 "time": "19:00",
 "title": "Deviant Wolfe Run Club",
 "venue": "Deviant Wolfe Brewing",
@@ -8522,7 +8517,7 @@
 "cat": "trivia_games",
 "city": "orlando",
 "date": "2026-11-25",
-"link": "https://www.instagram.com/p/DeKDm7rjHhJ/",
+"link": "https://www.instagram.com/p/DgI086OoV5X/",
 "time": "19:00",
 "title": "Feisty Trivia",
 "venue": "Deviant Wolfe Brewing",
@@ -8572,11 +8567,10 @@
 "cat": "trivia_games",
 "city": "orlando",
 "date": "2026-11-25",
-"link": "https://www.instagram.com/p/Dd2JHiTEQg2/",
+"link": "https://www.instagram.com/p/DgIfzUJKDuT/",
 "time": "19:00",
-"title": "FRIENDS Trivia",
-"venue": "Tactical Brewing Co.",
-"weekly": true
+"title": "True Crime Trivia",
+"venue": "Tactical Brewing Co."
 },
 {
 "cat": "fitness_run_club",
@@ -8593,9 +8587,9 @@
 "city": "orlando",
 "date": "2026-11-25",
 "featured": true,
-"link": "https://www.instagram.com/p/Dd4LNZ5lW85/",
+"link": "https://www.instagram.com/reel/DgIZjCNhC5-/",
 "time": "19:00",
-"title": "General Knowledge Trivia with Feisty Trivia",
+"title": "Classic Rock Trivia",
 "venue": "Toll Road Brewing Company",
 "weekly": true
 },
@@ -8754,6 +8748,32 @@
 "weekly": true
 },
 {
+"cat": "beer_release_tap_takeover",
+"city": "orlando",
+"date": "2026-11-25",
+"featured": true,
+"link": "https://www.instagram.com/reel/DgIZjCNhC5-/",
+"title": "Sweater Weather Holiday Beer Tapping",
+"venue": "Toll Road Brewing Company"
+},
+{
+"cat": "drink_special",
+"city": "orlando",
+"date": "2026-11-25",
+"featured": true,
+"link": "https://www.instagram.com/reel/DgIZjCNhC5-/",
+"title": "Thanksgiving To-Go Special",
+"venue": "Toll Road Brewing Company"
+},
+{
+"cat": "festival_party",
+"city": "orlando",
+"date": "2026-11-25",
+"link": "https://www.instagram.com/reel/DgIt6zFqCMe/",
+"title": "Drinksgiving",
+"venue": "Windermere Brewing Company"
+},
+{
 "cat": "food_truck_food_special",
 "city": "orlando",
 "date": "2026-11-25",
@@ -8774,18 +8794,18 @@
 "city": "orlando",
 "date": "2026-11-25",
 "featured": true,
-"link": "https://www.instagram.com/reel/Dd65_kSy5At/",
-"title": "$5 Growler Fills",
+"link": "https://www.instagram.com/reel/DgJFU2Pyi67/",
+"title": "$5 Growler Fill Wednesdays",
 "venue": "À La Cart Milk District",
 "weekly": true
 },
 {
-"cat": "food_truck_food_special",
+"cat": "drink_special",
 "city": "orlando",
 "date": "2026-11-25",
 "featured": true,
-"link": "https://www.instagram.com/reel/DeNcQ0thj03/",
-"title": "$1 Wing Wednesday",
+"link": "https://www.instagram.com/reel/DgJEV5dBCld/",
+"title": "$5 Growler Fill Wednesday",
 "venue": "À La Cart SoDo District",
 "weekly": true
 },
@@ -8798,6 +8818,15 @@
 "title": "Food truck: Lenador Argentinian Grill",
 "venue": "Ivanhoe Park Brewing Co",
 "weekly": true
+},
+{
+"cat": "festival_party",
+"city": "orlando",
+"date": "2026-11-26",
+"link": "https://www.instagram.com/reel/DgIXIPHCzEZ/",
+"time": "15:00",
+"title": "Thanksgiving Open Hours & Danny's Birthday",
+"venue": "GB's Bottle Shop"
 },
 {
 "cat": "other",
@@ -8846,6 +8875,15 @@
 "title": "Happy Hour $6 Drafts",
 "venue": "Ivanhoe Park Lager House",
 "weekly": true
+},
+{
+"cat": "festival_party",
+"city": "orlando",
+"date": "2026-11-26",
+"link": "https://www.instagram.com/p/DgIfzUJKDuT/",
+"time": "16:00",
+"title": "Thanksgiving Open Hours",
+"venue": "Tactical Brewing Co."
 },
 {
 "cat": "trivia_games",
@@ -9082,7 +9120,7 @@
 "city": "orlando",
 "date": "2026-11-27",
 "featured": true,
-"link": "https://www.instagram.com/p/DeKLuMxEQRd/",
+"link": "https://www.instagram.com/reel/DgIZjCNhC5-/",
 "time": "15:00",
 "title": "FriYay Happy Hour",
 "venue": "Toll Road Brewing Company",
@@ -9118,6 +9156,15 @@
 "title": "Happy Hour $6 Drafts",
 "venue": "Ivanhoe Park Lager House",
 "weekly": true
+},
+{
+"cat": "food_truck_food_special",
+"city": "orlando",
+"date": "2026-11-27",
+"link": "https://www.instagram.com/p/DgIfzUJKDuT/",
+"time": "17:30",
+"title": "Danger BBQ",
+"venue": "Tactical Brewing Co."
 },
 {
 "cat": "live_music",
@@ -9166,6 +9213,14 @@
 "weekly": true
 },
 {
+"cat": "market_vendor",
+"city": "orlando",
+"date": "2026-11-27",
+"link": "https://www.instagram.com/p/DgI086OoV5X/",
+"title": "Small Business Weekend",
+"venue": "Deviant Wolfe Brewing"
+},
+{
 "cat": "festival_party",
 "city": "orlando",
 "date": "2026-11-27",
@@ -9173,6 +9228,14 @@
 "title": "One & Done Weekend Party Starter",
 "venue": "Ivanhoe Park Lager House",
 "weekly": true
+},
+{
+"cat": "beer_release_tap_takeover",
+"city": "orlando",
+"date": "2026-11-27",
+"link": "https://www.instagram.com/p/DgIfzUJKDuT/",
+"title": "Fresh Can Release",
+"venue": "Tactical Brewing Co."
 },
 {
 "cat": "food_truck_food_special",
@@ -9208,6 +9271,15 @@
 "time": "11:00",
 "title": "Merry Mobile Trolley",
 "venue": "Gravity Taproom"
+},
+{
+"cat": "festival_party",
+"city": "orlando",
+"date": "2026-11-28",
+"link": "https://www.instagram.com/p/DgJFV2xpfDk/",
+"time": "11:00",
+"title": "MerryMobile Holiday Shuttle Stop – Small Business Saturday",
+"venue": "Ivanhoe Park Brewing Co"
 },
 {
 "cat": "food_truck_food_special",
@@ -9283,13 +9355,14 @@
 "venue": "Crooked Can Winter Garden"
 },
 {
-"cat": "festival_party",
+"cat": "live_music",
 "city": "orlando",
 "date": "2026-11-28",
-"link": "https://ivanhoeparkbrewing.com/event/cinema-on-the-grass/",
+"featured": true,
+"link": "https://www.instagram.com/reel/DgIZjCNhC5-/",
 "time": "18:00",
-"title": "Cinema on the grass",
-"venue": "Ivanhoe Park Brewing Co"
+"title": "Live Music with Derek Stroker",
+"venue": "Toll Road Brewing Company"
 },
 {
 "cat": "live_music",
@@ -9357,6 +9430,15 @@
 "cat": "food_truck_food_special",
 "city": "orlando",
 "date": "2026-11-28",
+"featured": true,
+"link": "https://www.instagram.com/reel/DgIZjCNhC5-/",
+"title": "Scoville Grille Food Truck",
+"venue": "Toll Road Brewing Company"
+},
+{
+"cat": "food_truck_food_special",
+"city": "orlando",
+"date": "2026-11-28",
 "link": "https://www.instagram.com/reel/DgG1JiKqkO_/",
 "title": "Food Truck: Lee's Famous Cheesesteaks",
 "venue": "Windermere Brewing Company"
@@ -9411,7 +9493,7 @@
 "cat": "fitness_run_club",
 "city": "orlando",
 "date": "2026-11-29",
-"link": "https://www.instagram.com/p/DeKDm7rjHhJ/",
+"link": "https://www.instagram.com/p/DgI086OoV5X/",
 "time": "10:30",
 "title": "Namaste for a Beer Yoga",
 "venue": "Deviant Wolfe Brewing",
@@ -9475,17 +9557,6 @@
 "weekly": true
 },
 {
-"cat": "drink_special",
-"city": "orlando",
-"date": "2026-11-29",
-"featured": true,
-"link": "https://www.instagram.com/p/DeKLuMxEQRd/",
-"time": "12:00",
-"title": "Bottomless Mimosas",
-"venue": "Toll Road Brewing Company",
-"weekly": true
-},
-{
 "cat": "food_truck_food_special",
 "city": "orlando",
 "date": "2026-11-29",
@@ -9543,6 +9614,16 @@
 "link": "https://www.instagram.com/p/DfSQsymiHvQ/",
 "time": "14:00",
 "title": "Paint 'n' Sip with Adventures on Tap",
+"venue": "Deviant Wolfe Brewing",
+"weekly": true
+},
+{
+"cat": "class_workshop",
+"city": "orlando",
+"date": "2026-11-29",
+"link": "https://www.instagram.com/p/DgI086OoV5X/",
+"time": "14:00",
+"title": "The Cozy Craft Club",
 "venue": "Deviant Wolfe Brewing",
 "weekly": true
 },
@@ -9623,15 +9704,6 @@
 "weekly": true
 },
 {
-"cat": "drink_special",
-"city": "orlando",
-"date": "2026-11-29",
-"link": "https://www.instagram.com/p/DeKDm7rjHhJ/",
-"title": "Mug Club Day",
-"venue": "Deviant Wolfe Brewing",
-"weekly": true
-},
-{
 "cat": "sports_viewing",
 "city": "orlando",
 "date": "2026-11-29",
@@ -9708,10 +9780,19 @@
 "city": "orlando",
 "date": "2026-11-29",
 "featured": true,
-"link": "https://www.instagram.com/p/DeKLuMxEQRd/",
-"title": "Build Your Own Bloody Marys",
+"link": "https://www.instagram.com/reel/DgIZjCNhC5-/",
+"title": "Bottomless Mimosas & Build-Your-Own Bloody Marys",
 "venue": "Toll Road Brewing Company",
 "weekly": true
+},
+{
+"cat": "food_truck_food_special",
+"city": "orlando",
+"date": "2026-11-29",
+"featured": true,
+"link": "https://www.instagram.com/reel/DgIZjCNhC5-/",
+"title": "The Steak Truck NY Food Truck",
+"venue": "Toll Road Brewing Company"
 },
 {
 "cat": "food_truck_food_special",
@@ -11199,6 +11280,16 @@
 "venue": "Ivanhoe Park Brewing Co"
 },
 {
+"cat": "drink_special",
+"city": "orlando",
+"date": "2026-12-08",
+"link": "https://www.instagram.com/p/Der181giZId/",
+"time": "17:00",
+"title": "Tuesday Chug",
+"venue": "The Commission Beer Chamber",
+"weekly": true
+},
+{
 "cat": "other",
 "city": "orlando",
 "date": "2026-12-08",
@@ -11208,12 +11299,170 @@
 "venue": "Ivanhoe Park Brewing Co"
 },
 {
+"cat": "fitness_run_club",
+"city": "orlando",
+"date": "2026-12-08",
+"featured": true,
+"link": "https://www.instagram.com/p/DeKLuMxEQRd/",
+"time": "18:15",
+"title": "Not So Serious Run Club",
+"venue": "Toll Road Brewing Company",
+"weekly": true
+},
+{
+"cat": "fitness_run_club",
+"city": "orlando",
+"date": "2026-12-08",
+"link": "https://www.instagram.com/p/DgGcXfRRC2I/",
+"time": "18:30",
+"title": "Ten10 Run Club Thanksgiving Food Drive",
+"venue": "Ten10 Brewing Co.",
+"weekly": true
+},
+{
+"cat": "trivia_games",
+"city": "orlando",
+"date": "2026-12-08",
+"link": "https://www.instagram.com/p/Dd1iFNjEQWv/",
+"time": "19:00",
+"title": "Trivia hosted by Puzzles Entertainment",
+"venue": "Crooked Can Winter Garden",
+"weekly": true
+},
+{
+"cat": "fitness_run_club",
+"city": "orlando",
+"date": "2026-12-08",
+"link": "https://www.instagram.com/p/Dd1_kChD5Oe/",
+"time": "19:00",
+"title": "Run Club for MFers That Don't Run",
+"venue": "Gravity Taproom",
+"weekly": true
+},
+{
+"cat": "trivia_games",
+"city": "orlando",
+"date": "2026-12-08",
+"link": "https://www.instagram.com/p/Dd9Qva0FX3u/",
+"time": "19:00",
+"title": "Trivia Tuesday",
+"venue": "Hourglass Brewing",
+"weekly": true
+},
+{
+"cat": "trivia_games",
+"city": "orlando",
+"date": "2026-12-08",
+"link": "https://www.instagram.com/p/DeuA-EflGEY/",
+"time": "19:00",
+"title": "Bingo Bash!",
+"venue": "Little Wekiva Brewery",
+"weekly": true
+},
+{
+"cat": "trivia_games",
+"city": "orlando",
+"date": "2026-12-08",
+"featured": true,
+"link": "https://www.instagram.com/p/DeGSStLtiZd/",
+"time": "19:00",
+"title": "Jeopardy",
+"venue": "RockPit Brewing & Distilling",
+"weekly": true
+},
+{
+"cat": "trivia_games",
+"city": "orlando",
+"date": "2026-12-08",
+"link": "https://www.instagram.com/p/Dd2JHiTEQg2/",
+"time": "19:00",
+"title": "Bingo with Brenda",
+"venue": "Tactical Brewing Co.",
+"weekly": true
+},
+{
+"cat": "trivia_games",
+"city": "orlando",
+"date": "2026-12-08",
+"link": "https://www.instagram.com/reel/DeZuJU2Kc6N/",
+"time": "19:00",
+"title": "Trivia Night",
+"venue": "Windermere Brewing Company",
+"weekly": true
+},
+{
+"cat": "drink_special",
+"city": "orlando",
+"date": "2026-12-08",
+"link": "https://www.instagram.com/p/DeH4DOfmTd7/",
+"title": "Service Industry Tuesday",
+"venue": "Crooked Can Minneola",
+"weekly": true
+},
+{
+"cat": "trivia_games",
+"city": "orlando",
+"date": "2026-12-08",
+"link": "https://www.instagram.com/p/DeKDm7rjHhJ/",
+"title": "Tabletop Tuesday",
+"venue": "Deviant Wolfe Brewing",
+"weekly": true
+},
+{
+"cat": "trivia_games",
+"city": "orlando",
+"date": "2026-12-08",
+"link": "https://www.instagram.com/p/Dd1_kChD5Oe/",
+"title": "Trivia Night Returns",
+"venue": "Gravity Taproom",
+"weekly": true
+},
+{
 "cat": "drink_special",
 "city": "orlando",
 "date": "2026-12-08",
 "link": "https://ivanhoeparkbrewing.com/event/take-one-home-tuesday-7/",
 "title": "Take One Home Tuesday",
 "venue": "Ivanhoe Park Brewing Co",
+"weekly": true
+},
+{
+"cat": "drink_special",
+"city": "orlando",
+"date": "2026-12-08",
+"link": "https://www.instagram.com/p/Dd0S8qcxJ8I/",
+"title": "Damn, It Feels Good to Be a Rep",
+"venue": "The Commission Beer Chamber",
+"weekly": true
+},
+{
+"cat": "drink_special",
+"city": "orlando",
+"date": "2026-12-08",
+"featured": true,
+"link": "https://www.instagram.com/p/DeKLuMxEQRd/",
+"title": "Service Industry Night",
+"venue": "Toll Road Brewing Company",
+"weekly": true
+},
+{
+"cat": "live_music",
+"city": "orlando",
+"date": "2026-12-08",
+"featured": true,
+"link": "https://www.instagram.com/p/DeKLuMxEQRd/",
+"title": "Turntable Tuesdays",
+"venue": "Toll Road Brewing Company",
+"weekly": true
+},
+{
+"cat": "trivia_games",
+"city": "orlando",
+"date": "2026-12-08",
+"featured": true,
+"link": "https://www.instagram.com/p/Dd9_d-2STAI/",
+"title": "Trivia Tuesdays",
+"venue": "À La Cart Milk District",
 "weekly": true
 },
 {
@@ -11378,6 +11627,15 @@
 "title": "One & Done Weekend Party Starter",
 "venue": "Ivanhoe Park Lager House",
 "weekly": true
+},
+{
+"cat": "market_vendor",
+"city": "orlando",
+"date": "2026-12-12",
+"link": "https://www.instagram.com/p/DgI5Ip_gIbD/",
+"time": "12:00",
+"title": "Vinyl & Brews ft. The Vinyl Draft",
+"venue": "Home State Brewing Co."
 },
 {
 "cat": "food_truck_food_special",
@@ -11606,7 +11864,74 @@
 "title": "Tasty Thursdays",
 "venue": "Ivanhoe Park Lager House",
 "weekly": true
+},
+{
+"cat": "food_truck_food_special",
+"city": "orlando",
+"date": "2026-12-18",
+"link": "https://ivanhoeparkbrewing.com/event/lenador-argentinian-grill-41/",
+"time": "12:00",
+"title": "Food truck: Lenador Argentinian Grill",
+"venue": "Ivanhoe Park Brewing Co",
+"weekly": true
+},
+{
+"cat": "drink_special",
+"city": "orlando",
+"date": "2026-12-18",
+"link": "https://ivanhoeparkbrewing.com/event/happy-hour-5-drafts-9/",
+"time": "14:00",
+"title": "Happy Hour $5 Drafts",
+"venue": "Ivanhoe Park Lager House",
+"weekly": true
+},
+{
+"cat": "drink_special",
+"city": "orlando",
+"date": "2026-12-18",
+"link": "https://ivanhoeparkbrewing.com/event/happier-hour-9/",
+"time": "16:00",
+"title": "Happier Hour",
+"venue": "Ivanhoe Park Brewing Co",
+"weekly": true
+},
+{
+"cat": "drink_special",
+"city": "orlando",
+"date": "2026-12-18",
+"link": "https://ivanhoeparkbrewing.com/event/happy-hour-6-drafts-25/",
+"time": "16:00",
+"title": "Happy Hour $6 Drafts",
+"venue": "Ivanhoe Park Lager House",
+"weekly": true
+},
+{
+"cat": "other",
+"city": "orlando",
+"date": "2026-12-18",
+"link": "https://ivanhoeparkbrewing.com/event/wild-heart-live-vol-01-ft-rage-riot/",
+"time": "18:00",
+"title": "Wild Heart Live — Vol. 01 Ft. Rage Riot",
+"venue": "Ivanhoe Park Brewing Co"
+},
+{
+"cat": "other",
+"city": "orlando",
+"date": "2026-12-18",
+"link": "https://www.instagram.com/p/DgFwmOdiCoT/",
+"time": "18:30",
+"title": "Sanford Critical Mass: Tinsel & Tires",
+"venue": "Deviant Wolfe Brewing"
+},
+{
+"cat": "festival_party",
+"city": "orlando",
+"date": "2026-12-18",
+"link": "https://ivanhoeparkbrewing.com/event/one-done-weekend-party-starter-9/",
+"title": "One & Done Weekend Party Starter",
+"venue": "Ivanhoe Park Lager House",
+"weekly": true
 }
 ],
-"generated": "2026-11-24"
+"generated": "2026-11-25"
 }
